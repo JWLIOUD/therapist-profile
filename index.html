@@ -3,55 +3,228 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>王小明 諮商心理師｜成人與伴侶諮商</title>
-  <meta name="description" content="王小明 諮商心理師，提供成人個別諮商與伴侶諮商。專長焦慮、情緒困擾與關係議題。" />
+  <title>心理師個人網站｜介紹・服務・聯絡</title>
+  <meta name="description" content="心理師個人介紹網站：服務項目、擅長議題、學經歷與聯絡方式。" />
+
+  <style>
+    /* ===== 基礎：讓不同螢幕自動排版 ===== */
+    :root{
+      --maxw: 920px;
+      --pad: clamp(16px, 4vw, 40px);
+      --h1: clamp(28px, 4vw, 44px);
+      --h2: clamp(20px, 2.6vw, 28px);
+      --p : clamp(16px, 1.6vw, 18px);
+      --muted: #666;
+      --line: #e8e8e8;
+    }
+    *{ box-sizing: border-box; }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, "PingFang TC", "Noto Sans TC", sans-serif;
+      line-height: 1.8;
+      font-size: var(--p);
+      color: #111;
+      background: #fff;
+    }
+    a{ color: inherit; text-decoration: underline; }
+    a:hover{ opacity: .75; }
+
+    /* ===== 投影片式滾動：scroll-snap ===== */
+    .deck{
+      height: 100vh;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+    section{
+      min-height: 100vh;
+      scroll-snap-align: start;
+      display: grid;
+      place-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+    .card{
+      width: min(var(--maxw), 100%);
+      padding: var(--pad);
+    }
+
+    /* ===== 內容排版：自動適應寬度 ===== */
+    .grid{
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 860px){
+      .grid.two{
+        grid-template-columns: 1.1fr .9fr; /* 桌機左右兩欄 */
+        align-items: start;
+      }
+    }
+
+    h1{ font-size: var(--h1); margin: 0 0 10px; }
+    h2{ font-size: var(--h2); margin: 0 0 10px; }
+    p{ margin: 0 0 12px; }
+    ul{ margin: 0 0 12px 1.2em; padding: 0; }
+    .muted{ color: var(--muted); }
+
+    /* ===== 固定導覽列（可點跳到各頁） ===== */
+    nav{
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.8);
+      border-bottom: 1px solid var(--line);
+      z-index: 10;
+    }
+    .navwrap{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 10px var(--pad);
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navlinks{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+    .brand{
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .5px;
+    }
+
+    /* 讓內容不被 nav 擋住：用 padding-top */
+    .spacer{ height: 52px; }
+    section .card{ padding-top: calc(var(--pad) + 18px); }
+  </style>
 </head>
 
-<body style="font-family: sans-serif; max-width: 700px; margin: 40px auto; line-height: 1.8;">
+<body>
+  <nav>
+    <div class="navwrap">
+      <div class="brand">心理師姓名</div>
+      <div class="navlinks">
+        <a href="#home">首頁</a>
+        <a href="#about">關於我</a>
+        <a href="#services">服務</a>
+        <a href="#experience">學經歷</a>
+        <a href="#contact">聯絡</a>
+      </div>
+    </div>
+  </nav>
 
-  <h1>王小明 諮商心理師</h1>
-  <p>專長於成人個別諮商與伴侶諮商，陪伴來談者整理情緒困擾、關係議題與自我探索。</p>
+  <div class="spacer"></div>
 
-  <hr>
+  <main class="deck" id="deck">
+    <!-- Slide 1 -->
+    <section id="home">
+      <div class="card">
+        <div class="grid two">
+          <div>
+            <h1>心理師姓名</h1>
+            <p class="muted">成人個別｜伴侶關係｜情緒與壓力調適</p>
+            <p>一句話介紹你的工作風格與你能提供的協助（白話、具體）。</p>
+            <p class="muted">提示：往下滑 / 手指上滑，就像投影片換頁。</p>
+          </div>
+          <div>
+            <h2>擅長議題</h2>
+            <ul>
+              <li>焦慮、壓力與失眠</li>
+              <li>自我價值與低自尊</li>
+              <li>親密關係與溝通</li>
+              <li>情緒困擾與自我探索</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <h2>服務對象</h2>
-  <ul>
-    <li>成人個別諮商</li>
-    <li>伴侶諮商</li>
-  </ul>
+    <!-- Slide 2 -->
+    <section id="about">
+      <div class="card">
+        <h2>關於我</h2>
+        <p>用 3–6 句描述：你相信什麼、你怎麼陪伴、你如何理解改變。</p>
+        <p class="muted">範例：我重視安全感與界線，會在理解情緒的同時一起整理可行的行動…</p>
+      </div>
+    </section>
 
-  <h2>擅長議題</h2>
-  <ul>
-    <li>焦慮與壓力調適</li>
-    <li>情緒困擾</li>
-    <li>自我價值與自信議題</li>
-    <li>親密關係與溝通</li>
-  </ul>
+    <!-- Slide 3 -->
+    <section id="services">
+      <div class="card">
+        <h2>服務項目</h2>
+        <ul>
+          <li>成人個別諮商（50 分鐘）</li>
+          <li>伴侶諮商（80–90 分鐘）</li>
+        </ul>
+        <h2>流程</h2>
+        <ol>
+          <li>加入 LINE / 寄信簡述需求</li>
+          <li>確認可預約時段與費用</li>
+          <li>完成預約</li>
+        </ol>
+      </div>
+    </section>
 
-  <h2>諮商理念</h2>
-  <p>
-  我相信每個人都在尋找理解與連結。透過穩定、安全的對話空間，
-  協助來談者更理解自己，並在關係中找到新的可能。
-  </p>
+    <!-- Slide 4 -->
+    <section id="experience">
+      <div class="card">
+        <h2>學經歷</h2>
+        <p>・某某大學 諮商心理學碩士</p>
+        <p>・某某機構／醫院 心理師</p>
+        <p>・證照字號：XXXXXX</p>
+      </div>
+    </section>
 
-  <h2>學經歷</h2>
-  <p>
-  ・國立某某大學 諮商心理學碩士<br>
-  ・醫院心理治療中心 心理師<br>
-  ・諮商心理師證照字號：XXXXXX
-  </p>
+    <!-- Slide 5 -->
+    <section id="contact">
+      <div class="card">
+        <h2>聯絡 / 預約</h2>
+        <p>
+          ・LINE：<a href="https://lin.ee/你的LINE連結" target="_blank" rel="noopener">點我加入</a><br>
+          ・Email：<a href="mailto:hello@example.com">hello@example.com</a>
+        </p>
+        <p class="muted">非緊急聯絡管道。如有立即危險，請聯絡當地緊急資源。</p>
+      </div>
+    </section>
+  </main>
 
-  <hr>
+  <script>
+    // 讓「滾輪」更像投影片：一次跳一頁（可選，想更自然就刪掉這段）
+    const deck = document.getElementById('deck');
+    const slides = Array.from(deck.querySelectorAll('section'));
+    let isLock = false;
 
-  <h2>預約方式</h2>
-  <p>
-    ・LINE 預約：<a href="https://lin.ee/你的LINE連結" target="_blank">點我加入</a><br>
-    ・Email 聯絡：<a href="mailto:hello@example.com">hello@example.com</a>
-  </p>
+    function currentIndex(){
+      const top = deck.scrollTop;
+      let best = 0, bestDist = Infinity;
+      slides.forEach((s, i) => {
+        const dist = Math.abs(s.offsetTop - top);
+        if(dist < bestDist){ bestDist = dist; best = i; }
+      });
+      return best;
+    }
 
-  <p style="font-size:14px; color:gray;">
-  本網站僅供介紹用途，非緊急聯絡管道。如有立即危險請撥打 119 或 1925。
-  </p>
+    function go(i){
+      const idx = Math.max(0, Math.min(slides.length - 1, i));
+      slides[idx].scrollIntoView({behavior:'smooth', block:'start'});
+    }
 
+    deck.addEventListener('wheel', (e) => {
+      // 觸控板很敏感，鎖一下避免連跳
+      if(isLock) return;
+      const idx = currentIndex();
+      if(e.deltaY > 0) go(idx + 1);
+      else if(e.deltaY < 0) go(idx - 1);
+      isLock = true;
+      setTimeout(()=> isLock = false, 450);
+    }, {passive:true});
+  </script>
 </body>
 </html>
