@@ -1,436 +1,199 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>黃郁倩 諮商心理師｜親子・成人・伴侶諮商｜童伴/同伴心理諮商體系</title>
-<meta name="description" content="黃郁倩諮商心理師（國家考試及格），於童伴/同伴心理諮商體系服務。擅長家庭與親子、成人自我肯定、情緒壓力管理、伴侶與親密關係議題。">
-
-<style>
-:root{
-  --maxw: 1040px;
-  --pad: clamp(20px,4vw,70px);
-  --h1: clamp(30px,4.2vw,52px);
-  --h2: clamp(22px,2.4vw,30px);
-  --text: clamp(16px,1.6vw,18px);
-
-  /* 溫暖療癒風：淡木色 + 奶茶色 */
-  --bg: #fbf6ef;
-  --surface: rgba(255,255,255,.72);
-  --surface2: rgba(255,255,255,.60);
-  --textc: #2a241e;
-  --muted: #6a5f55;
-  --line: rgba(231,219,207,.85);
-  --wood: #e7d3bf;
-  --latte:#efe2d4;
-  --accent:#7a5a3a;
-
-  --radius: 18px;
-  --shadow: 0 12px 30px rgba(32, 24, 18, .12);
-}
-
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",sans-serif;
-  line-height:1.85;
-  font-size:var(--text);
-  color:var(--textc);
-  background:
-    radial-gradient(1200px 600px at 20% 0%, #fff 0%, transparent 60%),
-    linear-gradient(180deg, #fff8f0 0%, var(--bg) 40%, #f7efe6 100%);
-}
-
-/* ===== 投影片滾動 ===== */
-main{
-  height:100vh;
-  overflow-y:auto;
-  scroll-snap-type:y mandatory;
-}
-
-/* 每一頁 */
-section{
-  min-height:100vh;
-  scroll-snap-align:start;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:var(--pad);
-  position:relative;
-}
-
-/* 頁面底紋（非首頁） */
-section:not(#home)::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(180deg, rgba(251,246,239,.92), rgba(251,246,239,.78)),
-    url("assets/paper_texture.jpg") center/cover no-repeat;
-  opacity:.7;
-  z-index:-1;
-}
-
-/* ===== 首頁背景 ===== */
-#home{ color:var(--textc); }
-#home::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(180deg, rgba(251,246,239,.88) 0%, rgba(251,246,239,.78) 55%, rgba(251,246,239,.70) 100%),
-    url("assets/hero_bg.jpg") center/cover no-repeat;
-  z-index:-1;
-}
-
-.container{
-  max-width:var(--maxw);
-  width:100%;
-}
-
-.hero{
-  display:grid;
-  gap:28px;
-  align-items:center;
-}
-@media(min-width:900px){
-  .hero{ grid-template-columns:1.15fr .85fr; }
-}
-
-h1{
-  font-size:var(--h1);
-  margin:0 0 12px;
-  letter-spacing:.5px;
-  line-height:1.15;
-}
-h2{
-  font-size:var(--h2);
-  margin:0 0 10px;
-  letter-spacing:.4px;
-}
-
-p{margin:0 0 10px;}
-.muted{color:var(--muted);}
-
-.badge-row{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin: 10px 0 2px;
-}
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.55);
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.hero-card{
-  border-radius:22px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-  overflow:hidden;
-}
-.hero-card-top{
-  padding:16px;
-  background:
-    radial-gradient(900px 520px at 20% 10%, rgba(255,255,255,.9) 0%, rgba(255,255,255,0) 60%),
-    url("assets/paper_texture.jpg") center/cover no-repeat;
-}
-.avatar{
-  width:min(260px,70vw);
-  aspect-ratio:1/1;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid rgba(255,255,255,.95);
-  box-shadow:0 12px 28px rgba(32,24,18,.18);
-  display:block;
-  margin: 0 auto;
-}
-.hero-note{
-  padding:14px 16px;
-  border-top:1px solid rgba(231,219,207,.75);
-  background: rgba(255,255,255,.72);
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.75;
-}
-.hero-note b{color:var(--textc);}
-
-.actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:14px;
-}
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:12px 16px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:700;
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.65);
-  color: var(--textc);
-  box-shadow: 0 10px 22px rgba(32,24,18,.08);
-  transition: transform .12s ease, box-shadow .2s ease, opacity .2s ease;
-  white-space:nowrap;
-}
-.btn:hover{transform:translateY(-1px); box-shadow: var(--shadow);}
-.btn.primary{
-  background: linear-gradient(135deg, #f4e7d8, #e9d2bb);
-  border-color: rgba(122, 90, 58, .18);
-}
-.btn.ghost{ background: rgba(255,255,255,.50); }
-
-@media(max-width:900px){
-  .actions .btn{width:100%;}
-}
-
-/* 其他頁面卡片 */
-.card{
-  max-width:860px;
-  width:100%;
-  margin:auto;
-  border-radius:var(--radius);
-  background: var(--surface2);
-  border:1px solid var(--line);
-  box-shadow: 0 10px 24px rgba(32,24,18,.08);
-  padding: 18px;
-}
-.card + .card{ margin-top: 14px; }
-
-ul{
-  margin: 10px 0 0 0;
-  padding: 0 0 0 18px;
-  color: var(--muted);
-  line-height: 1.9;
-}
-
-a.link{
-  color: var(--accent);
-  font-weight: 700;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(122,90,58,.25);
-}
-a.link:hover{opacity:.85;}
-
-/* 右側小圓點快速跳轉 */
-.pager{
-  position: fixed;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  z-index: 60;
-}
-.dot{
-  width:10px; height:10px;
-  border-radius: 999px;
-  background: rgba(122,90,58,.25);
-  border: 1px solid rgba(122,90,58,.25);
-}
-.dot:hover{ background: rgba(122,90,58,.45); }
-@media(max-width:900px){
-  .pager{ display:none; }
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>黃郁倩 諮商心理師｜關於我</title>
+  <meta name="description" content="黃郁倩諮商心理師，諮心字第005821號，服務兒童、青少年與成人議題，專長兒童情緒行為、親職教養、成人身心適應、伴侶與親密關係。">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<nav class="pager" aria-label="快速跳轉">
-  <a class="dot" href="#home" aria-label="回到首頁"></a>
-  <a class="dot" href="#services" aria-label="前往專長與服務"></a>
-  <a class="dot" href="#topics" aria-label="前往文章觀點"></a>
-  <a class="dot" href="#talks" aria-label="前往講座主題"></a>
-  <a class="dot" href="#contact" aria-label="前往聯絡與據點"></a>
-</nav>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">黃郁倩 諮商心理師</a>
 
-<main>
-
-<!-- 首頁 -->
-<section id="home">
-  <div class="container hero">
-
-    <div>
-      <div class="badge-row">
-        <span class="badge">同理心導向</span>
-        <span class="badge">系統觀點</span>
-        <span class="badge">實踐導向</span>
-      </div>
-
-      <h1>黃郁倩 諮商心理師</h1>
-      <p class="muted">家庭與親子｜成人自我肯定｜情緒壓力管理｜伴侶與親密關係</p>
-
-      <p>
-        我相信情緒是「信號」，而不是需要被趕走的麻煩。
-        在溫柔且清晰的陪伴中，我會和你一起看見情緒背後的需要，
-        也在關係裡練習更安全、更自在的連結。
-      </p>
-
-      <div class="actions">
-        <a class="btn primary" href="https://lin.ee/你的LINE連結" target="_blank" rel="noopener">LINE 預約</a>
-        <a class="btn ghost" href="#services">了解專長與服務</a>
-        <a class="btn ghost" href="#contact">講座 / 合作</a>
-      </div>
-
-      <div class="badge-row" style="margin-top:14px;">
-        <span class="badge">自我肯定（Self-Affirmation）</span>
-        <span class="badge">親子溝通：先接納情緒</span>
-        <span class="badge">關係界線練習</span>
-      </div>
+      <nav class="main-nav" aria-label="主選單">
+        <a class="nav-link active" href="index.html">關於我</a>
+        <a class="nav-link" href="talks.html">講座合作</a>
+      </nav>
     </div>
+  </header>
 
-    <aside class="hero-card" aria-label="形象照">
-      <div class="hero-card-top">
-        <img class="avatar" src="assets/headshot.jpeg" alt="黃郁倩心理師照片">
+  <main>
+    <!-- 首屏 -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>黃郁倩 諮商心理師</h1>
+
+          <p class="eyebrow">諮心字第005821號</p>
+
+          <p class="subtitle">
+            兒童／青少年議題心理師｜成人議題心理師
+          </p>
+
+          <div class="topic-tags" aria-label="可談議題關鍵字">
+            <span class="topic-tag">兒童情緒行為</span>
+            <span class="topic-tag">親職教養</span>
+            <span class="topic-tag">成人身心適應</span>
+            <span class="topic-tag">伴侶／親密關係</span>
+            <span class="topic-tag">情緒困擾與精神疾病</span>
+            <span class="topic-tag">多元性別</span>
+          </div>
+
+          <div class="button-row">
+            <a class="btn btn-primary" href="https://linevoom.line.me/user/_dfTdvqokLbbOavQ6JCh3iSHzsMcPe9xgnLoVytA" target="_blank" rel="noopener">LINE 預約諮商</a>
+            <a class="btn btn-secondary" href="#specialties">了解專長</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img class="avatar" src="assets/headshot.jpg" alt="黃郁倩心理師照片">
+          <div class="hero-note">
+            <strong>給第一次來訪的你</strong>
+            <p>
+              我相信，每個人的心中都蘊藏著走過低谷的力量。即使生活讓你遍體鱗傷，
+              你的內在依然擁有復原的智慧與勇氣。我會陪你一起找回那份曾被遺忘，
+              卻始終存在的韌性與可能。
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="hero-note">
-        <b>給第一次來訪的你：</b><br>
-        你不需要把自己整理好才來。你可以帶著混亂、害怕、委屈與疲憊來，
-        我會陪你一步一步，把自己帶回自己身邊。
+    </section>
+
+    <!-- 專長 -->
+    <section class="section" id="specialties">
+      <div class="container">
+        <div class="section-heading">
+          <h2>我可以陪你處理的議題</h2>
+          <p>你不需要先很確定問題屬於哪一類，只要你正在困擾、卡住，這些都可以成為我們一起談的主題。</p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <h3>兒童情緒行為</h3>
+            <ul>
+              <li>亞斯／過動衝動</li>
+              <li>網路成癮</li>
+              <li>創傷失落經驗</li>
+              <li>人際與校園適應議題</li>
+              <li>情緒與壓力調適</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>親職教養</h3>
+            <ul>
+              <li>親子溝通</li>
+              <li>教養風格不一致</li>
+              <li>孩子特殊需求與挑戰</li>
+              <li>教養壓力調適</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>成人身心適應</h3>
+            <ul>
+              <li>職場議題</li>
+              <li>創傷失落經驗</li>
+              <li>自我探索</li>
+              <li>人際議題</li>
+              <li>原生家庭議題</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>伴侶／親密關係</h3>
+            <ul>
+              <li>關係經營</li>
+              <li>衝突處理</li>
+              <li>信任修復</li>
+              <li>探索溝通互動模式</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>情緒困擾與精神疾病</h3>
+            <ul>
+              <li>憂鬱</li>
+              <li>廣泛性焦慮</li>
+              <li>情緒壓力調適</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>多元性別</h3>
+            <ul>
+              <li>性別認同</li>
+              <li>自我理解與接納</li>
+              <li>關係與身分探索</li>
+            </ul>
+          </article>
+        </div>
       </div>
-    </aside>
+    </section>
 
-  </div>
-</section>
+    <!-- 專業背景 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>專業背景</h2>
+        </div>
 
-<!-- 專長與服務 -->
-<section id="services">
-  <div class="card">
-    <h2>專長與服務領域</h2>
-    <p class="muted">讓你更快確認：這裡是否適合你。</p>
+        <div class="stack">
+          <article class="card compact-card">
+            <h3>現職</h3>
+            <ul class="small-list">
+              <li>童伴心理治療所心理師</li>
+              <li>同伴心理諮商所心理師</li>
+              <li>諮商心理師公會全國聯合會 副秘書長</li>
+              <li>旭立文教基金會 EAP合作講師</li>
+              <li>公部門職場霸凌申訴評議委員會外聘委員</li>
+            </ul>
+          </article>
 
-    <ul>
-      <li><b>家庭與親子：</b>家庭關係修復、親子溝通、親職教育。</li>
-      <li><b>個人成長：</b>自我肯定、情緒壓力管理（憂鬱/焦慮）、職場與家庭平衡。</li>
-      <li><b>情感關係：</b>情感與親密關係議題、伴侶諮商（依附型態、衝突修復、溝通與界線）。</li>
-    </ul>
-  </div>
+          <article class="card compact-card">
+            <h3>學經歷與專業訓練</h3>
+            <ul class="small-list">
+              <li>國立高雄師範大學 諮商心理與復健諮商研究所－諮商心理組</li>
+              <li>華人心理治療研究發展基金會－EAP專任心理師</li>
+              <li>台北市政府衛生局社區心理衛生中心－心理輔導員</li>
+              <li>國立新竹科學園區實驗高級中等學校－專任心理師</li>
+              <li>特殊教育教師中等教育階段師資職前教育證明</li>
+              <li>DEAP國際認證員工協助專業人員</li>
+              <li>MHFA澳洲心理急救計畫種子講師</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <div class="card">
-    <h2>專業特色</h2>
-    <ul>
-      <li><b>同理心導向：</b>文字與陪伴溫柔具包容力，特別理解照顧者與高壓環境中的疲憊。</li>
-      <li><b>系統觀點：</b>不只看個人困擾，也看見家庭系統與互動模式如何影響心理狀態。</li>
-      <li><b>實踐導向：</b>提供可練習的方法與對話模板，幫助你把理解帶回生活中。</li>
-    </ul>
-  </div>
-</section>
+    <!-- 聯絡 -->
+    <section class="section">
+      <div class="container narrow">
+        <div class="section-heading">
+          <h2>聯絡與預約</h2>
+        </div>
 
-<!-- 學經歷 -->
-<section id="bio">
-  <div class="card">
-    <h2>專業背景與學歷</h2>
-    <ul>
-      <li><b>學歷：</b>國立高雄師範大學 諮商心理研究所 碩士</li>
-      <li><b>學歷：</b>中原大學 特殊教育學系（輔修心理學）</li>
-      <li><b>專業身分：</b>國家考試及格之諮商心理師</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>經歷與公益參與</h2>
-    <ul>
-      <li><b>媒體專訪：</b>曾受邀至 Podcast / 廣播節目分享親子溝通技巧；參與「心理師來解惑」系列影片推廣自我肯定概念。</li>
-      <li><b>機構服務：</b>除童伴/同伴心理諮商所外，亦曾在華人心理治療基金會提供專業建議。</li>
-      <li><b>學會參與：</b>曾擔任諮商心理師節籌備小組成員。</li>
-    </ul>
-  </div>
-</section>
-
-<!-- 文章主題與觀點 -->
-<section id="topics">
-  <div class="card">
-    <h2>常見專欄主題與觀點</h2>
-    <p class="muted">以下是我經常在文章與分享中探討的方向。</p>
-
-    <ul>
-      <li><b>情緒調節與自我肯定：</b>壓力常來自「過度追求他人認同」。自我肯定不是自大，而是接納不完美的自己，建立內在安穩，降低焦慮。</li>
-      <li><b>親子溝通：從命令到對話：</b>先接納情緒，再處理事件；父母先覺察自己的焦慮，避免把壓力轉嫁給孩子，建立信任而非威權的連結。</li>
-      <li><b>家庭關係中的界線：</b>健康家庭需要清晰界線與獨立心理空間；過度干涉與糾纏常是衝突根源。</li>
-      <li><b>憂鬱與焦慮的內在覺察：</b>情緒是信號，不急著消除症狀，而是探索情緒背後未滿足的需要（如渴望被愛、害怕失敗）。</li>
-      <li><b>伴侶關係的親密與獨立：</b>以依附型態理解衝突：很多爭執源自安全感不足，練習用「表達脆弱」取代指責，修復連結。</li>
-    </ul>
-  </div>
-</section>
-
-<!-- 講座主題 -->
-<section id="talks">
-  <div class="card">
-    <h2>建議講座主題（可客製化）</h2>
-    <p class="muted">可依單位需求、族群與時長客製化課程。</p>
-
-    <ul>
-      <li><b>【家庭教育類】</b>
-        <ul>
-          <li>《不當完美父母：建立高品質的親子連結》</li>
-          <li>《當孩子的情緒教練：如何與叛逆期/高敏感孩子溝通》</li>
-        </ul>
-      </li>
-
-      <li style="margin-top:10px;"><b>【個人成長與壓力類】</b>
-        <ul>
-          <li>《從自我懷疑到自我肯定：找回內在的價值感》</li>
-          <li>《高壓環境下的情緒自救術：心理師教你如何與壓力共處》</li>
-        </ul>
-      </li>
-
-      <li style="margin-top:10px;"><b>【職場/人際關係類】</b>
-        <ul>
-          <li>《關係中的界線練習：如何愛人而不失去自我》</li>
-          <li>《高效溝通心理學：解析職場與家庭中的情緒連結》</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- 聯絡與據點 -->
-<section id="contact">
-  <div class="card">
-    <h2>聯絡與預約</h2>
-    <p class="muted">預約以 LINE 為主；講座/合作邀約可來信。</p>
-
-    <p>
-      <b>個別/伴侶諮商預約：</b><a class="link" href="https://linevoom.line.me/user/_dfTdvqokLbbOavQ6JCh3iSHzsMcPe9xgnLoVytA" target="_blank" rel="noopener">點我加入官方 LINE</a><br>
-      <b>講座/商案邀約：</b><a class="link" href="mailto:hello@example.com?subject=講座/合作邀約">yuchien9489@gmail.com</a>
-    </p>
-
-    <div class="card" style="padding:14px; margin-top:14px; background:rgba(255,255,255,.62);">
-      <p class="muted" style="margin:0;">
-        講座/合作邀約建議來信附上：單位、預計日期、主題需求、預計時長、聯絡人與電話。
-      </p>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>服務據點（童伴/同伴心理諮商體系）</h2>
-    <ul>
-      <li><b>童伴心理治療所：</b>台北市大安區信義路三段 190 號 6 樓</li>
-      <li><b>同伴心理諮商所：</b>同址 10 樓（主要提供成人與伴侶諮商）</li>
-    </ul>
-    <p class="muted" style="margin-top:10px;">
-      （你可以在此加上 Google 地圖連結或嵌入地圖）
-    </p>
-  </div>
-</section>
-
-</main>
+        <article class="card">
+          <p>
+            <strong>諮商預約：</strong>
+            <a class="text-link" href="https://linevoom.line.me/user/_dfTdvqokLbbOavQ6JCh3iSHzsMcPe9xgnLoVytA" target="_blank" rel="noopener">加入官方 LINE</a>
+          </p>
+          <p>
+            <strong>服務據點：</strong>童伴心理治療所／同伴心理諮商所
+          </p>
+          <p class="muted">
+            台北市大安區信義路三段 190 號 6 樓／10 樓
+          </p>
+          <p class="muted" style="margin-bottom:0;">
+            預約電話：02-2755-5429
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
 
 </body>
 </html>
