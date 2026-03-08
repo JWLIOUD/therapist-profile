@@ -399,11 +399,24 @@ font-size:.7rem;
 }
 
 .specialty-card{
+  scroll-margin-top: 110px;
   transition:
     box-shadow .45s ease,
     border-color .45s ease,
     transform .45s ease,
     background-color .45s ease;
+}
+
+@media (max-width: 900px){
+  .specialty-card{
+    scroll-margin-top: 150px;
+  }
+}
+
+@media (max-width: 520px){
+  .specialty-card{
+    scroll-margin-top: 175px;
+  }
 }
 
 .specialty-card.glow-focus{
@@ -418,4 +431,32 @@ font-size:.7rem;
 
 .specialty-card{
   scroll-margin-top: 110px;
+}
+
+#specialties,
+#topics,
+#formats,
+#contact,
+#background {
+  scroll-margin-top: 110px;
+}
+
+@media (max-width: 900px){
+  #specialties,
+  #topics,
+  #formats,
+  #contact,
+  #background {
+    scroll-margin-top: 150px;
+  }
+}
+
+@media (max-width: 520px){
+  #specialties,
+  #topics,
+  #formats,
+  #contact,
+  #background {
+    scroll-margin-top: 175px;
+  }
 }
