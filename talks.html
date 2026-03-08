@@ -37,7 +37,7 @@
       </nav>
 
       <div class="nav-icons">
-        <a href="talks.html">講座合作</a>
+        <a href="index.html" aria-label="返回諮商介紹頁">諮商介紹</a>
         <a href="mailto:yuchien9489@gmail.com?subject=講座合作邀約">Email</a>
       </div>
     </div>
@@ -58,12 +58,12 @@
           </p>
 
           <div class="topic-tags" aria-label="合作關鍵字">
-            <span class="topic-tag">家庭教育</span>
-            <span class="topic-tag">情緒壓力</span>
-            <span class="topic-tag">自我肯定</span>
-            <span class="topic-tag">人際關係</span>
-            <span class="topic-tag">界線練習</span>
-            <span class="topic-tag">心理健康推廣</span>
+            <a class="topic-tag" href="#family-education" data-target="family-education">家庭教育</a>
+            <a class="topic-tag" href="#growth-stress" data-target="growth-stress">情緒壓力</a>
+            <a class="topic-tag" href="#growth-stress" data-target="growth-stress">自我肯定</a>
+            <a class="topic-tag" href="#relationship-topics" data-target="relationship-topics">人際關係</a>
+            <a class="topic-tag" href="#relationship-topics" data-target="relationship-topics">界線練習</a>
+            <a class="topic-tag" href="#cooperation-features" data-target="cooperation-features">心理健康推廣</a>
           </div>
 
           <div class="button-row">
@@ -87,7 +87,7 @@
         <p class="section-desc">可依對象、年齡層、時長與需求客製化調整。</p>
 
         <div class="card-grid">
-          <article class="info-card">
+          <article class="info-card specialty-card" id="family-education">
             <h3>家庭教育類</h3>
             <ul class="small-list">
               <li>不當完美父母：建立高品質的親子連結</li>
@@ -96,7 +96,7 @@
             </ul>
           </article>
 
-          <article class="info-card">
+          <article class="info-card specialty-card" id="growth-stress">
             <h3>個人成長與壓力類</h3>
             <ul class="small-list">
               <li>從自我懷疑到自我肯定：找回內在價值感</li>
@@ -105,7 +105,7 @@
             </ul>
           </article>
 
-          <article class="info-card">
+          <article class="info-card specialty-card" id="relationship-topics">
             <h3>人際與關係類</h3>
             <ul class="small-list">
               <li>關係中的界線練習：如何愛人而不失去自己</li>
@@ -122,7 +122,7 @@
         <h2>合作形式</h2>
 
         <div class="card-grid">
-          <article class="info-card">
+          <article class="info-card specialty-card" id="format-types">
             <h3>適合形式</h3>
             <ul class="small-list">
               <li>實體講座</li>
@@ -132,7 +132,7 @@
             </ul>
           </article>
 
-          <article class="info-card">
+          <article class="info-card specialty-card" id="cooperation-objects">
             <h3>合作對象</h3>
             <ul class="small-list">
               <li>學校與家長會</li>
@@ -142,7 +142,7 @@
             </ul>
           </article>
 
-          <article class="info-card">
+          <article class="info-card specialty-card" id="cooperation-features">
             <h3>合作特色</h3>
             <ul class="small-list">
               <li>可依需求調整講題方向</li>
@@ -213,6 +213,29 @@
       img.setAttribute("draggable", "false");
       img.addEventListener("dragstart", function (e) {
         e.preventDefault();
+      });
+    });
+
+    const topicLinks = document.querySelectorAll(".topic-tag[data-target]");
+
+    topicLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        const targetId = this.dataset.target;
+        const targetCard = document.getElementById(targetId);
+
+        if (!targetCard) return;
+
+        document.querySelectorAll(".specialty-card.glow-focus").forEach(card => {
+          card.classList.remove("glow-focus");
+        });
+
+        setTimeout(() => {
+          targetCard.classList.add("glow-focus");
+
+          setTimeout(() => {
+            targetCard.classList.remove("glow-focus");
+          }, 2200);
+        }, 250);
       });
     });
   </script>

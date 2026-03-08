@@ -37,7 +37,7 @@
       </nav>
 
       <div class="nav-icons">
-        <a href="talks.html">講座合作</a>
+        <a href="talks.html" aria-label="前往講座合作頁">講座合作</a>
         <a href="https://linevoom.line.me/user/_dfTdvqokLbbOavQ6JCh3iSHzsMcPe9xgnLoVytA" target="_blank" rel="noopener noreferrer" aria-label="LINE">LINE</a>
       </div>
     </div>
@@ -58,12 +58,12 @@
           </p>
 
           <div class="topic-tags" aria-label="可談議題關鍵字">
-            <span class="topic-tag">兒童情緒行為</span>
-            <span class="topic-tag">親職教養</span>
-            <span class="topic-tag">成人身心適應</span>
-            <span class="topic-tag">伴侶／親密關係</span>
-            <span class="topic-tag">情緒困擾與精神疾病</span>
-            <span class="topic-tag">多元性別</span>
+            <a class="topic-tag" href="#child-emotion" data-target="child-emotion">兒童情緒行為</a>
+            <a class="topic-tag" href="#parenting" data-target="parenting">親職教養</a>
+            <a class="topic-tag" href="#adult-adjustment" data-target="adult-adjustment">成人身心適應</a>
+            <a class="topic-tag" href="#relationship" data-target="relationship">伴侶／親密關係</a>
+            <a class="topic-tag" href="#emotion-mental" data-target="emotion-mental">情緒困擾與精神疾病</a>
+            <a class="topic-tag" href="#gender-diversity" data-target="gender-diversity">多元性別</a>
           </div>
 
           <div class="button-row">
@@ -89,7 +89,7 @@
         </p>
 
         <div class="card-grid">
-          <article class="info-card">
+          <article class="info-card specialty-card" id="child-emotion">
             <h3>兒童情緒行為</h3>
             <ul class="small-list">
               <li>亞斯／過動衝動</li>
@@ -100,7 +100,7 @@
             </ul>
           </article>
 
-          <article class="info-card">
+          <article class="info-card specialty-card" id="parenting">
             <h3>親職教養</h3>
             <ul class="small-list">
               <li>親子溝通</li>
@@ -110,7 +110,7 @@
             </ul>
           </article>
 
-          <article class="info-card">
+          <article class="info-card specialty-card" id="adult-adjustment">
             <h3>成人身心適應</h3>
             <ul class="small-list">
               <li>職場議題</li>
@@ -121,7 +121,7 @@
             </ul>
           </article>
 
-          <article class="info-card">
+          <article class="info-card specialty-card" id="relationship">
             <h3>伴侶／親密關係</h3>
             <ul class="small-list">
               <li>關係經營</li>
@@ -131,7 +131,7 @@
             </ul>
           </article>
 
-          <article class="info-card">
+          <article class="info-card specialty-card" id="emotion-mental">
             <h3>情緒困擾與精神疾病</h3>
             <ul class="small-list">
               <li>憂鬱</li>
@@ -140,7 +140,7 @@
             </ul>
           </article>
 
-          <article class="info-card">
+          <article class="info-card specialty-card" id="gender-diversity">
             <h3>多元性別</h3>
             <ul class="small-list">
               <li>性別認同</li>
@@ -230,6 +230,29 @@
       img.setAttribute("draggable", "false");
       img.addEventListener("dragstart", function (e) {
         e.preventDefault();
+      });
+    });
+
+    const topicLinks = document.querySelectorAll(".topic-tag[data-target]");
+
+    topicLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        const targetId = this.dataset.target;
+        const targetCard = document.getElementById(targetId);
+
+        if (!targetCard) return;
+
+        document.querySelectorAll(".specialty-card.glow-focus").forEach(card => {
+          card.classList.remove("glow-focus");
+        });
+
+        setTimeout(() => {
+          targetCard.classList.add("glow-focus");
+
+          setTimeout(() => {
+            targetCard.classList.remove("glow-focus");
+          }, 2200);
+        }, 250);
       });
     });
   </script>
