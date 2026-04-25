@@ -77,6 +77,27 @@ a:hover{
   font-weight:500;
 }
 
+.quick-nav.article-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: nowrap; /* 不換行 */
+}
+
+.quick-nav.article-nav a {
+  flex: 1;
+  text-align: center;
+  padding: 8px 6px;
+  font-size: 14px;
+  white-space: nowrap; /* 不斷行 */
+}
+
+.quick-nav.article-nav a.active {
+  background-color: #f5c8b8;
+  color: #5a3e36;
+  border-radius: 999px;
+}
+
 .nav-icons{
   display:flex;
   gap:12px;
@@ -458,5 +479,96 @@ font-size:.7rem;
   #contact,
   #background {
     scroll-margin-top: 175px;
+  }
+}
+
+.article-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.article-modal.is-open {
+  display: block;
+}
+
+.article-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 26, 20, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.article-modal-panel {
+  position: relative;
+  width: min(920px, calc(100vw - 32px));
+  height: min(88vh, calc(100vh - 32px));
+  margin: 16px auto;
+  background: #fffaf6;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.article-modal-content {
+  height: 100%;
+  overflow-y: auto;
+  padding: 32px 28px 36px;
+}
+
+.article-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(245, 200, 184, 0.9);
+  color: #5a3e36;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.article-modal-category {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #8a6f66;
+  font-size: 0.95rem;
+}
+
+.article-modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.article-modal-body {
+  color: #3f312d;
+  line-height: 1.9;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .article-modal-panel {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .article-modal-content {
+    padding: 24px 20px 28px;
+  }
+
+  .article-modal-close {
+    top: 10px;
+    right: 10px;
   }
 }
