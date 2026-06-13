@@ -320,6 +320,12 @@ h2 {
   transform: scale(1.025);
 }
 
+@media (max-width: 639px) {
+  .series-card-art img {
+    aspect-ratio: 1 / 1;
+  }
+}
+
 .featured-series {
   background:
     radial-gradient(circle at 90% 10%, rgba(255, 253, 249, .65), transparent 25%),
