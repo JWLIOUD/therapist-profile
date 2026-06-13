@@ -1,3 +1,5 @@
 .DS_Store
 assets/.DS_Store
 assets/headshot_backup.jpeg
+__pycache__/
+*.py[cod]
