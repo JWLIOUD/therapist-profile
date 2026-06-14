@@ -346,6 +346,38 @@ h1 {
   font-size: .95rem;
 }
 
+.article-source {
+  margin: 48px 0 0;
+  padding: 22px;
+  border: 1px solid rgba(109, 85, 72, .14);
+  border-radius: var(--radius-md);
+  background: rgba(255, 253, 249, .72);
+  box-shadow: 0 12px 30px rgba(109, 85, 72, .06);
+}
+
+.article-source strong {
+  display: block;
+  color: var(--brown);
+  margin-bottom: 4px;
+}
+
+.article-source p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.article-source a {
+  color: var(--sage-dark);
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.article-source + .article-disclaimer {
+  margin-top: 18px;
+}
+
 .article-cta {
   margin: 54px 0;
   padding: 30px 24px;

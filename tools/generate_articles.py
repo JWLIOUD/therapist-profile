@@ -17,6 +17,7 @@ SOURCE = ROOT.parent / "專欄文章" / "專欄文章.docx"
 WORKFLOW = ROOT.parent / "WorkFlow" / "project" / "YucheinHomePage" / "docs"
 AUTHOR = "黃郁倩 諮商心理師"
 SITE = "https://yuchienpsy.com"
+SITE_NAME = "黃郁倩 諮商心理師"
 LINE_URL = "https://line.me/R/ti/p/@264kulgk"
 
 
@@ -155,6 +156,34 @@ EXACT_PARAGRAPH_REPLACEMENTS = {
         "️現代婦女基金會提供被害人支持服務，專線：(02)7728-5098 分機 6": "",
         "️勵馨基金會提供被害人庇護安置等服務，專線：北部 02-8911-5595 #122；中部 04-2223-9595；南部 07-2237-955": "",
     },
+}
+
+ARTICLE_SOURCE_LINKS = {
+    "addiction-01": "https://mental-health.gov.taipei/News_Content.aspx?n=CFB4198B850ECC95&sms=F3B948768F07712C&s=3D674DEEAF3F73B0",
+    "addiction-02": "https://mental-health.gov.taipei/News_Content.aspx?n=CFB4198B850ECC95&sms=F3B948768F07712C&s=50CE07A385B3B612",
+    "addiction-03": "https://mental-health.gov.taipei/News_Content.aspx?n=CFB4198B850ECC95&sms=F3B948768F07712C&s=91D7F977E87FE3C0",
+    "addiction-04": "https://mental-health.gov.taipei/News_Content.aspx?n=CFB4198B850ECC95&sms=F3B948768F07712C&s=2AC1351402564E6B",
+    "addiction-05": "https://mental-health.gov.taipei/News_Content.aspx?n=CFB4198B850ECC95&sms=F3B948768F07712C&s=7829AAB9690E36B0",
+    "addiction-06": "https://mental-health.gov.taipei/News_Content.aspx?n=CFB4198B850ECC95&sms=F3B948768F07712C&s=F39940A76ABD4498",
+    "addiction-07": "https://mental-health.gov.taipei/News_Content.aspx?n=CFB4198B850ECC95&sms=F3B948768F07712C&s=365D601A67285EFA",
+    "boundary-01": "https://mental-health.gov.taipei/News_Content.aspx?n=160B9C4672BF2849&sms=D9970CDAAAA49C91&s=F26D9EDCC2B987E6",
+    "workplace-01": "https://mental-health.gov.taipei/News_Content.aspx?n=AAC728154AF14339&sms=D7C906BCBC57377D&s=D75FD5A60B0A944B",
+    "workplace-02": "https://mental-health.gov.taipei/News_Content.aspx?n=AAC728154AF14339&sms=D7C906BCBC57377D&s=83E456DAA4866B05",
+    "workplace-03": "https://mental-health.gov.taipei/News_Content.aspx?n=AAC728154AF14339&sms=D7C906BCBC57377D&s=2B82BF204E79233B",
+    "workplace-05": "https://mental-health.gov.taipei/News_Content.aspx?n=AAC728154AF14339&sms=D7C906BCBC57377D&s=C055A3C111939DB9",
+    "workplace-06": "https://mental-health.gov.taipei/News_Content.aspx?n=AAC728154AF14339&sms=D7C906BCBC57377D&s=C67BFD2F8898DF6C",
+    "workplace-07": "https://mental-health.gov.taipei/News_Content.aspx?n=AAC728154AF14339&sms=D7C906BCBC57377D&s=312E5B8E5F0F7D30",
+    "workplace-08": "https://mental-health.gov.taipei/News_Content.aspx?n=AAC728154AF14339&sms=D7C906BCBC57377D&s=E64DEAEEB3B3458A",
+    "boundary-02": "https://mental-health.gov.taipei/News_Content.aspx?n=160B9C4672BF2849&sms=D9970CDAAAA49C91&s=CC74D12A815F9F4E",
+    "boundary-03": "https://mental-health.gov.taipei/News_Content.aspx?n=160B9C4672BF2849&sms=D9970CDAAAA49C91&s=95320434A94A30CD",
+    "boundary-04": "https://mental-health.gov.taipei/News_Content.aspx?n=160B9C4672BF2849&sms=D9970CDAAAA49C91&s=3C978A675DB273BE",
+    "boundary-05": "https://mental-health.gov.taipei/News_Content.aspx?n=160B9C4672BF2849&sms=D9970CDAAAA49C91&s=8A65A282F0636702",
+    "boundary-06": "https://mental-health.gov.taipei/News_Content.aspx?n=160B9C4672BF2849&sms=D9970CDAAAA49C91&s=57AFE5383F1DBAB9",
+    "boundary-07": "https://mental-health.gov.taipei/News_Content.aspx?n=160B9C4672BF2849&sms=D9970CDAAAA49C91&s=5E95684569241C17",
+    "relationship-control": "https://mental-health.gov.taipei/News_Content.aspx?n=160B9C4672BF2849&sms=D9970CDAAAA49C91&s=AFF5047157696D81",
+    "love-and-imperfection": "https://mental-health.gov.taipei/News_Content.aspx?n=160B9C4672BF2849&sms=D9970CDAAAA49C91&s=AF62ED96775EB103",
+    "self-care-07": "https://mental-health.gov.taipei/News_Content.aspx?n=117760319DAB664F&sms=0D9C3FAA1367281C&s=C552C927A56FFAA4",
+    "post-election-self-care": "https://mental-health.gov.taipei/News_Content.aspx?n=A526AC306CCFCE21&sms=69F6D3EF07A1110E&s=5F05187A8CB988F0",
 }
 
 
@@ -354,6 +383,7 @@ def article_page(article, articles) -> str:
     following = same_series[position + 1] if position + 1 < len(same_series) else None
     related = [item for item in same_series if item is not article][:3]
     canonical = f"{SITE}/articles/{article['slug']}.html"
+    source_link = ARTICLE_SOURCE_LINKS.get(article["slug"])
     article_json_ld = {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -369,6 +399,12 @@ def article_page(article, articles) -> str:
         },
         "mainEntityOfPage": {"@type": "WebPage", "@id": canonical},
     }
+    if source_link:
+        article_json_ld["isBasedOn"] = {
+            "@type": "CreativeWork",
+            "name": "台北市社區心理衛生中心原刊文章",
+            "url": source_link,
+        }
     breadcrumb_json_ld = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -414,6 +450,13 @@ def article_page(article, articles) -> str:
         f'<strong>{html.escape(item["title"])}</strong></a>'
         for item in related
     )
+    source_html = ""
+    if source_link:
+        source_html = f"""<aside class="article-source" aria-label="文章原刊來源">
+            <strong>原刊來源</strong>
+            <p>本文原刊於台北市社區心理衛生中心心理健康專欄。</p>
+            <a href="{source_link}" target="_blank" rel="noopener noreferrer">前往原刊頁面</a>
+          </aside>"""
     return f"""<!doctype html>
 <html lang="zh-Hant">
 <head>
@@ -433,6 +476,7 @@ def article_page(article, articles) -> str:
   <meta property="og:image:alt" content="{html.escape(series.image_alt, quote=True)}">
   <meta property="og:url" content="{canonical}">
   <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="{SITE_NAME}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{html.escape(article["title"], quote=True)}">
   <meta name="twitter:description" content="{html.escape(article["description"], quote=True)}">
@@ -478,6 +522,7 @@ def article_page(article, articles) -> str:
         </aside>
         <div class="article-content">
           {article["body"]}
+          {source_html}
           <aside class="article-disclaimer" aria-label="內容聲明">
             <strong>內容聲明</strong>
             <p>{DISCLAIMER}</p>
@@ -587,6 +632,7 @@ def series_page(series: Series, items, all_series) -> str:
   <meta property="og:image:alt" content="{html.escape(series.image_alt, quote=True)}">
   <meta property="og:url" content="{canonical}">
   <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="{SITE_NAME}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{html.escape(series.name, quote=True)}｜{html.escape(series.topic, quote=True)}">
   <meta name="twitter:description" content="{html.escape(series.description, quote=True)}">
