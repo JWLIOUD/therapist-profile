@@ -306,12 +306,13 @@ h2 {
   margin: -24px -24px 20px;
   width: calc(100% + 48px);
   overflow: hidden;
+  aspect-ratio: 16 / 9;
   background: var(--cream-2);
 }
 
 .series-card-art img {
-  height: auto;
-  aspect-ratio: 16 / 9;
+  display: block;
+  height: 100%;
   object-fit: cover;
   transition: transform .35s ease;
 }
@@ -321,7 +322,7 @@ h2 {
 }
 
 @media (max-width: 639px) {
-  .series-card-art img {
+  .series-card-art {
     aspect-ratio: 1 / 1;
   }
 }
