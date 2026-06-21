@@ -185,6 +185,26 @@ h1 {
   margin-bottom: 22px;
 }
 
+.article-hero-media {
+  display: block;
+  width: min(760px, 100%);
+  margin: 24px 0 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.article-hero-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
 .article-meta {
   display: flex;
   flex-wrap: wrap;
@@ -533,6 +553,10 @@ h1 {
 
   .article-hero {
     padding: 76px 0 62px;
+  }
+
+  .article-hero-media {
+    margin-top: 28px;
   }
 
   .article-layout {

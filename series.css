@@ -209,6 +209,29 @@ h1 {
   object-position: 68% center;
 }
 
+@media (max-width: 639px) {
+  .series-hero {
+    padding: 34px 0 52px;
+  }
+
+  .hero-grid {
+    gap: 20px;
+  }
+
+  .series-visual {
+    order: -1;
+  }
+
+  .series-hero-art img {
+    aspect-ratio: 16 / 10;
+    object-position: center;
+  }
+
+  .series-note {
+    display: none;
+  }
+}
+
 .series-note {
   padding: 26px;
   border-radius: var(--radius-lg);

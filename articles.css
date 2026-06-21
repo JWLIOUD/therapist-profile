@@ -215,6 +215,29 @@ h1 {
   object-position: 70% center;
 }
 
+@media (max-width: 639px) {
+  .articles-hero {
+    padding: 34px 0 52px;
+  }
+
+  .hero-grid {
+    gap: 20px;
+  }
+
+  .hero-visual-stack {
+    order: -1;
+  }
+
+  .articles-hero-art img {
+    aspect-ratio: 16 / 10;
+    object-position: center;
+  }
+
+  .hero-visual-stack .author-card {
+    display: none;
+  }
+}
+
 .author-card {
   display: grid;
   gap: 18px;

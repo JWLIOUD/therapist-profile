@@ -482,7 +482,7 @@ def article_page(article, articles) -> str:
   <meta name="twitter:description" content="{html.escape(article["description"], quote=True)}">
   <meta name="twitter:image" content="{series_image(series)}">
   <meta name="twitter:image:alt" content="{html.escape(series.image_alt, quote=True)}">
-  <link rel="stylesheet" href="../article.css?v=20260613-2">
+  <link rel="stylesheet" href="../article.css?v=20260621-visual-qa-1">
   <script type="application/ld+json">{json.dumps(article_json_ld, ensure_ascii=False, indent=2)}</script>
   <script type="application/ld+json">{json.dumps(breadcrumb_json_ld, ensure_ascii=False, indent=2)}</script>
 </head>
@@ -499,6 +499,12 @@ def article_page(article, articles) -> str:
           </nav>
           <p class="article-series">{html.escape(series_label)}</p>
           <h1>{html.escape(article["title"])}</h1>
+          <picture class="article-hero-media">
+            <source media="(max-width: 639px)" srcset="../assets/illustrations/{series.image_stem}-mobile-900x900.webp">
+            <img src="../assets/illustrations/{series.image_stem}-1600x900.webp"
+              alt="{html.escape(series.image_alt, quote=True)}" width="1600" height="900"
+              fetchpriority="high" decoding="async">
+          </picture>
           <p class="article-description">{html.escape(article["description"])}</p>
           <div class="article-meta">
             <span>作者：{AUTHOR}</span><span>分類：{html.escape(series.topic)}</span>
@@ -638,7 +644,7 @@ def series_page(series: Series, items, all_series) -> str:
   <meta name="twitter:description" content="{html.escape(series.description, quote=True)}">
   <meta name="twitter:image" content="{series_image(series)}">
   <meta name="twitter:image:alt" content="{html.escape(series.image_alt, quote=True)}">
-  <link rel="stylesheet" href="../series.css?v=20260613-2">
+  <link rel="stylesheet" href="../series.css?v=20260621-visual-qa-1">
   <script type="application/ld+json">{json.dumps(collection_json_ld, ensure_ascii=False, indent=2)}</script>
   <script type="application/ld+json">{json.dumps(breadcrumb_json_ld, ensure_ascii=False, indent=2)}</script>
 </head>
