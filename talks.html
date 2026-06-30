@@ -402,7 +402,10 @@
       link.addEventListener("click", async event => {
         event.preventDefault();
 
-        const gmailWindow = window.open(link.href, "_blank", "noopener,noreferrer");
+        const gmailWindow = window.open(link.href, "_blank");
+        if (gmailWindow) {
+          gmailWindow.opener = null;
+        }
 
         let copied = false;
         try {
