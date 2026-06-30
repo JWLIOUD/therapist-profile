@@ -424,6 +424,39 @@ h2 {
   margin-top: 26px;
 }
 
+.featured-links {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.featured-links a {
+  display: grid;
+  gap: 6px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 253, 249, .72);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.featured-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+.featured-links span {
+  color: var(--sage-dark);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.featured-links strong {
+  color: var(--brown);
+  line-height: 1.45;
+}
+
 .cta-actions {
   justify-content: center;
 }
@@ -991,6 +1024,10 @@ h2 {
 
   .card-grid {
     gap: 20px;
+  }
+
+  .featured-links {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .card-grid.three {

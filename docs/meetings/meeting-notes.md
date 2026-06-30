@@ -1,0 +1,135 @@
+# 會議記錄
+
+## 2026-06-19：建立網站總管 AI 與 SEO 初步檢查
+
+### 會議目標
+
+建立本地網站維護環境，並建立 AI 維護團隊、工作流、待辦與交接文件。
+
+### 已確認事項
+
+- GitHub repo：`JWLIOUD/therapist-profile`
+- 本地路徑：`C:\Users\roy81\Documents\therapist-profile`
+- 正式網域：`yuchienpsy.com`
+- 網站型態：GitHub Pages 靜態網站
+- 技術架構：HTML、CSS、圖片素材、少量 Python 產生工具
+- 本地預覽：`http://127.0.0.1:8000/`
+
+### 決策
+
+- 建立 1 個網站總管 AI 加 5 個執行 AI。
+- 網站總管 AI 負責和你討論、拆任務、安排角色、整合結果。
+- 固定工作流優先建立：
+  - 新增文章
+  - 修改服務資訊
+  - 發布前檢查
+
+### SEO 初步觀察
+
+- 本地 `robots.txt` 允許搜尋引擎抓取。
+- 本地 `sitemap.xml` 已包含文章頁與系列頁。
+- 文章頁本地設定大多是 `index, follow`。
+- Google `site:` 查詢目前找不到文章頁結果。
+
+### 待確認
+
+- Google Search Console 是否已驗證 `yuchienpsy.com`。
+- sitemap 是否已在 Search Console 成功提交。
+- Search Console 是否顯示「已探索但尚未建立索引」、「已檢索但尚未建立索引」或其他排除原因。
+- 是否需要將文章頁加入首頁更多內部連結，提高文章被發現與重視程度。
+
+### 本次固定流程執行結果
+
+- 新增文章流程：已建立。因本次未提供新文章正文，未新增文章頁。
+- 修改服務資訊流程：已建立。因本次未提供新版服務資訊，未修改正式頁面文案。
+- 發布前檢查流程：已建立並先執行 SEO 相關自動檢查。
+
+### 發布前 SEO 檢查結果
+
+- sitemap URL 數量：32。
+- 文章頁數量：25。
+- 25 篇文章都已列入 sitemap。
+- sitemap 內 URL 都對得到本地檔案。
+- sitemap 內頁面皆為 `index, follow`。
+- sitemap 內頁面的 canonical 皆與 sitemap URL 一致。
+- `talks.html` 原本未列入 sitemap，當時作為 noindex 舊轉址頁處理。
+
+### 文章索引問題處理紀錄
+
+- 正式站 robots、sitemap、代表文章頁、Googlebot User-Agent 檢查皆未發現阻擋索引的設定。
+- 正式站 sitemap 內 32 個 URL 全部回 `200`。
+- 找到可改善項：首頁沒有直接連到文章頁，且部分已存在系列仍顯示「即將開放」。
+- 已修正首頁內部連結：
+  - 新增 3 篇精選文章直接連結。
+  - 將職場與界線系列入口改為實際系列頁。
+  - 更新首頁 sitemap `lastmod`。
+- 剩餘關鍵步驟：登入 Google Search Console 查看 URL Inspection 的未索引原因。
+
+## 2026-06-30：講座邀約 SEO 調整
+
+### 會議目標
+
+將網站中的「講座合作」統一改為「講座邀約」，並建立可支援「心理師 講座邀約」搜尋意圖的索引頁。
+
+### 分工
+
+- 網站總管 AI：決定 SEO 目標頁策略與工作流。
+- 內容編輯 AI：將正式頁面文案統一為「講座邀約」，並自然加入「心理師講座邀約」。
+- SEO / 發布維護 AI：讓 `talks.html` 從 noindex 轉為 indexable landing page，更新 canonical、meta、OG、JSON-LD 與 sitemap。
+- 前端維護 AI：更新首頁與文章頁導覽，讓站內連結指向 `talks.html`。
+- 品質檢查 AI：檢查舊詞殘留、sitemap 與本機頁面狀態。
+
+### 已完成
+
+- `talks.html` 改為可索引的「心理師講座邀約」頁。
+- 移除 `talks.html` 的 noindex 與 meta refresh。
+- `talks.html` canonical 改為 `https://yuchienpsy.com/talks.html`。
+- 首頁、文章頁導覽改為「講座邀約」並連到 `talks.html`。
+- `sitemap.xml` 新增 `https://yuchienpsy.com/talks.html`。
+- 首頁與講座邀約頁 `lastmod` 更新為 `2026-06-30`。
+
+### 待發布後處理
+
+- 重新提交 sitemap。
+- 用 Search Console URL Inspection 檢查 `https://yuchienpsy.com/talks.html`。
+- 若 live test 通過，要求建立索引。
+
+## 2026-06-30：Google site name 顯示調整
+
+### 會議目標
+
+讓 Google 搜尋結果中顯示於網址上方的 site name，更有機會從 `yuchienpsy.com` 改為「黃郁倩諮商心理師」。
+
+### 決策
+
+- 目標文字採用無空格版本：`黃郁倩諮商心理師`。
+- 首頁 `WebSite` structured data 是主要調整點。
+- 同步補強 `og:site_name` 與 favicon。
+- 保留 `黃郁倩 諮商心理師` 作為 alternateName，避免既有品牌寫法完全消失。
+
+### 已完成
+
+- `index.html` 的 `WebSite` JSON-LD `name` 改為 `黃郁倩諮商心理師`。
+- `index.html` 的 `WebSite` JSON-LD `alternateName` 改為陣列，包含 `黃郁倩 諮商心理師` 與 `郁倩心理師`。
+- `index.html`、`articles.html`、`talks.html` 的 `og:site_name` 改為 `黃郁倩諮商心理師`。
+- 新增 `favicon.ico` 與 `assets/favicon-192.png`。
+- 首頁、文章列表頁、講座邀約頁加入 favicon link。
+
+### 待發布後處理
+
+- 檢查正式站 `/favicon.ico` 是否回 `200`。
+- 用 Search Console URL Inspection 檢查首頁。
+- 若首頁已是 indexed/requested/on Google，不重複 Request indexing，只紀錄。
+- 等待 Google 重新抓取與更新搜尋結果顯示。
+
+## 2026-06-30：正式站舊詞殘留確認
+
+### 檢查結果
+
+- 本地首頁沒有 `講座合作`。
+- 本地首頁已連到 `talks.html`。
+- 正式站首頁仍顯示 `講座合作`，且仍使用 `#speaking`。
+
+### 結論
+
+這是尚未發布造成的正式站舊版，不是本地檔案漏改。下一步要推送 GitHub，等待 GitHub Pages 更新後再驗收正式站。
