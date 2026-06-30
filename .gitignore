@@ -3,3 +3,4 @@ assets/.DS_Store
 assets/headshot_backup.jpeg
 __pycache__/
 *.py[cod]
+講座紀錄.csv

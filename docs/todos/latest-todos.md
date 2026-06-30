@@ -4,6 +4,7 @@
 
 ## 最高優先
 
+- [ ] 發布後檢查 `https://yuchienpsy.com/talks.html` 是否顯示新版講座紀錄與合作主題。
 - [ ] 在 Google Search Console 驗證 `yuchienpsy.com`。
 - [ ] 在 Google Search Console 提交 `https://yuchienpsy.com/sitemap.xml`。
 - [ ] 發布後用 URL Inspection 檢查 `https://yuchienpsy.com/talks.html`，並在 live test 通過後要求建立索引。
@@ -19,8 +20,10 @@
 - [x] 建立「新增文章」工作流。
 - [x] 建立「修改服務資訊」工作流。
 - [x] 建立「發布前檢查」工作流。
+- [x] 建立「更新講座紀錄與講座邀約頁」工作流。
 - [ ] 之後每次新增文章都同步更新文章列表、系列頁、sitemap、meta 與 canonical。
 - [ ] 之後每次修改服務資訊都同步檢查首頁、CTA、LINE 連結與手機版。
+- [ ] 之後每次更新 `講座紀錄.csv`，都同步更新 `talks.html` 的代表合作紀錄與主題分類。
 - [ ] 每次發布前執行發布前檢查。
 
 ## SEO 改善
