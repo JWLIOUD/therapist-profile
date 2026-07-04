@@ -170,6 +170,9 @@
 - 2026-07-04 已推送 commit `eb57037`，GitHub Pages build `28696441473` 已完成且成功。
 - 正式站首頁與四個圖示檔已回 `200`，首頁已包含新版 `site-icon-512.png` 訊號。
 - 用 Search Console URL Inspection 檢查 `https://yuchienpsy.com/`。
+- Google SERP 驗收必須實際用瀏覽器搜尋並截圖，不可只用技術檢查替代。
+- 必查關鍵字：`黃郁倩心理師`、`黃郁倩諮商心理師`、`黃郁倩心理師 yuchienpsy.com`、`site:yuchienpsy.com 黃郁倩心理師`。
+- 截圖驗收若未通過，先判斷是 Google 尚未更新或網站端訊號不足；可修正則繼續修正，需要使用者登入或判斷時先停下討論。
 - 若 Search Console 已顯示已要求索引、已在 Google 服務中或已編入索引，只記錄，不重複按 Request indexing。
 - 3-14 天後觀察 Google 搜尋結果是否更新網站名稱與 favicon。
 - 若 2-4 週仍無變化，重新檢查首頁 Live Test、favicon 可抓取性與 structured data。

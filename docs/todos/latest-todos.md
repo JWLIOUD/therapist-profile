@@ -7,6 +7,8 @@
 - [x] 發布後檢查 `https://yuchienpsy.com/favicon.ico`、`https://yuchienpsy.com/assets/favicon-48.png`、`https://yuchienpsy.com/assets/favicon-192.png`、`https://yuchienpsy.com/assets/site-icon-512.png` 是否都回 `200`。
 - [ ] 發布後用 Google Search Console URL Inspection 檢查 `https://yuchienpsy.com/`，確認 Google 看到新版首頁與 favicon 設定。
 - [ ] 若 Search Console 已顯示首頁「已要求建立索引」、已在 Google 服務中、或已編入索引，不得再次按 Request indexing；只記錄狀態與時間，避免浪費每日額度。
+- [ ] 用實際瀏覽器 Google 搜尋 `黃郁倩心理師`、`黃郁倩諮商心理師`、`黃郁倩心理師 yuchienpsy.com`、`site:yuchienpsy.com 黃郁倩心理師`，截圖並記錄搜尋結果網站名稱、favicon、排名與摘要。
+- [ ] 若實際搜尋截圖驗收未通過，依失敗原因持續修正；若需要 Search Console 權限、瀏覽器登入或使用者判斷，先停下與使用者討論。
 - [ ] 發布後 3-14 天觀察 Google 搜尋結果是否開始顯示「黃郁倩諮商心理師」與新版網站圖示；若 2-4 週仍無變化，重新做首頁 Live Test 與 favicon 可抓取性檢查。
 - [ ] 發布後檢查 `https://yuchienpsy.com/talks.html` 是否顯示新版講座紀錄與合作主題。
 - [ ] 在 Google Search Console 驗證 `yuchienpsy.com`。

@@ -178,6 +178,12 @@
   - 首頁 HTML 可看到品牌實體 `logo` 指向 `assets/site-icon-512.png`。
   - Search Console 檢查首頁時，若已在 Google 服務中、已編入索引或已要求建立索引，只做紀錄，不得重複按 Request indexing。
 - 後續追蹤：
+  - Google 搜尋結果品牌曝光不可只用 HTTP 200、structured data 或 Search Console 狀態驗收。
+  - 必須使用實際瀏覽器搜尋 `黃郁倩心理師`、`黃郁倩諮商心理師`、`黃郁倩心理師 yuchienpsy.com`、`site:yuchienpsy.com 黃郁倩心理師`，並截圖保存搜尋結果第一頁。
+  - 截圖需記錄搜尋日期、瀏覽器、關鍵字、yuchienpsy.com 結果排名、顯示網站名稱、favicon、標題與摘要。
+  - 若截圖驗收未通過，先判斷是 Google 尚未重抓、索引不足、搜尋結果尚未更新，或網站端訊號仍不一致。
+  - 若可由網站端修正，SEO / 發布維護 AI、前端維護 AI、品牌素材 AI 需提出下一輪修正並重新發布。
+  - 若需要使用者登入 Google、操作 Search Console、判斷截圖是否符合品牌期待，網站總管 AI 必須停下與使用者討論。
   - 發布後 3-14 天觀察 Google 搜尋結果。
   - 若 2-4 週後仍只顯示網址，重新執行首頁 Live Test、favicon 檔案抓取檢查、Google rich result / structured data 檢查，並確認沒有快取或錯誤 canonical。
 
