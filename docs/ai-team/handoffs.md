@@ -134,6 +134,55 @@
   - sitemap 包含 `https://yuchienpsy.com/talks.html`。
   - Search Console URL Inspection live test 通過後，要求建立索引。
 
+### 2026-07-05：A 暖印章「郁」墨水手寫字版
+
+- 任務名稱：依使用者參考圖，將 A 暖印章「郁」改為活動常見的墨水手寫字方向。
+- 交接來源：網站總管 AI
+- 接手角色：品牌素材 AI、SEO / 發布維護 AI、前端維護 AI、品質檢查 AI
+- 使用者回饋：
+  - 想用活動常見的墨水手寫字體。
+  - 參考圖是黑色手寫筆記風格，筆畫有速度、不像正式電腦字。
+  - 文字仍要放在正中心，避免偏上造成煩躁感。
+- AI 團隊決策：
+  - 品牌素材 AI：不用一般電腦字型套字，改用手繪筆畫方式畫出「郁」字。
+  - SEO / 發布維護 AI：三版保留 512x512，預覽包含 48px 小尺寸，避免手寫字在搜尋結果縮小後糊掉。
+  - 前端維護 AI：本輪仍不替換正式 favicon。
+  - 品質檢查 AI：A4-A6 視為上一輪過渡稿；目前優先候選改為 A7-A9。
+- 已建立版本：
+  - A7 清楚墨水字：`assets/logo-options/option-a7-ink-marker-clear.png`
+  - A8 可愛麥克筆：`assets/logo-options/option-a8-ink-marker-cute.png`
+  - A9 飄逸手寫字：`assets/logo-options/option-a9-ink-marker-flowing.png`
+  - 總覽預覽：`assets/logo-options/option-a-ink-handwriting-preview.png`
+- 目前狀態：
+  - 等使用者選 A7 / A8 / A9，或提出微調方向。
+  - 選定後再替換正式 favicon 套件並發布。
+  - 替換並發布後需做正式站圖示檔 200 檢查、Search Console 檢查與 Google 實際搜尋結果截圖驗收。
+
+### 2026-07-05：A 暖印章「郁」飄逸可愛置中版
+
+- 任務名稱：依使用者回饋重做 A 暖印章字體版本，要求更飄逸可愛，且文字必須放在視覺正中心。
+- 交接來源：網站總管 AI
+- 接手角色：品牌素材 AI、SEO / 發布維護 AI、前端維護 AI、品質檢查 AI
+- 使用者回饋：
+  - 想要字體更飄逸可愛。
+  - 文字偏上會讓人感到煩躁。
+  - 文字要放在正中心。
+- AI 團隊決策：
+  - 品牌素材 AI：保留 A 暖印章外框，重做 3 個更柔軟、可愛、置中的「郁」字版本。
+  - SEO / 發布維護 AI：仍保留 512x512 來源圖，總覽圖包含 48px 小尺寸預覽。
+  - 前端維護 AI：本輪仍不替換正式 favicon，避免未選定版本直接上線。
+  - 品質檢查 AI：確認正式 `favicon.ico` 與 `assets/site-icon-512.png` 未被改動。
+- 已建立版本：
+  - A4 飄逸楷體：`assets/logo-options/option-a4-floating-kai-centered.png`
+  - A5 柔和明體：`assets/logo-options/option-a5-soft-serif-centered.png`
+  - A6 可愛圓體：`assets/logo-options/option-a6-cute-rounded-centered.png`
+  - 總覽預覽：`assets/logo-options/option-a-centered-cute-variants-preview.png`
+- 目前狀態：
+  - 等使用者選 A4 / A5 / A6，或提出微調方向。
+  - A1-A3 視為上一輪候選，不作為目前優先推薦。
+  - 選定後再替換正式 favicon 套件並發布。
+  - 替換並發布後需做正式站圖示檔 200 檢查、Search Console 檢查與 Google 實際搜尋結果截圖驗收。
+
 ### 2026-07-05：A 暖印章「郁」字體版本
 
 - 任務名稱：使用者選定 A 暖印章方向後，產出 3 個更有活力的「郁」字字體版本。

@@ -122,6 +122,76 @@
 - 若首頁已是 indexed/requested/on Google，不重複 Request indexing，只紀錄。
 - 等待 Google 重新抓取與更新搜尋結果顯示。
 
+## 2026-07-05：A 暖印章「郁」墨水手寫字版會議
+
+### 會議目標
+
+使用者補充參考圖，確認想要的是活動常見的墨水手寫字體，而不是一般電腦字型的活潑版。本輪產出 3 個手繪筆畫版本，不直接替換正式 favicon。
+
+### AI 團隊討論結論
+
+- 網站總管 AI：
+  - A4-A6 方向仍偏像字型，不符合新參考圖。
+  - 目前優先候選改為 A7-A9。
+- 品牌素材 AI：
+  - 改用手繪筆畫方式畫「郁」字。
+  - 保留暖印章外框與網站色彩。
+  - 文字視覺重心需置中，不能偏上。
+- SEO / 發布維護 AI：
+  - 三版仍需保留 512x512 與 48px 預覽。
+  - 手寫感不能犧牲搜尋結果小尺寸辨識度。
+- 前端維護 AI：
+  - 本輪不改正式 favicon links。
+- 品質檢查 AI：
+  - 正式 `favicon.ico` 與 `assets/site-icon-512.png` 未變動。
+
+### 已完成
+
+- A7 清楚墨水字：`assets/logo-options/option-a7-ink-marker-clear.png`
+- A8 可愛麥克筆：`assets/logo-options/option-a8-ink-marker-cute.png`
+- A9 飄逸手寫字：`assets/logo-options/option-a9-ink-marker-flowing.png`
+- 總覽預覽：`assets/logo-options/option-a-ink-handwriting-preview.png`
+
+### 待決策
+
+- 等使用者選擇 A7 / A8 / A9。
+- 選定後再替換正式 favicon 套件並發布。
+
+## 2026-07-05：A 暖印章「郁」飄逸可愛置中版會議
+
+### 會議目標
+
+使用者認為上一輪字體仍不夠飄逸可愛，且文字偏上會讓人煩躁。本輪重新產出 3 個字體置中版本，不直接替換正式 favicon。
+
+### AI 團隊討論結論
+
+- 網站總管 AI：
+  - 將 A1-A3 視為上一輪候選，不作為本輪優先推薦。
+  - 新版本需明確滿足「飄逸可愛」與「視覺正中心」。
+- 品牌素材 AI：
+  - A4 使用較柔軟的楷體方向，最飄逸。
+  - A5 使用較輕盈的明體方向，兼顧正式與飄逸。
+  - A6 使用較圓潤的黑體方向，最親切可愛。
+- SEO / 發布維護 AI：
+  - 三版仍維持 512x512，並提供 48px 預覽。
+  - 選定後再轉成 favicon 套件，不在本輪替換正式圖示。
+- 前端維護 AI：
+  - 本輪不改 head favicon links。
+- 品質檢查 AI：
+  - 正式 `favicon.ico` 與 `assets/site-icon-512.png` 未變動。
+
+### 已完成
+
+- A4 飄逸楷體：`assets/logo-options/option-a4-floating-kai-centered.png`
+- A5 柔和明體：`assets/logo-options/option-a5-soft-serif-centered.png`
+- A6 可愛圓體：`assets/logo-options/option-a6-cute-rounded-centered.png`
+- 總覽預覽：`assets/logo-options/option-a-centered-cute-variants-preview.png`
+
+### 待決策
+
+- 等使用者選擇 A4 / A5 / A6。
+- 選定後再替換正式 favicon 套件並發布。
+
 ## 2026-07-05：A 暖印章「郁」字體版本會議
 
 ### 會議目標

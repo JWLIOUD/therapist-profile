@@ -45,7 +45,7 @@ Google 搜尋結果目前仍顯示被縮小的人像照片，品牌感不足，�
 ## 待使用者決策
 
 - [x] 使用者選擇 A / B / C 其中一個：已選 A 暖印章「郁」。
-- [ ] 使用者從 A 的字體版本中選擇 A1 / A2 / A3。
+- [ ] 使用者從 A 的墨水手寫字版本中選擇 A7 / A8 / A9。
 - [ ] 若需要，可依使用者意見微調顏色、字重、圖形比例。
 - [ ] 選定後輸出正式 favicon 套件：
   - `favicon.ico`
@@ -80,3 +80,57 @@ Google 搜尋結果目前仍顯示被縮小的人像照片，品牌感不足，�
 ### A 字體版本預覽
 
 - 總覽圖：`assets/logo-options/option-a-font-variants-preview.png`
+
+## A 暖印章「郁」飄逸可愛置中版
+
+使用者回饋 A1-A3 的字體仍不夠飄逸可愛，且文字偏上會讓人煩躁。本輪保留 A 暖印章外框，將「郁」字移到視覺中心，並改成更柔軟、可愛、輕盈的字體方向。
+
+後續使用者補充參考圖後，確認目標更接近活動常見的墨水手寫字，因此 A4-A6 視為上一輪過渡稿，不作為目前優先候選。
+
+### A4. 飄逸楷體
+
+- 檔案：`assets/logo-options/option-a4-floating-kai-centered.png`
+- 特色：字形最柔軟，帶手寫感，視覺重心置中。
+- 適合：想要溫柔、飄逸、比較有人味的版本。
+
+### A5. 柔和明體
+
+- 檔案：`assets/logo-options/option-a5-soft-serif-centered.png`
+- 特色：比 A1 更輕盈，仍保留正式感與辨識度。
+- 適合：想要在正式可信與飄逸感之間取得平衡。
+
+### A6. 可愛圓體
+
+- 檔案：`assets/logo-options/option-a6-cute-rounded-centered.png`
+- 特色：筆畫最厚實，最親切，小尺寸清楚。
+- 適合：優先考慮 Google 搜尋結果小圖的穩定可讀性。
+
+### A 飄逸可愛置中版預覽
+
+- 總覽圖：`assets/logo-options/option-a-centered-cute-variants-preview.png`
+
+## A 暖印章「郁」墨水手寫字版
+
+使用者補充參考圖後，明確希望是活動常見的墨水手寫字體。此輪改用手繪筆畫方式建立「郁」字，不再套用一般電腦字型；重點是筆畫有速度、帶手寫感、視覺重心置中，同時保留搜尋結果小圖的辨識度。
+
+### A7. 清楚墨水字
+
+- 檔案：`assets/logo-options/option-a7-ink-marker-clear.png`
+- 特色：最接近活動手寫字，筆畫清楚，重心置中。
+- 適合：想要手寫感，但仍希望 Google 小圖最穩定。
+
+### A8. 可愛麥克筆
+
+- 檔案：`assets/logo-options/option-a8-ink-marker-cute.png`
+- 特色：筆畫更圓、更俏皮，中心穩定。
+- 適合：想要可愛感更明顯。
+
+### A9. 飄逸手寫字
+
+- 檔案：`assets/logo-options/option-a9-ink-marker-flowing.png`
+- 特色：筆畫更輕盈飄逸，但仍保留辨識度。
+- 適合：想要更接近輕快手寫活動字。
+
+### A 墨水手寫字版預覽
+
+- 總覽圖：`assets/logo-options/option-a-ink-handwriting-preview.png`
