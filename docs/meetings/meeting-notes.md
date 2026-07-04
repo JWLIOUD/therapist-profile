@@ -122,6 +122,57 @@
 - 若首頁已是 indexed/requested/on Google，不重複 Request indexing，只紀錄。
 - 等待 Google 重新抓取與更新搜尋結果顯示。
 
+## 2026-07-04：Google 搜尋結果品牌曝光 CTR 專案
+
+### 會議目標
+
+讓 Google 搜尋結果更容易顯示正式網站名稱「黃郁倩諮商心理師」與清楚網站圖示，降低只顯示 `yuchienpsy.com` 時造成的不信任感。
+
+### AI 團隊討論結論
+
+- 網站總管 AI：
+  - 這是搜尋結果品牌曝光專案，不只是單一 favicon 檔案替換。
+  - 需要同時處理網站名稱一致性、結構化資料、圖示設計、正式站驗收與 Search Console 追蹤。
+- SEO / 發布維護 AI：
+  - Google 網站名稱與 favicon 都是 Google 自動產生，不能保證改完立即顯示。
+  - 首頁 `WebSite` structured data、`og:site_name`、title、首頁文字與 favicon 需一致。
+  - Search Console 只在必要時要求建立索引；若已要求、已在 Google 服務中或已編入索引，不重複消耗額度。
+- 品牌素材 AI：
+  - 舊人像縮圖在搜尋結果小尺寸中辨識度偏弱。
+  - 改用品牌字圖示：暖色底、深棕「郁」字、品牌色環，讓小尺寸更像正式網站標示。
+- 前端維護 AI：
+  - 首頁、文章列表頁、講座邀約頁同步 favicon link。
+  - 首頁主要品牌文字統一為「黃郁倩諮商心理師」。
+- 品質檢查 AI：
+  - 發布前檢查核心頁與圖示檔。
+  - 發布後檢查正式站圖示檔皆回 `200`。
+  - 追蹤 Google 搜尋結果需抓時間點，不把 Google 尚未重抓誤判成網站端失敗。
+
+### 已完成
+
+- 新增新版網站圖示檔：
+  - `assets/site-icon-512.png`
+  - `assets/favicon-48.png`
+  - `assets/favicon-192.png`
+  - `assets/apple-touch-icon.png`
+  - `favicon.ico`
+- 首頁 `<title>`、`og:title`、`twitter:title` 與頁首品牌文字統一為「黃郁倩諮商心理師」。
+- 首頁 `LocalBusiness` 增加 `@id`、`alternateName` 與 `logo`。
+- 首頁 `WebSite` 增加 `@id`、`publisher`，並保留 `alternateName`。
+- 首頁新增 `Person` structured data，建立心理師本人與品牌實體關聯。
+- `articles.html` 與 `talks.html` 同步 favicon links 與頁首品牌文字。
+- `docs/workflows/pre-publish-check.md` 新增 Google 搜尋結果品牌曝光驗收清單。
+- `docs/todos/latest-todos.md` 新增發布後 Search Console 與 Google 搜尋結果追蹤項目。
+- `docs/ai-team/handoffs.md` 已補上本次交接。
+
+### 待發布後處理
+
+- 檢查正式站首頁與四個圖示檔是否回 `200`。
+- 用 Search Console URL Inspection 檢查 `https://yuchienpsy.com/`。
+- 若 Search Console 已顯示已要求索引、已在 Google 服務中或已編入索引，只記錄，不重複按 Request indexing。
+- 3-14 天後觀察 Google 搜尋結果是否更新網站名稱與 favicon。
+- 若 2-4 週仍無變化，重新檢查首頁 Live Test、favicon 可抓取性與 structured data。
+
 ## 2026-06-30：正式站舊詞殘留確認
 
 ### 檢查結果

@@ -34,6 +34,18 @@
 - [ ] 不應收錄頁面為 `noindex, follow`。
 - [ ] sitemap 已包含新增頁面，且未包含不應收錄頁面。
 
+### Google 搜尋結果品牌曝光
+
+- [ ] 首頁 `<title>`、`og:title`、`twitter:title`、頁首品牌文字使用一致網站名稱：`黃郁倩諮商心理師`。
+- [ ] 首頁 `WebSite` JSON-LD `name` 為 `黃郁倩諮商心理師`，並保留 `alternateName`。
+- [ ] 首頁 `WebSite` JSON-LD 有 `publisher`，且可連到同頁的心理師品牌實體。
+- [ ] 首頁品牌實體有 `logo`，指向 `https://yuchienpsy.com/assets/site-icon-512.png`。
+- [ ] 首頁與核心頁有 `/favicon.ico`、`/assets/favicon-48.png`、`/assets/favicon-192.png`、`/assets/apple-touch-icon.png`。
+- [ ] favicon 圖檔為正方形，至少有 48x48 版本，且不是頻繁更換的 URL。
+- [ ] 正式站 `/favicon.ico`、`/assets/favicon-48.png`、`/assets/favicon-192.png`、`/assets/site-icon-512.png` 都回 `200`。
+- [ ] 發布後用 Search Console 檢查首頁。若已顯示「已要求建立索引」、已在 Google 服務中、或已編入索引，不得再次按 Request indexing，只做紀錄。
+- [ ] Google 搜尋結果的網站名稱與 favicon 由 Google 自動產生；發布後需追蹤數天到數週，不能把未即時顯示視為網站端部署失敗。
+
 ### 內容與風險
 
 - [ ] 心理健康內容沒有不當診斷或療效承諾。

@@ -134,6 +134,50 @@
   - sitemap 包含 `https://yuchienpsy.com/talks.html`。
   - Search Console URL Inspection live test 通過後，要求建立索引。
 
+### 2026-07-04：Google 搜尋結果品牌曝光與點擊率提升專案
+
+- 任務名稱：讓 Google 搜尋結果更像正式網站，盡量顯示「黃郁倩諮商心理師」與清楚網站圖示，而不是只顯示 `yuchienpsy.com`
+- 交接來源：網站總管 AI
+- 接手角色：SEO / 發布維護 AI、品牌素材 AI、前端維護 AI、品質檢查 AI、內容編輯 AI
+- Google 官方判斷：
+  - Google 的網站名稱與 favicon 不是 Search Console 裡手動輸入後立即生效的欄位。
+  - 網站名稱主要依首頁內容、`WebSite` structured data、`og:site_name`、標題與其他首頁文字自動判斷。
+  - favicon 需要首頁有 `<link rel="icon">`，且 Googlebot 與 Googlebot-Image 都能抓取首頁與圖示檔。
+  - 即使網站端設定正確，Google 仍需要重新抓取與處理，通常要數天到數週。
+- 問題判斷：
+  - 正式站可抓取，首頁、sitemap、robots 與 favicon 不是完全失效。
+  - 舊 favicon 偏向人像縮圖，在搜尋結果小尺寸顯示時品牌辨識度弱。
+  - 首頁部分品牌文字有空格版本「黃郁倩 諮商心理師」，`WebSite.name` 則為無空格版本；雖非錯誤，但為了讓 Google 判斷更集中，本次統一核心訊號。
+- AI 團隊決策：
+  - 品牌素材 AI：建立更像網站標示的小尺寸圖示，不再只依賴人像縮圖；採用暖色底、深棕「郁」字與品牌色環，提升小尺寸辨識度。
+  - SEO / 發布維護 AI：首頁 `WebSite.name`、`publisher`、品牌實體 `logo`、favicon links 全部對齊。
+  - 前端維護 AI：首頁、文章列表、講座邀約頁同步 favicon link 與頁首品牌文字。
+  - 品質檢查 AI：發布前後檢查圖示檔 HTTP 200、核心頁可開啟、Search Console 不重複消耗 Request indexing 額度。
+- 已修改檔案：
+  - `index.html`
+  - `articles.html`
+  - `talks.html`
+  - `favicon.ico`
+  - `assets/favicon-48.png`
+  - `assets/favicon-192.png`
+  - `assets/apple-touch-icon.png`
+  - `assets/site-icon-512.png`
+  - `docs/workflows/pre-publish-check.md`
+  - `docs/todos/latest-todos.md`
+  - `docs/ai-team/handoffs.md`
+- 發布後驗收：
+  - `https://yuchienpsy.com/` 回 `200`。
+  - `https://yuchienpsy.com/favicon.ico` 回 `200`。
+  - `https://yuchienpsy.com/assets/favicon-48.png` 回 `200`。
+  - `https://yuchienpsy.com/assets/favicon-192.png` 回 `200`。
+  - `https://yuchienpsy.com/assets/site-icon-512.png` 回 `200`。
+  - 首頁 HTML 可看到 `WebSite` name 為 `黃郁倩諮商心理師`，且 `publisher` 指向品牌實體。
+  - 首頁 HTML 可看到品牌實體 `logo` 指向 `assets/site-icon-512.png`。
+  - Search Console 檢查首頁時，若已在 Google 服務中、已編入索引或已要求建立索引，只做紀錄，不得重複按 Request indexing。
+- 後續追蹤：
+  - 發布後 3-14 天觀察 Google 搜尋結果。
+  - 若 2-4 週後仍只顯示網址，重新執行首頁 Live Test、favicon 檔案抓取檢查、Google rich result / structured data 檢查，並確認沒有快取或錯誤 canonical。
+
 ### 2026-06-30：Google 搜尋結果 site name 顯示任務
 
 - 任務名稱：讓 Google 搜尋結果站名從 `yuchienpsy.com` 更有機會顯示為「黃郁倩諮商心理師」
