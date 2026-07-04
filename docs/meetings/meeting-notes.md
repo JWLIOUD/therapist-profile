@@ -122,6 +122,43 @@
 - 若首頁已是 indexed/requested/on Google，不重複 Request indexing，只紀錄。
 - 等待 Google 重新抓取與更新搜尋結果顯示。
 
+## 2026-07-05：Google 搜尋結果 Logo 選項會議
+
+### 會議目標
+
+回應使用者對 Google 搜尋結果人像縮圖的不滿，建立 3 個溫暖系、非照片、符合網站風格的 logo 選項，供使用者選定後再替換正式 favicon。
+
+### AI 團隊討論結論
+
+- 網站總管 AI：
+  - 先產生候選方案，不直接替換正式站 favicon。
+  - 選定後再進入正式替換、發布、Search Console 與 SERP 截圖驗收。
+- 品牌素材 AI：
+  - 使用網站既有色彩：cream、almond、peach、sage、brown。
+  - 避免照片、過細線條與過多文字。
+  - 建立 3 種方向：中文姓名識別、諮商意象、英文縮寫品牌。
+- SEO / 發布維護 AI：
+  - 三個選項都以 512x512 製作，後續可產出 Google favicon 所需尺寸。
+  - 選定後需保持 URL 穩定，避免頻繁更換。
+- 前端維護 AI：
+  - 本輪不改正式 head favicon links。
+- 品質檢查 AI：
+  - 檢查每個選項都是正方形。
+  - 總覽圖需包含 48px 小尺寸預覽。
+
+### 已完成
+
+- A 暖印章「郁」：`assets/logo-options/option-1-warm-seal-yu.png`
+- B 傾聽心形：`assets/logo-options/option-2-listening-heart.png`
+- C YP 字標：`assets/logo-options/option-3-calm-yp.png`
+- 總覽預覽：`assets/logo-options/logo-options-preview.png`
+- 說明文件：`docs/brand/google-serp-logo-options.md`
+
+### 待決策
+
+- 等使用者選擇 A / B / C。
+- 選定後再替換正式 favicon 套件並發布。
+
 ## 2026-07-04：Google 搜尋結果品牌曝光 CTR 專案
 
 ### 會議目標

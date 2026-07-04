@@ -134,6 +134,32 @@
   - sitemap 包含 `https://yuchienpsy.com/talks.html`。
   - Search Console URL Inspection live test 通過後，要求建立索引。
 
+### 2026-07-05：Google 搜尋結果小圖改版 Logo 選項
+
+- 任務名稱：把 Google 搜尋結果中不可接受的人像縮圖，改為溫暖、正式、符合網站風格的非照片 logo。
+- 交接來源：網站總管 AI
+- 接手角色：品牌素材 AI、SEO / 發布維護 AI、前端維護 AI、品質檢查 AI
+- 使用者回饋：
+  - 搜尋結果的小圖片目前仍像人像照片縮圖，使用者不能接受。
+  - 新圖示需溫暖系，與網站風格搭配，可以是圖案或文字，但不要直接用照片。
+  - 先提供 3 個選項讓使用者選，不要未選定就直接替換正式 favicon。
+- AI 團隊決策：
+  - 品牌素材 AI：以網站既有色彩 `cream / almond / peach / sage / brown` 做 3 個可選圖示。
+  - SEO / 發布維護 AI：三個選項都需可做 512x512 來源圖，後續可輸出 favicon 套件。
+  - 前端維護 AI：本輪只新增候選圖，不改正式 `<link rel="icon">` 或正式 `site-icon-512.png`。
+  - 品質檢查 AI：檢查 512x512 與 48px 預覽，避免小尺寸不可讀。
+- 已建立選項：
+  - A 暖印章「郁」：`assets/logo-options/option-1-warm-seal-yu.png`
+  - B 傾聽心形：`assets/logo-options/option-2-listening-heart.png`
+  - C YP 字標：`assets/logo-options/option-3-calm-yp.png`
+  - 總覽預覽：`assets/logo-options/logo-options-preview.png`
+- 說明文件：
+  - `docs/brand/google-serp-logo-options.md`
+- 目前狀態：
+  - 等使用者選 A / B / C。
+  - 選定後再替換正式 `favicon.ico`、`assets/favicon-48.png`、`assets/favicon-192.png`、`assets/apple-touch-icon.png`、`assets/site-icon-512.png`。
+  - 替換並發布後，必須執行 Google 實際搜尋結果截圖驗收。
+
 ### 2026-07-04：Google 搜尋結果品牌曝光與點擊率提升專案
 
 - 任務名稱：讓 Google 搜尋結果更像正式網站，盡量顯示「黃郁倩諮商心理師」與清楚網站圖示，而不是只顯示 `yuchienpsy.com`
