@@ -134,6 +134,30 @@
   - sitemap 包含 `https://yuchienpsy.com/talks.html`。
   - Search Console URL Inspection live test 通過後，要求建立索引。
 
+### 2026-07-05：A 暖印章「郁」字體版本
+
+- 任務名稱：使用者選定 A 暖印章方向後，產出 3 個更有活力的「郁」字字體版本。
+- 交接來源：網站總管 AI
+- 接手角色：品牌素材 AI、SEO / 發布維護 AI、前端維護 AI、品質檢查 AI
+- 使用者決策：
+  - 已選定 A 暖印章「郁」方向。
+  - 希望字體更有活力一點。
+  - 仍需提供 3 個版本讓使用者選。
+- AI 團隊決策：
+  - 品牌素材 AI：保留暖印章外框，只調整「郁」字字體與微小角度，避免整體方向漂移。
+  - SEO / 發布維護 AI：三版都維持 512x512，並檢查 48px 小尺寸。
+  - 前端維護 AI：本輪不替換正式 favicon。
+  - 品質檢查 AI：確認正式 `favicon.ico` 與 `assets/site-icon-512.png` 未被改動。
+- 已建立版本：
+  - A1 活潑明體：`assets/logo-options/option-a1-lively-serif-yu.png`
+  - A2 圓潤黑體：`assets/logo-options/option-a2-rounded-sans-yu.png`
+  - A3 書寫楷體：`assets/logo-options/option-a3-kai-yu.png`
+  - 總覽預覽：`assets/logo-options/option-a-font-variants-preview.png`
+- 目前狀態：
+  - 等使用者選 A1 / A2 / A3，或提出微調方向。
+  - 選定後再替換正式 favicon 套件並發布。
+  - 替換並發布後需做正式站圖示檔 200 檢查、Search Console 檢查與 Google 實際搜尋結果截圖驗收。
+
 ### 2026-07-05：Google 搜尋結果小圖改版 Logo 選項
 
 - 任務名稱：把 Google 搜尋結果中不可接受的人像縮圖，改為溫暖、正式、符合網站風格的非照片 logo。

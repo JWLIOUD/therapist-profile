@@ -44,7 +44,8 @@ Google 搜尋結果目前仍顯示被縮小的人像照片，品牌感不足，�
 
 ## 待使用者決策
 
-- [ ] 使用者選擇 A / B / C 其中一個。
+- [x] 使用者選擇 A / B / C 其中一個：已選 A 暖印章「郁」。
+- [ ] 使用者從 A 的字體版本中選擇 A1 / A2 / A3。
 - [ ] 若需要，可依使用者意見微調顏色、字重、圖形比例。
 - [ ] 選定後輸出正式 favicon 套件：
   - `favicon.ico`
@@ -53,3 +54,29 @@ Google 搜尋結果目前仍顯示被縮小的人像照片，品牌感不足，�
   - `assets/apple-touch-icon.png`
   - `assets/site-icon-512.png`
 - [ ] 替換後執行發布前檢查與 Google 實際搜尋結果截圖驗收。
+
+## A 暖印章「郁」字體版本
+
+使用者已選定 A 的方向，但希望字體更有活力。本輪保留暖印章外框，僅調整「郁」字字體氣質。
+
+### A1. 活潑明體
+
+- 檔案：`assets/logo-options/option-a1-lively-serif-yu.png`
+- 特色：保留正式識別感，字形比原版更有動勢。
+- 適合：想要穩重但不要太呆板。
+
+### A2. 圓潤黑體
+
+- 檔案：`assets/logo-options/option-a2-rounded-sans-yu.png`
+- 特色：筆畫較厚，親切穩定，48px 小尺寸最厚實。
+- 適合：優先考慮 Google 搜尋結果小圖清楚度。
+
+### A3. 書寫楷體
+
+- 檔案：`assets/logo-options/option-a3-kai-yu.png`
+- 特色：較有人味與手寫感，是三版中最活潑。
+- 適合：想要更柔軟、有個人溫度的識別。
+
+### A 字體版本預覽
+
+- 總覽圖：`assets/logo-options/option-a-font-variants-preview.png`

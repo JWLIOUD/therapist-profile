@@ -122,6 +122,43 @@
 - 若首頁已是 indexed/requested/on Google，不重複 Request indexing，只紀錄。
 - 等待 Google 重新抓取與更新搜尋結果顯示。
 
+## 2026-07-05：A 暖印章「郁」字體版本會議
+
+### 會議目標
+
+使用者已選定 A 暖印章方向，但希望「郁」字更有活力。本輪產出 3 個字體版本，不直接替換正式 favicon。
+
+### AI 團隊討論結論
+
+- 網站總管 AI：
+  - 維持 A 的設計方向，避免重新發散成新 logo。
+  - 先讓使用者選 A1 / A2 / A3，再進入正式替換流程。
+- 品牌素材 AI：
+  - A1 使用較有動勢的明體。
+  - A2 使用較厚實親切的圓潤黑體。
+  - A3 使用較有手寫感的楷體。
+- SEO / 發布維護 AI：
+  - 仍以 Google favicon 小尺寸為主要驗收限制。
+  - A2 小尺寸最穩，A1 兼顧正式與活力，A3 最有個人溫度。
+- 前端維護 AI：
+  - 本輪不改正式 favicon links。
+- 品質檢查 AI：
+  - 三版皆為 512x512。
+  - 預覽圖包含 48px 小尺寸。
+  - 正式 `favicon.ico` 與 `assets/site-icon-512.png` 未變動。
+
+### 已完成
+
+- A1 活潑明體：`assets/logo-options/option-a1-lively-serif-yu.png`
+- A2 圓潤黑體：`assets/logo-options/option-a2-rounded-sans-yu.png`
+- A3 書寫楷體：`assets/logo-options/option-a3-kai-yu.png`
+- 總覽預覽：`assets/logo-options/option-a-font-variants-preview.png`
+
+### 待決策
+
+- 等使用者選擇 A1 / A2 / A3。
+- 選定後再替換正式 favicon 套件並發布。
+
 ## 2026-07-05：Google 搜尋結果 Logo 選項會議
 
 ### 會議目標
