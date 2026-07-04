@@ -44,16 +44,20 @@ Google 搜尋結果目前仍顯示被縮小的人像照片，品牌感不足，�
 
 ## 待使用者決策
 
-- [x] 使用者選擇 A / B / C 其中一個：曾選 A 暖印章「郁」，後續改為狗線條標示方向。
-- [ ] 使用者從網路參考簡單線條狗版本中選擇 E1 / E2 / E3。
+- [x] 使用者最終選擇：A 暖印章「郁」。
+- [x] 已正式替換 favicon 套件。
 - [ ] 若需要，可依使用者意見微調顏色、字重、圖形比例。
-- [ ] 選定後輸出正式 favicon 套件：
+- [x] 選定後輸出正式 favicon 套件：
   - `favicon.ico`
   - `assets/favicon-48.png`
   - `assets/favicon-192.png`
   - `assets/apple-touch-icon.png`
   - `assets/site-icon-512.png`
 - [ ] 替換後執行發布前檢查與 Google 實際搜尋結果截圖驗收。
+
+## 正式採用版本
+
+2026-07-05 使用者決定直接使用最一開始的 A 暖印章「郁」版本，並要求正式推上線，讓 Google 搜尋結果中網站所有分頁都使用這個圖示。已將 `assets/logo-options/option-1-warm-seal-yu.png` 輸出為正式 favicon 套件，並為所有公開 HTML 補上同一組 favicon links。
 
 ## D 狗線條標示
 

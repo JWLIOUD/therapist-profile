@@ -122,6 +122,44 @@
 - 若首頁已是 indexed/requested/on Google，不重複 Request indexing，只紀錄。
 - 等待 Google 重新抓取與更新搜尋結果顯示。
 
+## 2026-07-05：正式採用 A 暖印章「郁」全站圖示會議
+
+### 會議目標
+
+使用者最終決定直接使用最一開始的 A 暖印章「郁」版本，正式推上線，讓 Google 搜尋結果中網站所有分頁都使用同一個圖示。
+
+### AI 團隊討論結論
+
+- 網站總管 AI：
+  - 結束候選討論，正式採用 A 暖印章「郁」。
+  - 不再推狗線條版本到正式 favicon。
+- 品牌素材 AI：
+  - 使用 `assets/logo-options/option-1-warm-seal-yu.png` 產出正式 favicon 套件。
+- SEO / 發布維護 AI：
+  - 保持 `site-icon-512.png` 作為 structured data logo。
+  - 所有公開 HTML 分頁補上 favicon links，讓每個分頁都明確指向同一組圖示。
+- 前端維護 AI：
+  - 核心頁、文章頁、系列頁都使用同一組 `/favicon.ico` 與 `/assets/favicon-*`。
+- 品質檢查 AI：
+  - 確認每個缺 favicon 的 HTML 只新增 4 行，沒有破壞內容。
+  - 發布後需確認正式站圖示檔回 `200`。
+
+### 已完成
+
+- 正式替換：
+  - `favicon.ico`
+  - `assets/site-icon-512.png`
+  - `assets/favicon-192.png`
+  - `assets/favicon-48.png`
+  - `assets/apple-touch-icon.png`
+- 所有公開 HTML 已補 favicon links。
+
+### 待發布後處理
+
+- GitHub Pages 部署完成後確認正式站圖示檔回 `200`。
+- Search Console 檢查首頁與代表分頁。
+- 等 Google 重新抓取；搜尋結果圖示不會保證立即更新。
+
 ## 2026-07-05：網路參考簡單線條狗 Logo 會議
 
 ### 會議目標

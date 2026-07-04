@@ -134,6 +134,33 @@
   - sitemap 包含 `https://yuchienpsy.com/talks.html`。
   - Search Console URL Inspection live test 通過後，要求建立索引。
 
+### 2026-07-05：正式採用 A 暖印章「郁」作為全站搜尋結果圖示
+
+- 任務名稱：將 A 暖印章「郁」正式推上線，作為全站所有分頁的 favicon / Google 搜尋結果圖示來源。
+- 交接來源：網站總管 AI
+- 接手角色：品牌素材 AI、SEO / 發布維護 AI、前端維護 AI、品質檢查 AI
+- 使用者決策：
+  - 直接使用最一開始的 A 暖印章「郁」版本。
+  - 要正式推上線，讓 Google 搜尋結果中網站所有分頁都顯示這個圖示。
+- AI 團隊分工：
+  - 品牌素材 AI：將 `assets/logo-options/option-1-warm-seal-yu.png` 輸出為正式 favicon 套件。
+  - SEO / 發布維護 AI：確認首頁 structured data `logo` 指向 `https://yuchienpsy.com/assets/site-icon-512.png`，所有公開 HTML 都有 favicon links。
+  - 前端維護 AI：補齊文章頁與系列頁 favicon links，讓每個分頁明確使用同一組圖示。
+  - 品質檢查 AI：確認 PNG 尺寸、diff 範圍、全站連結、正式站圖示檔 200。
+- 已替換正式檔案：
+  - `favicon.ico`
+  - `assets/site-icon-512.png`
+  - `assets/favicon-192.png`
+  - `assets/favicon-48.png`
+  - `assets/apple-touch-icon.png`
+- 已補強：
+  - 所有公開 HTML 分頁都已明確加入 `/favicon.ico`、`/assets/favicon-48.png`、`/assets/favicon-192.png`、`/assets/apple-touch-icon.png`。
+- 待發布後驗收：
+  - GitHub Pages build 必須成功。
+  - 正式站首頁與圖示檔都需回 `200`。
+  - 用 Search Console 檢查首頁與代表文章；若已要求索引、已在 Google 服務中或已編入索引，不重複 Request indexing。
+  - 依發布前檢查流程做 Google 實際搜尋結果截圖驗收。
+
 ### 2026-07-05：網路參考簡單線條狗 Logo 候選
 
 - 任務名稱：直接上網查找簡單線條狗參考，重新設計狗為主體的搜尋結果 logo 候選。

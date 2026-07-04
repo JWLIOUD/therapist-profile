@@ -5,7 +5,8 @@
 ## 最高優先
 
 - [x] 使用者從 Google 搜尋結果 logo 候選中選擇 A / B / C；已選 A。
-- [ ] 使用者從網路參考簡單線條狗版本中選擇 E1 / E2 / E3；選定後再替換正式 favicon 套件。
+- [x] 使用者最終選擇 A 暖印章「郁」，已替換正式 favicon 套件，待發布後驗收。
+- [ ] 發布後確認 `https://yuchienpsy.com/favicon.ico`、`https://yuchienpsy.com/assets/favicon-48.png`、`https://yuchienpsy.com/assets/favicon-192.png`、`https://yuchienpsy.com/assets/site-icon-512.png` 都回 `200` 且為 A 暖印章「郁」。
 - [x] 發布後檢查 `https://yuchienpsy.com/favicon.ico`、`https://yuchienpsy.com/assets/favicon-48.png`、`https://yuchienpsy.com/assets/favicon-192.png`、`https://yuchienpsy.com/assets/site-icon-512.png` 是否都回 `200`。
 - [ ] 發布後用 Google Search Console URL Inspection 檢查 `https://yuchienpsy.com/`，確認 Google 看到新版首頁與 favicon 設定。
 - [ ] 若 Search Console 已顯示首頁「已要求建立索引」、已在 Google 服務中、或已編入索引，不得再次按 Request indexing；只記錄狀態與時間，避免浪費每日額度。
