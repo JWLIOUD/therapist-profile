@@ -166,10 +166,13 @@
   - `docs/todos/latest-todos.md`
   - `docs/ai-team/handoffs.md`
 - 發布後驗收：
-  - `https://yuchienpsy.com/` 回 `200`。
+  - 2026-07-04 已推送 commit `eb57037`。
+  - GitHub Pages build `28696441473` 已完成且成功。
+  - `https://yuchienpsy.com/` 回 `200`，正式站首頁已包含 `site-icon-512.png` 與 `黃郁倩諮商心理師` 新訊號。
   - `https://yuchienpsy.com/favicon.ico` 回 `200`。
   - `https://yuchienpsy.com/assets/favicon-48.png` 回 `200`。
   - `https://yuchienpsy.com/assets/favicon-192.png` 回 `200`。
+  - `https://yuchienpsy.com/assets/apple-touch-icon.png` 回 `200`。
   - `https://yuchienpsy.com/assets/site-icon-512.png` 回 `200`。
   - 首頁 HTML 可看到 `WebSite` name 為 `黃郁倩諮商心理師`，且 `publisher` 指向品牌實體。
   - 首頁 HTML 可看到品牌實體 `logo` 指向 `assets/site-icon-512.png`。

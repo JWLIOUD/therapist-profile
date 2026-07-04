@@ -167,7 +167,8 @@
 
 ### 待發布後處理
 
-- 檢查正式站首頁與四個圖示檔是否回 `200`。
+- 2026-07-04 已推送 commit `eb57037`，GitHub Pages build `28696441473` 已完成且成功。
+- 正式站首頁與四個圖示檔已回 `200`，首頁已包含新版 `site-icon-512.png` 訊號。
 - 用 Search Console URL Inspection 檢查 `https://yuchienpsy.com/`。
 - 若 Search Console 已顯示已要求索引、已在 Google 服務中或已編入索引，只記錄，不重複按 Request indexing。
 - 3-14 天後觀察 Google 搜尋結果是否更新網站名稱與 favicon。
