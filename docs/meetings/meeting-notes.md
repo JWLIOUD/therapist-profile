@@ -122,6 +122,112 @@
 - 若首頁已是 indexed/requested/on Google，不重複 Request indexing，只紀錄。
 - 等待 Google 重新抓取與更新搜尋結果顯示。
 
+## 2026-07-05：網路參考簡單線條狗 Logo 會議
+
+### 會議目標
+
+依使用者要求，直接上網搜尋「簡單線條狗」相關圖片，整理常見視覺方向後，重新設計狗為主體的搜尋結果 logo 候選。
+
+### AI 團隊討論結論
+
+- 網站總管 AI：
+  - D1-D3 是未參考網路前的草稿，不作為本輪優先候選。
+  - 目前優先候選改為 E1-E3。
+- 品牌素材 AI：
+  - 不照抄單一圖片，只取共同特徵。
+  - 產出三種方向：圓框狗頭、坐姿一筆線狗、站姿幾何狗。
+- SEO / 發布維護 AI：
+  - E3 小尺寸最俐落，E1 最像正式品牌，E2 最有陪伴感。
+  - 三版都要保留 512x512 與 48px 預覽。
+- 前端維護 AI：
+  - 本輪不改正式 favicon links。
+- 品質檢查 AI：
+  - 正式 `favicon.ico` 與 `assets/site-icon-512.png` 未變動。
+
+### 已完成
+
+- E1 圓框狗頭：`assets/logo-options/option-e1-circle-dog-head.png`
+- E2 坐姿一筆線狗：`assets/logo-options/option-e2-one-line-sitting-dog.png`
+- E3 站姿幾何狗：`assets/logo-options/option-e3-geometric-standing-dog.png`
+- 總覽預覽：`assets/logo-options/option-e-web-line-dog-preview.png`
+
+### 待決策
+
+- 等使用者選擇 E1 / E2 / E3。
+- 選定後再替換正式 favicon 套件並發布。
+
+## 2026-07-05：Google 搜尋結果狗線條標示會議
+
+### 會議目標
+
+使用者將 logo 方向改為「一隻用簡單線條構成的狗」。本輪產出 D1-D3 候選，不直接替換正式 favicon。
+
+### AI 團隊討論結論
+
+- 網站總管 AI：
+  - 方向從「郁」字印章切換到狗線條標示。
+  - 本輪只產生候選稿，等使用者選定後再正式替換。
+- 品牌素材 AI：
+  - 使用網站既有暖色系與圓形標示結構。
+  - 狗要簡單線條，不做照片、不做複雜插畫。
+  - 產生三種方向：環抱感、坐姿清楚度、暖心記憶點。
+- SEO / 發布維護 AI：
+  - 512x512 與 48px 預覽是必要條件。
+  - D2 小尺寸辨識度最高；D1 溫暖感最強；D3 記憶點最強。
+- 前端維護 AI：
+  - 本輪不改正式 favicon links。
+- 品質檢查 AI：
+  - 正式 `favicon.ico` 與 `assets/site-icon-512.png` 未變動。
+
+### 已完成
+
+- D1 環抱線條狗：`assets/logo-options/option-d1-curled-line-dog.png`
+- D2 坐姿線條狗：`assets/logo-options/option-d2-sitting-line-dog.png`
+- D3 暖心線條狗：`assets/logo-options/option-d3-heart-line-dog.png`
+- 總覽預覽：`assets/logo-options/option-d-line-dog-preview.png`
+
+### 待決策
+
+- 等使用者選擇 D1 / D2 / D3。
+- 選定後再替換正式 favicon 套件並發布。
+
+## 2026-07-05：A 暖印章「郁」活動墨水手寫版會議
+
+### 會議目標
+
+使用者追加多張活動手寫字參考，確認目標是講義、活動筆記、麥克筆墨水字感。本輪產出 A10-A12，不直接替換正式 favicon。
+
+### AI 團隊討論結論
+
+- 網站總管 AI：
+  - A7-A9 是初步手繪稿，方向接近但字形穩定度不足。
+  - 目前優先候選改為 A10-A12。
+- 品牌素材 AI：
+  - 保留「郁」字正確字形。
+  - 加入墨水字的不規則邊緣、輕微拖筆與速度感。
+  - 文字必須維持視覺置中。
+- SEO / 發布維護 AI：
+  - 三版都需保留 512x512 與 48px 預覽。
+  - Google 搜尋小圖優先考慮 A10 或 A11；A12 較飄逸但仍需確認小尺寸可讀。
+- 前端維護 AI：
+  - 本輪不改正式 favicon links。
+- 品質檢查 AI：
+  - A12 第一版偏右上，已修正置中。
+  - 正式 `favicon.ico` 與 `assets/site-icon-512.png` 未變動。
+  - GitHub Pages 曾回 `Deployment failed, try again later` 並卡 queued，後續正式發布需追蹤部署結果。
+
+### 已完成
+
+- A10 活動墨水字：`assets/logo-options/option-a10-activity-ink-kai.png`
+- A11 俏皮墨水字：`assets/logo-options/option-a11-playful-ink-kai.png`
+- A12 飄逸墨水字：`assets/logo-options/option-a12-flowing-ink-kai.png`
+- 總覽預覽：`assets/logo-options/option-a-activity-ink-preview.png`
+
+### 待決策
+
+- 等使用者選擇 A10 / A11 / A12。
+- 選定後再替換正式 favicon 套件並發布。
+
 ## 2026-07-05：A 暖印章「郁」墨水手寫字版會議
 
 ### 會議目標

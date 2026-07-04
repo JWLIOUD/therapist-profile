@@ -134,6 +134,85 @@
   - sitemap 包含 `https://yuchienpsy.com/talks.html`。
   - Search Console URL Inspection live test 通過後，要求建立索引。
 
+### 2026-07-05：網路參考簡單線條狗 Logo 候選
+
+- 任務名稱：直接上網查找簡單線條狗參考，重新設計狗為主體的搜尋結果 logo 候選。
+- 交接來源：網站總管 AI
+- 接手角色：品牌素材 AI、SEO / 發布維護 AI、前端維護 AI、品質檢查 AI
+- 使用者回饋：
+  - 請直接在網路上找「簡單線條狗」。
+  - 用相關圖片作為模仿目標，設計簡單線條狗為主體的標示。
+- 參考來源類型：
+  - Depositphotos：站姿狗線條 icon。
+  - Pinterest：one-line dog logo 與簡單線條狗。
+  - VectorStock：圓形狗頭連續線 logo。
+  - Creative Fabrica / 123RF：坐姿極簡狗、單線狗。
+  - IKEA 搜尋結果中也出現幾何狗 icon 風格，可作為小尺寸清晰度參考。
+- AI 團隊決策：
+  - 品牌素材 AI：只取共同風格特徵，不照抄任何單一圖片。
+  - SEO / 發布維護 AI：三版都保留 512x512，預覽包含 48px 小尺寸。
+  - 前端維護 AI：本輪仍不替換正式 favicon。
+  - 品質檢查 AI：正式 `favicon.ico` 與 `assets/site-icon-512.png` 未被改動。
+- 已建立版本：
+  - E1 圓框狗頭：`assets/logo-options/option-e1-circle-dog-head.png`
+  - E2 坐姿一筆線狗：`assets/logo-options/option-e2-one-line-sitting-dog.png`
+  - E3 站姿幾何狗：`assets/logo-options/option-e3-geometric-standing-dog.png`
+  - 總覽預覽：`assets/logo-options/option-e-web-line-dog-preview.png`
+- 目前狀態：
+  - 等使用者選 E1 / E2 / E3，或提出微調方向。
+  - 選定後再替換正式 favicon 套件並發布。
+  - 替換並發布後需做正式站圖示檔 200 檢查、Search Console 檢查與 Google 實際搜尋結果截圖驗收。
+  - GitHub Pages 先前曾出現 queued / `Deployment failed, try again later` 狀態，正式發布時需確認 Pages build 成功。
+
+### 2026-07-05：Google 搜尋結果狗線條標示候選
+
+- 任務名稱：將 Google 搜尋結果 logo 方向改為「簡單線條構成的狗」。
+- 交接來源：網站總管 AI
+- 接手角色：品牌素材 AI、SEO / 發布維護 AI、前端維護 AI、品質檢查 AI
+- 使用者回饋：
+  - 不再繼續使用「郁」字作為主要候選。
+  - 想改成一隻用簡單線條構成的狗作為標示主體。
+- AI 團隊決策：
+  - 品牌素材 AI：產生 3 個非照片、簡單線條、暖系狗圖示。
+  - SEO / 發布維護 AI：三版都保留 512x512，預覽含 48px 小圖；狗的輪廓需在搜尋結果小尺寸可辨識。
+  - 前端維護 AI：本輪仍不替換正式 favicon，等使用者選定 D1 / D2 / D3。
+  - 品質檢查 AI：確認正式 `favicon.ico` 與 `assets/site-icon-512.png` 未被改動。
+- 已建立版本：
+  - D1 環抱線條狗：`assets/logo-options/option-d1-curled-line-dog.png`
+  - D2 坐姿線條狗：`assets/logo-options/option-d2-sitting-line-dog.png`
+  - D3 暖心線條狗：`assets/logo-options/option-d3-heart-line-dog.png`
+  - 總覽預覽：`assets/logo-options/option-d-line-dog-preview.png`
+- 目前狀態：
+  - 等使用者選 D1 / D2 / D3，或提出微調方向。
+  - 選定後再替換正式 favicon 套件並發布。
+  - 替換並發布後需做正式站圖示檔 200 檢查、Search Console 檢查與 Google 實際搜尋結果截圖驗收。
+  - GitHub Pages 先前曾出現 queued / `Deployment failed, try again later` 狀態，正式發布時需確認 Pages build 成功。
+
+### 2026-07-05：A 暖印章「郁」活動墨水手寫版
+
+- 任務名稱：依使用者追加的多張活動手寫字參考，重做 A 暖印章「郁」字，讓字感更接近講義、活動筆記、麥克筆墨水字。
+- 交接來源：網站總管 AI
+- 接手角色：品牌素材 AI、SEO / 發布維護 AI、前端維護 AI、品質檢查 AI
+- 使用者回饋：
+  - 追加多張活動常見手寫墨水字參考。
+  - 目標不是一般電腦字型，而是有速度、有拖筆、有一點不規則的手寫墨水字。
+  - 仍要保留視覺正中心，不能偏上。
+- AI 團隊決策：
+  - 品牌素材 AI：A7-A9 是初步手繪稿；本輪改為保留「郁」字正確字形，再加入墨水不規則感與速度筆觸。
+  - SEO / 發布維護 AI：A10-A12 都保留 512x512 與 48px 預覽，避免搜尋結果縮小後不可讀。
+  - 前端維護 AI：本輪仍不替換正式 favicon。
+  - 品質檢查 AI：A12 第一版偏右上，已修正置中；正式 `favicon.ico` 與 `assets/site-icon-512.png` 未變動。
+- 已建立版本：
+  - A10 活動墨水字：`assets/logo-options/option-a10-activity-ink-kai.png`
+  - A11 俏皮墨水字：`assets/logo-options/option-a11-playful-ink-kai.png`
+  - A12 飄逸墨水字：`assets/logo-options/option-a12-flowing-ink-kai.png`
+  - 總覽預覽：`assets/logo-options/option-a-activity-ink-preview.png`
+- 目前狀態：
+  - 等使用者選 A10 / A11 / A12，或提出微調方向。
+  - 選定後再替換正式 favicon 套件並發布。
+  - 替換並發布後需做正式站圖示檔 200 檢查、Search Console 檢查與 Google 實際搜尋結果截圖驗收。
+  - GitHub Pages 在 2026-07-05 曾出現 `Deployment failed, try again later` 與 queued 狀態，後續發布正式 favicon 時需確認 Pages build 成功。
+
 ### 2026-07-05：A 暖印章「郁」墨水手寫字版
 
 - 任務名稱：依使用者參考圖，將 A 暖印章「郁」改為活動常見的墨水手寫字方向。
