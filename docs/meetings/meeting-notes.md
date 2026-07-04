@@ -156,7 +156,9 @@
 
 ### 待發布後處理
 
-- GitHub Pages 部署完成後確認正式站圖示檔回 `200`。
+- 2026-07-05 已推送 commit `5ccbba4`，GitHub Pages build `28714204138` 已成功。
+- 正式站首頁、代表文章頁、代表系列頁都回 `200`，且都有 favicon links。
+- 正式站 `favicon.ico`、`favicon-48.png`、`favicon-192.png`、`apple-touch-icon.png`、`site-icon-512.png` 都回 `200`。
 - Search Console 檢查首頁與代表分頁。
 - 等 Google 重新抓取；搜尋結果圖示不會保證立即更新。
 

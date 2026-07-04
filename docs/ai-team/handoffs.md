@@ -156,8 +156,14 @@
 - 已補強：
   - 所有公開 HTML 分頁都已明確加入 `/favicon.ico`、`/assets/favicon-48.png`、`/assets/favicon-192.png`、`/assets/apple-touch-icon.png`。
 - 待發布後驗收：
-  - GitHub Pages build 必須成功。
-  - 正式站首頁與圖示檔都需回 `200`。
+  - 2026-07-05 已推送 commit `5ccbba4`。
+  - GitHub Pages build `28714204138` 已成功。
+  - 正式站首頁、代表文章頁、代表系列頁都回 `200`，且都有 favicon links。
+  - `https://yuchienpsy.com/favicon.ico` 回 `200`，大小為 57862 bytes。
+  - `https://yuchienpsy.com/assets/favicon-48.png` 回 `200`，大小為 4292 bytes。
+  - `https://yuchienpsy.com/assets/favicon-192.png` 回 `200`，大小為 21906 bytes。
+  - `https://yuchienpsy.com/assets/apple-touch-icon.png` 回 `200`，大小為 20520 bytes。
+  - `https://yuchienpsy.com/assets/site-icon-512.png` 回 `200`，大小為 41008 bytes。
   - 用 Search Console 檢查首頁與代表文章；若已要求索引、已在 Google 服務中或已編入索引，不重複 Request indexing。
   - 依發布前檢查流程做 Google 實際搜尋結果截圖驗收。
 
