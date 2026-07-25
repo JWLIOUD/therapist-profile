@@ -1,19 +1,65 @@
 # 各 AI 工作交接
 
-更新日期：2026-06-19
+更新日期：2026-07-25
 
-## 交接格式
+## 交接制度
 
-每次交接都要留下：
+交接不是摘要，而是任務責任正式移轉。每次交接必須符合 `docs/maintenance-workflow.md` 的任務狀態與閘門，並留下足以讓接手角色不需猜測即可繼續工作的資訊。
 
-- 任務名稱
-- 交接來源
-- 接手角色
-- 目前狀態
-- 已改檔案
-- 尚未完成
-- 驗證方式
-- 風險或需要你決定的事項
+### 必填格式
+
+```text
+任務 ID：
+任務名稱：
+目前狀態：
+交接日期／時區：
+交接來源：
+接手角色：
+
+目標與成功標準：
+已確認決策：
+不可改變事項：
+
+已完成：
+已修改檔案：
+驗證證據：
+
+尚未完成：
+已知風險：
+需要使用者決定：
+
+接手角色下一步：
+接手完成條件：
+```
+
+### 狀態用詞
+
+- `intake`：已收到，尚未完成範圍確認。
+- `scoped`：目標、範圍、限制與角色已確定。
+- `assigned`：總管需求單已派工。
+- `in_progress`：執行中，尚未進入驗收。
+- `review`：等待專責或品質檢查。
+- `user_preview`：等待使用者檢視或決定。
+- `approved`：使用者已核准指定範圍。
+- `published`：已發布，但正式站／外部驗收未必完成。
+- `verified`：適用驗收有證據通過。
+- `blocked`：缺少必要決策、權限或資料，無法安全前進。
+- `closed`：交付、驗證、風險與下一步均已記錄。
+
+### 證據規則
+
+- 「已修改」附檔案與 diff 範圍。
+- 「已驗證」附指令、結果、預覽網址、截圖或報告。
+- 「已發布」附 commit、分支、部署結果與正式 URL。
+- 「Google 已完成」需區分網站端、Search Console 與實際 SERP。
+- 未執行或無法確認的項目標示「未驗證」，不得省略。
+
+### 退回與重交
+
+- 審查不通過時，接手角色將任務退回原負責角色，列出問題、證據與重測條件。
+- 修正後建立新的交接紀錄，不覆蓋先前失敗證據。
+- 品質檢查角色若自行修改問題，不得直接自我核准；由總管安排另一輪檢查。
+- 使用者的新決定若改變範圍，總管需更新需求單並重新派工。
 
 ## 交接紀錄
 
@@ -550,3 +596,153 @@
 - 目前狀態：
   - 本次為內部測試版，不上線、不提交 Search Console。
   - 若使用者喜歡此方向，下一步才是決定要覆寫原文、另開新文，或做系列文章策略。
+
+### 2026-07-25：建立搜尋趨勢與內容情報 AI 團隊
+
+- 任務名稱：建立即時關鍵字、SERP 與內容機會研究團隊
+- 交接來源：網站總管 AI
+- 接手角色：搜尋趨勢研究 AI、SERP／搜尋意圖分析 AI、內容機會策略 AI、研究品質檢查 AI、內容編輯 AI
+- 目前狀態：團隊角色、固定工作流、報告範本與第一份基準報告已建立，尚未啟用自動排程或 Search Console 資料串接。
+- 已改檔案：
+  - `docs/ai-team/ai-roles.md`
+  - `docs/workflows/keyword-trend-research.md`
+  - `docs/seo/keyword-research/report-template.md`
+  - `docs/seo/keyword-research/keyword-opportunity-2026-07-25.md`
+  - `docs/todos/latest-todos.md`
+  - `docs/ai-team/handoffs.md`
+- 尚未完成：
+  - 使用者確認職場心理健康 SEO 測試文方向。
+  - 取得 Search Console 資料後建立本站實際流量與關鍵字成效基準。
+  - 決定是否建立雙週或每月自動排程。
+- 驗證方式：
+  - 公開來源的趨勢、政策與 SERP 訊號均與本站實際流量分開標示。
+  - 報告未宣稱未取得的精確搜尋量、點擊或固定排名。
+  - 研究報告只位於 `docs/`，沒有加入公開導覽或 sitemap。
+- 風險或需要使用者決定：
+  - Google Trends 是相對興趣，不是搜尋量；手動搜尋排名只是當下快照。
+  - 自站查詢、曝光、點擊、CTR 與平均排名需要 Search Console。
+  - 心理健康、法律與職場制度文章仍需專業審稿與使用者預覽。
+  - 擱置頁與 SEO 測試文維持原限制，不得正式化或加入 sitemap。
+
+### 2026-07-25：限定心理健康情報範圍與建立 SEO 語意保真發包流程
+
+- 任務名稱：將搜尋情報轉為可控的即時 SEO 修改與網站驗收流程
+- 交接來源：網站總管 AI
+- 接手角色：搜尋趨勢研究 AI、內容機會策略 AI、內容編輯 AI、SEO／發布維護 AI、品質檢查 AI
+- 目前狀態：流程文件已完成；尚未對正式文章執行任何趨勢驅動修改。
+- 已改檔案：
+  - `docs/ai-team/ai-roles.md`
+  - `docs/workflows/keyword-trend-research.md`
+  - `docs/workflows/seo-trend-content-update.md`
+  - `docs/workflows/pre-publish-check.md`
+  - `docs/seo/keyword-research/report-template.md`
+  - `docs/todos/latest-todos.md`
+  - `docs/ai-team/handoffs.md`
+- 核心決策：
+  - 只分析與心理健康及網站專業定位直接相關的議題；無關熱門話題在評分前排除。
+  - 情報報告必須檢查既有 SEO 策略並提出修正方向。
+  - 網站總管核准後建立需求單，才可發包給內容、SEO 與品質檢查角色。
+  - 既有內容只允許 SEO 層面的修改，不得改變核心意思、案例意義、專業主張、結論或來源。
+  - 每次修改都需先建立語意基準，再進行修改前後逐項對照。
+- 驗證方式：
+  - `pre-publish-check.md` 已加入趨勢證據、心理健康相關性、語意保真、關鍵字互搶、完整網站回歸與使用者預覽檢查。
+  - `seo-trend-content-update.md` 已明列可修改與不可修改範圍、總管需求單及雙重驗收流程。
+- 風險或需要使用者決定：
+  - 如果 SEO 目標無法在不改變原意的情況下完成，必須改為新增獨立文章或持續觀察。
+  - 即時性不能取代專業審稿與使用者確認。
+  - 未取得 Search Console 前仍不能宣稱本站真實流量或固定排名。
+
+### 2026-07-25：重寫總管工作流、AI 角色與交接制度
+
+- 任務 ID：`OPS-20260725-01`
+- 任務名稱：統一網站總管派工、角色權責、交接與驗收規範
+- 目前狀態：`verified`
+- 交接日期／時區：2026-07-25／Asia/Taipei
+- 交接來源：網站總管 AI
+- 接手角色：品質檢查 AI
+- 目標與成功標準：
+  - 每個 AI 角色具有明確輸入、責任、交付、禁止事項與完成條件。
+  - 每條工作流具有觸發、需求單、角色順序、交接、驗收及停止條件。
+  - 交接狀態與證據格式一致。
+- 已確認決策：
+  - 趨勢研究限心理健康相關議題。
+  - 趨勢 SEO 更新不得改變既有內容核心意義。
+  - 總管建立需求單後才能派工；使用者核准後才能發布。
+- 不可改變事項：
+  - 正式網站內容與 sitemap 本次不修改。
+  - 擱置頁與 SEO 測試文維持既有隔離規則。
+- 已完成：
+  - 重寫總管作業制度、AI 角色檔與全部專用工作流。
+  - 更新發布前檢查與交接制度。
+- 已修改檔案：
+  - `docs/maintenance-workflow.md`
+  - `docs/ai-team/ai-roles.md`
+  - `docs/ai-team/handoffs.md`
+  - `docs/workflows/*.md`
+- 驗證證據：
+  - `git diff --check` 通過。
+  - 六份 `docs/workflows/*.md` 均存在，工作流路由與引用名稱一致。
+  - 角色、需求單、交接狀態、發布閘門與停止條件已交叉核對。
+  - `index.html`、`articles.html`、`talks.html`、文章、系列、CSS、`robots.txt` 與 `sitemap.xml` 本次均無 diff。
+  - 擱置頁、SEO 測試文 `noindex, nofollow` 與禁止推送 `main` 規則仍保留。
+- 尚未完成：
+  - 使用者確認。
+- 已知風險：
+  - 文件規則完整不代表自動排程已啟用；自動化仍需另行授權。
+- 需要使用者決定：
+  - 是否在文件驗收後 commit 並推送接手分支。
+- 接手角色下一步：
+  - 驗證所有工作流名稱、角色名稱、狀態與限制一致；確認公開網站無 diff。
+- 接手完成條件：
+  - `git diff --check` 通過，所有工作流文件存在，公開網站與 sitemap 無改動。
+
+### 2026-07-25：建立 Search Console 搜尋成效回饋閉環
+
+- 任務 ID：`SEO-PERF-20260725-01`
+- 任務名稱：將索引驗收與 Search Console 流量數據回饋趨勢及 SEO 文案團隊
+- 目前狀態：`verified`
+- 交接日期／時區：2026-07-25／Asia/Taipei
+- 交接來源：網站總管 AI
+- 接手角色：品質檢查 AI
+- 目標與成功標準：
+  - 有專責角色管理 sitemap、URL 索引狀態與已送出索引申請。
+  - Search Console 的 query、page、click、impression、CTR、average position 能回饋趨勢與 SEO 文案策略。
+  - 趨勢策略與文案目標具有可重現的發布後判定方式。
+- 已確認決策：
+  - Search Console 平均排名不是固定名次。
+  - 讀取與分析可作驗收；提交 sitemap、Live Test 或 Request indexing 需使用者授權。
+  - 不重複對已申請、已在 Google 服務中或已編入索引的 URL 送出申請。
+- 不可改變事項：
+  - 本次只建立制度與報告範本，不假裝已取得 Search Console 資料。
+  - 正式網站內容與 sitemap 不修改。
+- 已完成：
+  - 新增搜尋成效與索引驗收 AI。
+  - 新增 Search Console 索引／成效回饋工作流與報告範本。
+  - 將回饋接入趨勢研究、SEO 更新、發布後檢查與待辦。
+- 已修改檔案：
+  - `docs/maintenance-workflow.md`
+  - `docs/ai-team/ai-roles.md`
+  - `docs/workflows/search-performance-feedback.md`
+  - `docs/seo/search-performance/report-template.md`
+  - `docs/workflows/keyword-trend-research.md`
+  - `docs/workflows/seo-trend-content-update.md`
+  - `docs/workflows/pre-publish-check.md`
+  - `docs/todos/latest-todos.md`
+  - `docs/ai-team/handoffs.md`
+- 驗證證據：
+  - `git diff --check` 通過。
+  - `search-performance-feedback.md` 與 Search Console 報告範本存在。
+  - 總管路由、角色鏈、趨勢研究、SEO 更新與發布後檢查均已引用成效回饋流程。
+  - Search Console 唯讀分析、外部操作授權、重複 indexing 防護與低樣本判斷規則一致。
+  - 正式 HTML、CSS、文章、`robots.txt` 與 `sitemap.xml` 本次均無 diff。
+- 尚未完成：
+  - 使用者確認與第一份真實 Search Console 報告。
+- 已知風險：
+  - 沒有 Search Console 權限或匯出資料時只能建立待辦，不能判斷真實成效。
+  - 新頁 7 天資料可能過少，不能過早判定策略失敗。
+- 需要使用者決定：
+  - 後續以登入權限、CSV 匯出或截圖何種方式提供 Search Console 資料。
+- 接手角色下一步：
+  - 確認工作流、角色、報告欄位與外部操作授權邊界一致。
+- 接手完成條件：
+  - `git diff --check` 通過，所有引用文件存在，公開網站與 sitemap 無 diff。
