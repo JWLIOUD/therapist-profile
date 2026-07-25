@@ -48,3 +48,24 @@
 - [ ] 補完整 `README.md`。
 - [ ] 整理 `tools/generate_articles.py` 的外部 Word 來源與使用條件。
 - [ ] 評估加入 GitHub Actions 做連結與 sitemap 檢查。
+## 2026-07-05：職場霸凌調查委員 SEO 頁面
+
+- [x] 建立 `workplace-bullying-committee.html` 本地草案。
+- [x] 在首頁加入「職場霸凌委員」導覽與內容入口。
+- [x] 在講座頁加入委員邀約分流 CTA。
+- [x] 本地 sitemap 加入新 URL，等待使用者確認後再發布。
+- [x] 本地 HTTP 檢查與主要內部連結檢查通過。
+- [ ] 使用者本地預覽確認頁面文案、版面與服務定位。
+- [ ] 上線前執行瀏覽器視覺確認與正式發布前完整檢查。
+- [ ] 使用者確認後才 commit / push / 發布。
+- [ ] 發布後再進 Search Console 檢查新 URL；若已要求建立索引、已在 Google 服務中或已編入索引，不得重複按 Request indexing。
+
+## 2026-07-07：職場心理健康 SEO 改寫測試
+
+- [x] 暫停 `workplace-bullying-committee.html` 正式站導入。
+- [x] 將職場霸凌委員獨立頁草案移到 `docs/drafts/` 作為擱置素材。
+- [x] 還原首頁、講座頁、sitemap、styles 中的上一輪正式站入口改動。
+- [x] 建立內部測試文 `drafts/workplace-mental-health-seo-test.html`。
+- [x] 測試文設定 `noindex, nofollow`，不加入正式列表與 sitemap。
+- [ ] 使用者預覽測試文，決定是否採用此 SEO 改寫方向。
+- [ ] 若採用，決定正式作法：覆寫原文、新增正式文章，或規劃職場心理健康文章群。

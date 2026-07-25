@@ -498,3 +498,55 @@
   - 檢查 canonical 為 `https://yuchienpsy.com/talks.html`。
   - 檢查首頁與文章頁導覽都連到 `talks.html`。
   - 全站連結檢查需確認 `talks.html`、首頁、文章頁都回 `200` 且有內容。
+### 2026-07-05：職場霸凌調查委員／外聘心理師 SEO 頁面草案
+
+- 任務名稱：讓需要職場霸凌調查委員、申訴評議委員或安全及衛生防護委員會外聘心理師的行政窗口，能透過 Google 找到明確邀約頁。
+- 使用者限制：本次只做本地預覽，不上線、不 push；需等使用者確認後再發布。
+- 總管 AI 決策：
+  - 不把需求只塞在 `talks.html`，因為「講座邀約」與「調查／評議／外聘委員」搜尋意圖不同。
+  - 新增獨立頁 `workplace-bullying-committee.html`，主打行政窗口會搜尋的精準語句。
+  - `talks.html` 保留職場霸凌與不法侵害教育訓練，但把「委員邀約」導到獨立頁。
+  - `index.html` 專業背景區與講座區加入入口，讓使用者能從首頁理解此服務存在。
+- AI 團隊分工：
+  - 內容編輯 AI：文案站在公部門人事、政風、職安、HR、EAP 行政窗口角度，強調「可先來信評估邀約角色」，不承諾調查結論。
+  - SEO / 發布維護 AI：關鍵字包含 `職場霸凌調查委員`、`職場霸凌外聘委員`、`職場霸凌心理師`、`安全及衛生防護委員會 外聘委員`、`不法侵害調查 心理師`、`公部門職場霸凌 委員`。
+  - 前端維護 AI：新增頁面沿用既有 `styles.css`、Gmail CTA 與複製 Email 備援；避免新增費用資訊。
+  - 品質檢查 AI：本地預覽需確認首頁、講座頁、新頁、Gmail 邀約、複製 Email、手機版導覽與 sitemap 都正常。
+- 已修改檔案：
+  - `workplace-bullying-committee.html`
+  - `index.html`
+  - `talks.html`
+  - `styles.css`
+  - `sitemap.xml`
+- 上線前待辦：
+  - 使用者本地預覽確認文案與版面。
+  - 確認是否要補更多實際委員經驗或正式單位名稱。
+  - 上線前執行全站連結檢查與本地瀏覽器驗收。
+  - 若上線，發布後到 Search Console 檢查新 URL；若已要求建立索引、已在 Google 服務中或已編入索引，不得重複按 Request indexing。
+- 本輪驗收紀錄：
+  - 使用 Codex 內建 Node REPL 啟動本地靜態伺服器：`http://127.0.0.1:8011/workplace-bullying-committee.html`。
+  - `Start-Process` 與本機 Python 執行受 Windows/Codex 權限限制，無法作為背景伺服器方案。
+  - HTTP 檢查通過：`/`、`/talks.html`、`/workplace-bullying-committee.html`、`/sitemap.xml`、`/styles.css` 均回 200。
+  - 新頁檢查通過：H1、漁業署/農糧署經驗、Gmail CTA、複製 Email、FAQ schema 均存在，且未出現費用資訊。
+  - 主要頁面內部連結與錨點檢查通過，未發現空白頁或斷裂內部跳轉。
+  - Playwright / 瀏覽器自動截圖受權限限制，視覺預覽需由使用者開啟本地網址確認。
+
+### 2026-07-07：職場霸凌委員獨立頁擱置與職場心理健康 SEO 測試文
+
+- 任務名稱：暫停上一輪職場霸凌委員獨立頁正式站導入，改做職場心理健康／職場霸凌文章 SEO 改寫內部測試版。
+- 使用者最新決策：
+  - `workplace-bullying-committee.html` 還需要改，暫時不要加入正式網站。
+  - 先測試現有心理專欄是否可改寫成「心理健康 × 職場／社會制度」長尾關鍵字文章。
+- 總管 AI 決策：
+  - 將上一輪正式站入口還原：`index.html`、`talks.html`、`sitemap.xml`、`styles.css` 不保留職場霸凌委員獨立頁入口。
+  - 將上一輪獨立頁草案移到 `docs/drafts/workplace-bullying-committee-shelved-2026-07-07.html`，只作為擱置素材。
+  - 以現有 `articles/workplace-05.html` 作為母稿，建立內部測試文 `drafts/workplace-mental-health-seo-test.html`。
+  - 測試文設定 `noindex, nofollow`，不加入 `articles.html`、系列頁或 `sitemap.xml`。
+- AI 團隊分工：
+  - 內容編輯 AI：把原本「黑羊效應／職場霸凌」文章改寫成更貼近職場人搜尋意圖的專欄，保留心理師溫和、科普、不診斷的語氣。
+  - SEO / 發布維護 AI：聚焦長尾關鍵字 `職場心理健康`、`職場霸凌處理機制`、`心理諮商如何幫助職場人`、`職場倦怠預防`、`心理健康與工作生活平衡`、`職場性別平等與心理健康`。
+  - 前端維護 AI：沿用 `article.css` 建立可預覽內部草稿，不新增正式導覽或 sitemap。
+  - 品質檢查 AI：確認正式站入口已移除、測試文為 noindex、測試文 HTTP 可開啟且主要連結正常。
+- 目前狀態：
+  - 本次為內部測試版，不上線、不提交 Search Console。
+  - 若使用者喜歡此方向，下一步才是決定要覆寫原文、另開新文，或做系列文章策略。
