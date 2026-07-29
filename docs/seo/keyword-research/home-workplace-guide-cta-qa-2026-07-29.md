@@ -6,7 +6,7 @@
 不可改變事項：指南正文、七篇文章、首頁其他內容、索引設定與原意
 本地預覽：`http://127.0.0.1:8014/index.html#articles-entry`
 初審基準：`b8b9ecd` 加本任務工作樹 diff
-目前狀態：`approved`
+目前狀態：`verified`
 
 ## 版本修改總表
 
@@ -136,3 +136,28 @@
 - 發布範圍：首頁入口、必要樣式及五重驗收／工作流文件。
 - 保持不變：指南正文、七篇文章、首頁其他文案、索引設定與草稿隔離。
 - 發布後：驗證正式首頁、兩個入口、桌機／手機、console、目的頁 H1／canonical 及部署狀態。
+
+## 正式站驗證
+
+- PR：`https://github.com/JWLIOUD/therapist-profile/pull/5`
+- 發布 commit：`6277aa3e21cdd18b91ca5b50893878de0349b2f7`
+- GitHub Pages：`built`（2026-07-29）
+- HTTP：
+  - `https://yuchienpsy.com/` → `200`
+  - `https://yuchienpsy.com/workplace-mental-health.html` → `200`
+  - `https://yuchienpsy.com/series/workplace.html` → `200`
+  - `https://yuchienpsy.com/styles.css` → `200`
+- 桌機 1280 × 720：
+  - 指南按鈕 323.33 × 55.59px。
+  - 系列次要連結高 44px。
+  - 無水平溢位；console warning／error 為 0。
+- 手機 390 × 844：
+  - 指南按鈕 293 × 55.59px。
+  - 系列次要連結高 44px。
+  - 無水平溢位。
+- 實際點擊指南按鈕後：
+  - URL：`https://yuchienpsy.com/workplace-mental-health.html`
+  - H1 與預期相符。
+  - canonical：`https://yuchienpsy.com/workplace-mental-health.html`
+  - console warning／error 為 0。
+- 最終判定：`verified`。
