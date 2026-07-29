@@ -96,5 +96,7 @@
 - [x] 提交接手分支、以 PR #1 合併至 `main`，GitHub Pages build 狀態為 `built`。
 - [x] 發布後驗證正式新頁、圖片、metadata、JSON-LD、sitemap 與三個 inbound。
 - [ ] 方案 B 發布後建立 Search Console 7／28／90 天 query、page、click、impression、CTR 與 average position 回饋。
-- [ ] 執行下一次雙週快速趨勢掃描，加入 Google Trends 台灣區 7／30／90 天比較。
-- [ ] 決定是否另行建立自動排程；未取得明確授權前維持人工觸發。
+- [x] 將搜尋趨勢研究由雙週快速掃描改為每日 09:00（Asia/Taipei）執行。
+- [x] 啟用每週日七日彙整，交 SEO 文案、網站風格／插畫、網站架構與品質檢查組提出可行性及修改方案。
+- [x] 建立「使用者審核方案 → 正式需求單 → 開發 → 四重驗收 → 再次發布核准 → 正式上線」權限閘門。
+- [ ] 第一份自動週日報告產出後，確認資料品質、方案數量與通知節奏是否需要調整。
