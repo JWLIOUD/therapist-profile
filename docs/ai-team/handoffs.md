@@ -909,7 +909,7 @@
 - 權限限制：
   - 自動排程只研究與提案，不得修改網站、commit、push 或發布；Search Console 的 sitemap 提交與單次 Request indexing 僅依 2026-07-29 後續授權及防重複規則執行。
   - 使用者接受方案後才開需求單與開發。
-  - 文案、風格、網站架構與 SEO 四重驗收全部 PASS，並取得使用者發布核准後，才可正式上線。
+  - 文案、風格、網站架構、SEO、組織合作與講座邀約視角五重驗收均有逐輪證據，並取得使用者發布核准後，才可正式上線。
 
 ### 2026-07-29：擴充每日 Search Console 索引管理
 
@@ -928,4 +928,73 @@
   - 草稿、noindex、非 canonical、重複頁或網站端預檢失敗的 URL 不得送出。
 - 網站修正：
   - Google 建議若需要修改 HTML、內容、canonical、robots、sitemap、結構化資料或架構，只能建立報告與方案。
-  - 使用者接受方案後才進入開發、四重驗收與正式發布流程。
+  - 使用者接受方案後才進入開發、五重驗收迴圈與正式發布流程。
+
+### 2026-07-29：首頁新增職場心理健康指南主要入口
+
+- 任務 ID：`SEO-CONTENT-20260729-05`
+- 目前狀態：`user_preview`
+- 已完成：
+  - 首頁「咖啡哪有工作苦」卡片以主要按鈕連到正式職場心理健康指南。
+  - 保留「查看完整職場系列」次要入口。
+  - 舊制文案、風格、網站架構與 SEO 四重本地驗收全部 PASS；依 2026-07-29 新制仍需補第五關及逐輪紀錄。
+- 保持不變：
+  - 指南正文、七篇職場文章及首頁其他內容的表達原意。
+  - robots、canonical、sitemap、JSON-LD 與草稿隔離設定。
+- 驗收證據：
+  - `docs/seo/keyword-research/home-workplace-guide-cta-qa-2026-07-29.md`
+  - 桌機 1280 × 720、手機 390 × 844、實際連結點擊與 console 檢查通過。
+- 下一位接手：
+  - 使用者先預覽 `http://127.0.0.1:8014/index.html#articles-entry`。
+  - 僅在使用者明確核准上線後，發布維護 AI 才可 commit、push、合併與部署，再執行正式站回歸驗收。
+
+### 2026-07-29：網站驗收制度升級為五重驗收迴圈
+
+- 任務名稱：新增組織合作與講座邀約視角
+- 目前狀態：`user_preview`
+- 使用者決策：
+  - 未來驗收需增加企業主管、人資／人才發展／員工關係及公部門承辦科員視角。
+  - 內容應保持中立、兼顧個人與團隊影響，並支持可信任的講座合作評估。
+  - 不得只有通過結論；五關都要留下明確回饋、修改前後與複驗紀錄。
+- 已更新：
+  - `docs/maintenance-workflow.md`
+  - `docs/ai-team/ai-roles.md`
+  - `docs/ai-team/five-review-log-template.md`
+  - `docs/workflows/pre-publish-check.md`
+  - `docs/workflows/keyword-trend-research.md`
+  - `docs/workflows/seo-trend-content-update.md`
+  - `docs/workflows/search-performance-feedback.md`
+- 新制五關：
+  - 文案與語意保真。
+  - 視覺風格與無障礙。
+  - 網站架構與互動。
+  - SEO 與索引邊界。
+  - 組織合作與講座邀約視角。
+- 邊界：
+  - 中立不代表偏袒雇主、淡化權力不對等或犧牲個人心理安全。
+  - 商業邀約目標不得凌駕倫理、事實及必要風險說明。
+- 對進行中任務的影響：
+  - `SEO-CONTENT-20260729-05` 從 `user_preview` 退回 `review`。
+  - 舊制四重驗收證據保留，但不得直接發布；需補第五關與完整逐輪紀錄。
+- 下一步：
+  - 以新範本補驗首頁職場心理健康指南入口。
+  - 五重驗收完整後再交使用者預覽與核准。
+
+### 2026-07-29：首頁指南入口完成五重驗收並取得發布核准
+
+- 任務 ID：`SEO-CONTENT-20260729-05`
+- 目前狀態：`approved`
+- 使用者決策：明確回覆「核准上線」。
+- 五重驗收：
+  - 文案與語意保真：PASS；原卡片與指南正文未改。
+  - 視覺風格與無障礙：初審 FAIL；R1 修正對比與觸控高度後複驗 PASS。
+  - 網站架構與互動：PASS；桌機／手機、唯一連結、實際點擊與 console 回歸通過。
+  - SEO 與索引邊界：PASS；自然 anchor，索引設定與草稿邊界未變。
+  - 組織合作與講座邀約視角：PASS；企業主管、人資與公部門承辦均有逐項回饋。
+- 完整紀錄：`docs/seo/keyword-research/home-workplace-guide-cta-qa-2026-07-29.md`
+- 保持不變：指南正文、七篇文章、首頁其他文案、robots、canonical、sitemap、JSON-LD 與草稿隔離。
+- 發布阻擋：
+  - 本機 `gh auth status` 顯示 `JWLIOUD` token 無效；依 GitHub 發布工作流尚不可 commit、push 或建立 PR。
+- 接手下一步：
+  - 使用者重新執行 `gh auth login -h github.com`。
+  - 確認 `gh auth status` 成功後，提交本次範圍、推送接手分支、建立 PR、合併 `main`、等待 Pages 並做正式站回歸。

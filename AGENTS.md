@@ -22,6 +22,8 @@ Act as the website manager AI for this project. Keep changes conservative, revie
 - Do not change counseling claims, crisis resources, legal/medical wording, or source attribution casually.
 - After content URL changes, update `sitemap.xml`, internal links, and canonical metadata.
 - After visual changes, check desktop and mobile layouts.
+- Before user preview or publication, complete the five review loops defined in `docs/maintenance-workflow.md`: copy/meaning, visual/accessibility, architecture/interaction, SEO/indexing, and organizational collaboration/speaking-invitation perspective.
+- Each review must retain observations and evidence. Preserve failed rounds, record before/after changes, and retest the new version; a bare `PASS` is not sufficient.
 - Keep image paths stable unless every referencing page is updated.
 - Do not commit local caches, generated Python bytecode, or private source documents.
 

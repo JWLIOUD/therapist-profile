@@ -505,6 +505,32 @@ h2 {
   margin-bottom: 10px;
 }
 
+.card-actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.card-actions .btn {
+  width: 100%;
+  padding-inline: 16px;
+  text-align: center;
+}
+
+.card-detail-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  min-height: 44px;
+  padding-inline: 8px;
+  color: var(--brown);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: rgba(125, 143, 114, .42);
+  text-underline-offset: 5px;
+}
+
 .small-list {
   list-style: none;
   margin: 0;
