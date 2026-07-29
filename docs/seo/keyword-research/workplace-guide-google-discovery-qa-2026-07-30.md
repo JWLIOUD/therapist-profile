@@ -6,7 +6,7 @@
 
 候選版本：`codex/workplace-guide-nav`，HEAD `9a7d6be` 加未提交差異
 
-狀態：`approved`
+狀態：`verified`
 
 ## 目標與不可改變事項
 
@@ -141,3 +141,38 @@
 3. 在 Search Console 查看 sitemap 與 URL Inspection 狀態。
 4. 若 URL 已申請、處理中、已在 Google 服務中或已收錄，不重複 Request indexing。
 5. 只記錄實際 Search／Discover 回饋，不把候選條件描述成保證成效。
+
+## V4：正式站發布後回歸
+
+發布證據：
+
+- PR：`https://github.com/JWLIOUD/therapist-profile/pull/7`
+- main merge commit：`14004977db8255f98a7bd3103312db3f6b42c303`
+- GitHub Pages run：`30471185768`
+- Pages 狀態：`built`；build、report-build-status 與 deploy 全部 `success`。
+
+正式站檢查：
+
+- 首頁、講座頁、文章列表、代表文章、職場系列、指南、導覽 CSS／JS、sitemap、OG 圖及擱置草稿均回 HTTP `200`。
+- sitemap 原始回應有 34 個 URL、34 個 `lastmod=2026-07-30`、一個指南 URL及零個草稿 URL。
+- 指南原始回應保留：
+  - `index, follow, max-image-preview:large`
+  - 正確 canonical
+  - 1600 × 900 OG 尺寸
+  - 兩個 JSON-LD block
+- 擱置草稿原始回應為 `noindex, nofollow`。
+- 桌機 1280px：
+  - 首頁沒有水平溢位或壞圖。
+  - 鍵盤聚焦「心理專欄」後子選單可見、動畫完成 opacity 1、文字 `nowrap` 且沒有超出 viewport。
+  - 實際點擊可到正式指南。
+- 390 × 568 手機：
+  - 講座頁選單 `aria-expanded` 正確切換，選單可捲動。
+  - 職場心理健康子項可見、`nowrap` 且位於選單內。
+  - 實際點擊可到正式指南；指南無水平溢位、壞圖或 console warning／error。
+
+V4 總判定：PASS。正式網站狀態為 `verified`。
+
+尚待外部回饋：
+
+- Search Console URL Inspection 與 sitemap 狀態依每日工作流執行。
+- 實際收錄、Search／Discover 顯示、圖片裁切、曝光及流量只能後續觀察，不作保證。
