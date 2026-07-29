@@ -83,5 +83,18 @@
 - [ ] 使用者確認是否採用職場心理健康 SEO 測試文方向。
 - [ ] 若使用者授權並提供 Search Console 資料，建立本站真實查詢、曝光、點擊、CTR 與平均排名基準。
 - [ ] 取得 Search Console 權限或匯出資料後，建立第一份索引台帳與 28／90 天成效基準報告。
+- [x] 啟動第一輪分析團隊，完成職場心理健康三種 SEO 本地方案與驗收。
+- [x] 使用者預覽 A／B／C 並選擇方案 B「職場心理健康導航頁」。
+- [x] 依總管需求單完成方案 B 本地正式候選、站內導流與完整驗收。
+- [x] 補做方案 B 視覺風格與圖片需求驗收；先以既有圖驗證版面，再產出專屬職場導航插畫桌機／手機版並統一全站色票。
+- [x] 將視覺風格、圖片需求判定與缺圖時的插畫設計 AI 流程加入角色及發布前檢查。
+- [ ] 使用者預覽 `/workplace-mental-health.html`，確認文案、七篇文章導流順序與 CTA。
+- [ ] 使用者明確核准發布後，另開發布需求單並處理 robots、canonical、`og:url`、結構化資料 URL 與 sitemap。
+- [x] 使用者已於 2026-07-29 明確核准方案 B 正式發布。
+- [x] 完成文案、風格、網站架構與 SEO 四重驗收；視覺與 SEO 的第一輪問題均修正後重測通過。
+- [x] 將新頁切換為 `index, follow`，補 canonical、`og:url`、正式 JSON-LD URL 與 sitemap。
+- [ ] 提交接手分支、合併至 `main` 並確認 GitHub Pages 發布完成。
+- [ ] 發布後驗證正式新頁、圖片、metadata、JSON-LD、sitemap 與三個 inbound。
+- [ ] 方案 B 發布後建立 Search Console 7／28／90 天 query、page、click、impression、CTR 與 average position 回饋。
 - [ ] 執行下一次雙週快速趨勢掃描，加入 Google Trends 台灣區 7／30／90 天比較。
 - [ ] 決定是否另行建立自動排程；未取得明確授權前維持人工觸發。

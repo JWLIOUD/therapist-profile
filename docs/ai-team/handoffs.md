@@ -746,3 +746,129 @@
   - 確認工作流、角色、報告欄位與外部操作授權邊界一致。
 - 接手完成條件：
   - `git diff --check` 通過，所有引用文件存在，公開網站與 sitemap 無 diff。
+
+### 2026-07-25：第一輪心理健康搜尋情報與三種本地 SEO 方案
+
+- 任務 ID：`SEO-INTEL-20260725-02`
+- 任務名稱：分析高機會心理健康關鍵字並建立三種網站修改方向
+- 目前狀態：`user_preview`
+- 交接日期／時區：2026-07-25／Asia/Taipei
+- 交接來源：網站總管 AI
+- 接手角色：使用者
+- 目標與成功標準：
+  - 趨勢、SERP 與內容策略團隊完成獨立分析。
+  - SEO 團隊提出三種修改方向。
+  - 三版只在本地建立並完成桌面、手機、連結、草稿隔離與核心頁回歸。
+- 已確認決策：
+  - 缺 Search Console／Keyword Planner／可匯出 Trends，因此只稱高機會訊號，不稱精確高流量排行。
+  - 第一優先議題為職場霸凌新制與心理安全。
+  - 三種方案為 A 單篇精修、B 職場心理健康總論、C 文章群意圖分層。
+- 不可改變事項：
+  - 原文案例、心理觀點、結論、來源與服務界線不變。
+  - 本任務不修改正式網站、不進 sitemap、不 commit、不 push、不發布。
+- 已完成：
+  - 分析報告、總管需求單、SEO 修改方向、三版本地預覽與評估報告。
+- 已修改檔案：
+  - `docs/seo/keyword-research/team-analysis-2026-07-25.md`
+  - `docs/seo/keyword-research/seo-directions-2026-07-25.md`
+  - `docs/seo/keyword-research/three-options-evaluation-2026-07-25.md`
+  - `docs/ai-team/requests/SEO-INTEL-20260725-02.md`
+  - `drafts/seo-options/*.html`
+  - `docs/todos/latest-todos.md`
+  - `docs/ai-team/handoffs.md`
+- 驗證證據：
+  - 三方案及入口 HTTP `200`，桌面與 375px 手機無水平溢位。
+  - 瀏覽器 console 無 warning／error，所有相對連結指向存在檔案。
+  - 四個預覽頁均為 `noindex, nofollow`。
+  - 首頁、文章列表、講座頁、原文章與職場系列頁回歸 `200`。
+  - 正式頁面、CSS、robots 與 sitemap 無修改。
+- 尚未完成：
+  - 使用者選擇；任何正式改站與 Search Console 成效驗證。
+- 已知風險：
+  - B 與系列頁可能互搶廣義詞；C 多頁同批修改不易歸因。
+- 需要使用者決定：
+  - 選 A、B、C，或採分階段 A → C → B。
+- 接手角色下一步：
+  - 開啟本地預覽入口，閱讀評估並選擇正式候選。
+- 接手完成條件：
+  - 使用者明確核准下一輪範圍；總管另建正式需求單。
+
+### 2026-07-25：方案 B 職場心理健康導航頁正式候選
+
+- 任務 ID：`SEO-CONTENT-20260725-03`
+- 任務名稱：建立職場心理健康總論與文章導航頁
+- 目前狀態：`user_preview`
+- 交接日期／時區：2026-07-25／Asia/Taipei
+- 交接來源：網站總管 AI
+- 接手角色：使用者
+- 目標與成功標準：
+  - 建立「職場心理健康」廣義主題入口，依七種處境導向既有文章。
+  - 首頁、文章列表與職場系列頁建立自然入口。
+  - 不修改任何既有文章的原意、正文、標題、案例、結論或來源。
+- 已確認決策：
+  - 新頁使用 `/workplace-mental-health.html`。
+  - 新頁負責總論與導航；系列頁、霸凌文章、講座頁維持不同搜尋意圖。
+  - 本輪只做本地候選與驗收，不發布。
+- 不可改變事項：
+  - 新頁維持 `noindex, nofollow`、不設正式 canonical、不進 sitemap。
+  - 不 commit、不 push、不發布；尤其不得推送 `main`。
+  - 擱置草案與既有 SEO 測試文不得轉為正式網站內容。
+- 已完成：
+  - 新頁、專用 CSS、三個站內入口、結構化資料、專屬桌機／手機插畫與本地完整驗收。
+- 已修改檔案：
+  - `workplace-mental-health.html`
+  - `workplace-mental-health.css`
+  - `index.html`
+  - `articles.html`
+  - `series/workplace.html`
+  - `docs/ai-team/requests/SEO-CONTENT-20260725-03.md`
+  - `docs/seo/keyword-research/workplace-guide-local-qa-2026-07-25.md`
+  - `docs/todos/latest-todos.md`
+  - `docs/ai-team/handoffs.md`
+- 驗證證據：
+  - `git diff --check` 通過；七篇原文章沒有 diff。
+  - 單一 H1、七張導航卡、兩段 JSON-LD 可解析、相對連結無遺失。
+  - 新頁維持 `noindex, nofollow`，未加入 sitemap。
+  - 所有範圍內頁面與 CSS 回應 `200`；桌機與 390px 手機無水平溢位。
+  - 桌機載入 1600×900 專屬導航插畫、手機載入另行構圖的 900×900 版本；alt、尺寸與裁切均通過。
+  - 新頁色票已使用全站 CSS 變數；社群預覽改用專屬 1600×900 JPG。
+- 尚未完成：
+  - 使用者預覽與正式發布核准。
+  - 發布版 robots、canonical、`og:url`、結構化資料 URL、sitemap 與 Search Console。
+- 已知風險：
+  - 缺少 Search Console 真實基準，現在不能證明流量成長。
+  - 若未來讓導航頁與系列頁使用過度相似內容，可能發生搜尋意圖重疊。
+- 需要使用者決定：
+  - 是否核准此候選進入正式發布流程。
+- 接手角色下一步：
+  - 預覽 `/workplace-mental-health.html`，確認文案、七篇導流順序與 CTA。
+- 接手完成條件：
+  - 使用者明確核准或提出修正；總管依結果建立後續需求單。
+
+### 2026-07-29：方案 B 四重驗收與正式發布授權
+
+- 任務 ID：`SEO-CONTENT-20260725-03`
+- 目前狀態：`approved`
+- 交接來源：使用者／網站總管 AI
+- 接手角色：SEO／發布維護 AI
+- 使用者決策：
+  - 通過文案、風格、網站架構與 SEO 四重驗收迴圈後正式發布。
+- 驗收結果：
+  - 文案：第一輪 PASS。
+  - 視覺：第一輪 FAIL；修正手機首屏閱讀順序與品牌色後第二輪 PASS。
+  - 網站架構：PASS。
+  - SEO：第一輪 FAIL；完成正式索引設定與 sitemap 後第二輪 PASS。
+- 發布候選：
+  - `workplace-mental-health.html`
+  - `workplace-mental-health.css`
+  - `assets/illustrations/ill-007-workplace-guide-*`
+  - 首頁、文章列表與職場系列頁入口。
+- 保持不變：
+  - 七篇文章正文、案例、標題、觀點與來源。
+  - 擱置草案及既有 SEO 測試文。
+- 驗證證據：
+  - `docs/seo/keyword-research/workplace-guide-release-qa-2026-07-29.md`
+  - `git diff --check`、JSON-LD、XML、相對連結、桌機／390px 手機與本地 HTTP 檢查通過。
+- 發布後要求：
+  - 驗證正式 URL、三個圖片、robots、canonical、OG、JSON-LD、sitemap 與三個 inbound。
+  - 建立 Search Console 7／28／90 天回饋；外部 indexing 操作遵守授權與防重複規則。
