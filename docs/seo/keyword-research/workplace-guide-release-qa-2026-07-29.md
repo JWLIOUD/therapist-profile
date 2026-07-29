@@ -95,3 +95,21 @@
 
 - 七篇既有文章的 meta description 多為故事開頭，可另開只修改 metadata 的小型 SEO 需求；不得在本次發布擴張範圍。
 - 若要讓七篇文章反向連回導航頁，需另做共用文末區塊與全文章版型回歸。
+
+## 正式發布與線上驗收
+
+- PR：`https://github.com/JWLIOUD/therapist-profile/pull/1`
+- PR 狀態：`MERGED`
+- 正式 main commit：`9c3b35b97508b827f4245ff5c4f6b950381d41c5`
+- GitHub Pages build：`built`
+- 正式新頁、CSS、桌機 WebP、手機 WebP、社群 JPG、首頁、文章列表與職場系列頁：全部 HTTP `200`。
+- 線上新頁：單一 H1、七張導航卡、`index, follow`、self-canonical、`og:url` 與兩段可解析 JSON-LD 均通過。
+- 線上 sitemap：正式 URL 出現一次，沒有 `drafts/` 或 `docs/`。
+- 正式桌機：1600×900 WebP 載入完成，無壞圖、無水平溢位、console 無 warning／error。
+- 正式 390×844 手機：900×900 WebP 載入完成，H1 top 172px／bottom 294px，主圖 top 685px，七張卡均為單欄，無水平溢位、console 無 warning／error。
+- 三個正式 inbound：
+  - 首頁：「先看職場心理健康指南」
+  - 心理專欄：「依照職場困擾找文章」
+  - 職場系列：「先看職場心理健康指南」
+
+網站端結論：`verified`。Google 是否收錄與後續成效仍需依 Search Console 7／28／90 天流程觀察，不把網站發布完成等同 Google 已收錄。
