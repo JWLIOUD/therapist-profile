@@ -983,7 +983,7 @@
 ### 2026-07-29：首頁指南入口完成五重驗收並取得發布核准
 
 - 任務 ID：`SEO-CONTENT-20260729-05`
-- 目前狀態：`approved`
+- 目前狀態：`verified`
 - 使用者決策：明確回覆「核准上線」。
 - 五重驗收：
   - 文案與語意保真：PASS；原卡片與指南正文未改。
@@ -993,8 +993,12 @@
   - 組織合作與講座邀約視角：PASS；企業主管、人資與公部門承辦均有逐項回饋。
 - 完整紀錄：`docs/seo/keyword-research/home-workplace-guide-cta-qa-2026-07-29.md`
 - 保持不變：指南正文、七篇文章、首頁其他文案、robots、canonical、sitemap、JSON-LD 與草稿隔離。
-- 發布阻擋：
-  - 本機 `gh auth status` 顯示 `JWLIOUD` token 無效；依 GitHub 發布工作流尚不可 commit、push 或建立 PR。
-- 接手下一步：
-  - 使用者重新執行 `gh auth login -h github.com`。
-  - 確認 `gh auth status` 成功後，提交本次範圍、推送接手分支、建立 PR、合併 `main`、等待 Pages 並做正式站回歸。
+- 發布結果：
+  - 使用者已重新完成 GitHub CLI 與 SSH 登入。
+  - PR #5 已合併：`https://github.com/JWLIOUD/therapist-profile/pull/5`
+  - main merge commit：`6277aa3e21cdd18b91ca5b50893878de0349b2f7`
+  - GitHub Pages build：`built`
+  - 正式首頁、指南、系列與樣式檔均為 HTTP `200`。
+  - 桌機／手機、唯一入口、實際點擊、H1、canonical 與 console 回歸通過。
+- 後續觀察：
+  - 依既有 Search Console 工作流觀察首頁 → 指南及指南 → 講座合作的實際成效。
