@@ -23,7 +23,9 @@
   <meta name="twitter:description" content="週五深夜，加班到九點的阿倫拖著疲憊步伐走出辦公室，城市霓虹閃爍，街道上人聲鼎沸，但對阿倫而言那只是背景噪音，回到空蕩蕩的出租屋，他從冰箱拿出一罐啤酒，獨自坐在沙發上，啤酒並不特別好喝，但那股微微的放鬆感，似乎能讓今晚的孤單好過一點…">
   <meta name="twitter:image" content="https://yuchienpsy.com/assets/illustrations/ill-002-addiction-series-1600x900.png">
   <meta name="twitter:image:alt" content="一位成人坐在沙發上看向窗外，手中手機旁有柔和循環線條，象徵停不下來的習慣與重新選擇。">
-  <link rel="stylesheet" href="../article.css?v=20260621-visual-qa-1">
+  <link rel="stylesheet" href="../article.css?v=20260729-nav-dropdown-1">
+  <link rel="stylesheet" href="../navigation.css?v=20260729-1">
+  <script src="../navigation.js?v=20260729-1" defer></script>
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Article",
@@ -97,12 +99,25 @@
         <a href="../index.html">首頁</a>
         <a href="../index.html#about">關於我</a>
         <a href="../index.html#services">諮商服務</a>
-        <a href="../articles.html" aria-current="page">心理專欄</a>
+        <div class="nav-dropdown">
+          <a href="../articles.html" aria-current="page" aria-haspopup="true">心理專欄</a>
+          <div class="nav-submenu" role="group" aria-label="心理專欄子選單">
+            <a href="../workplace-mental-health.html">職場心理健康</a>
+          </div>
+        </div>
         <a href="../index.html#contact">聯絡預約</a>
       </nav>
       <a class="btn btn-primary nav-cta" href="https://line.me/R/ti/p/@264kulgk" target="_blank" rel="noopener noreferrer">LINE 預約</a>
+      <button class="hamburger" type="button" aria-label="開啟選單" aria-controls="mobileMenu" aria-expanded="false"><span aria-hidden="true"></span></button>
     </div>
   </header>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="手機選單">
+    <a href="../index.html">首頁</a>
+    <a href="../articles.html">心理專欄</a>
+    <a class="mobile-sub-link" href="../workplace-mental-health.html"><span aria-hidden="true">↳</span>職場心理健康</a>
+    <a href="../index.html#contact">聯絡預約</a>
+    <a class="btn btn-primary" href="https://line.me/R/ti/p/@264kulgk" target="_blank" rel="noopener noreferrer">LINE 預約</a>
+  </nav>
   <main>
     <article class="article-page">
       <header class="article-hero">

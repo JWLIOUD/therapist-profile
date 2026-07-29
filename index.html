@@ -30,7 +30,7 @@
   <link rel="icon" href="/assets/favicon-48.png" sizes="48x48" type="image/png">
   <link rel="icon" href="/assets/favicon-192.png" sizes="192x192" type="image/png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260729-nav-dropdown-3">
 
   <script type="application/ld+json">
   {
@@ -161,7 +161,12 @@
         <a href="#home">首頁</a>
         <a href="#about">關於我</a>
         <a href="#services">諮商服務</a>
-        <a href="articles.html">心理專欄</a>
+        <div class="nav-dropdown">
+          <a href="articles.html" aria-haspopup="true">心理專欄</a>
+          <div class="nav-submenu" role="group" aria-label="心理專欄子選單">
+            <a href="workplace-mental-health.html">職場心理健康</a>
+          </div>
+        </div>
         <a href="talks.html">講座邀約</a>
         <a href="#faq">常見問題</a>
         <a href="#contact">聯絡預約</a>
@@ -183,6 +188,7 @@
     <a href="#about">關於我</a>
     <a href="#services">諮商服務</a>
     <a href="articles.html">心理專欄</a>
+    <a class="mobile-sub-link" href="workplace-mental-health.html"><span aria-hidden="true">↳</span>職場心理健康</a>
     <a href="talks.html">講座邀約</a>
     <a href="#faq">常見問題</a>
     <a href="#contact">聯絡預約</a>

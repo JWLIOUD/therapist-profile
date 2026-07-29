@@ -23,7 +23,9 @@
   <meta name="twitter:description" content="小真是初入職場的社會新鮮人，某次會議報告後，老闆特別走來稱讚她的表現，還記住了她的名字。之後，老闆開始私訊問近況，有時還說「如果妳願意聊聊，我都在」。她一開始覺得受寵若驚，因為是有名望的管理者，對她好，應該是賞識吧？">
   <meta name="twitter:image" content="https://yuchienpsy.com/assets/illustrations/ill-004-boundary-series-1600x900.png">
   <meta name="twitter:image:alt" content="一位成人以溫和但清楚的手勢表達界線，周圍有柔和光線與支持者的身影。">
-  <link rel="stylesheet" href="../article.css?v=20260621-visual-qa-1">
+  <link rel="stylesheet" href="../article.css?v=20260729-nav-dropdown-1">
+  <link rel="stylesheet" href="../navigation.css?v=20260729-1">
+  <script src="../navigation.js?v=20260729-1" defer></script>
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Article",
@@ -97,12 +99,25 @@
         <a href="../index.html">首頁</a>
         <a href="../index.html#about">關於我</a>
         <a href="../index.html#services">諮商服務</a>
-        <a href="../articles.html" aria-current="page">心理專欄</a>
+        <div class="nav-dropdown">
+          <a href="../articles.html" aria-current="page" aria-haspopup="true">心理專欄</a>
+          <div class="nav-submenu" role="group" aria-label="心理專欄子選單">
+            <a href="../workplace-mental-health.html">職場心理健康</a>
+          </div>
+        </div>
         <a href="../index.html#contact">聯絡預約</a>
       </nav>
       <a class="btn btn-primary nav-cta" href="https://line.me/R/ti/p/@264kulgk" target="_blank" rel="noopener noreferrer">LINE 預約</a>
+      <button class="hamburger" type="button" aria-label="開啟選單" aria-controls="mobileMenu" aria-expanded="false"><span aria-hidden="true"></span></button>
     </div>
   </header>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="手機選單">
+    <a href="../index.html">首頁</a>
+    <a href="../articles.html">心理專欄</a>
+    <a class="mobile-sub-link" href="../workplace-mental-health.html"><span aria-hidden="true">↳</span>職場心理健康</a>
+    <a href="../index.html#contact">聯絡預約</a>
+    <a class="btn btn-primary" href="https://line.me/R/ti/p/@264kulgk" target="_blank" rel="noopener noreferrer">LINE 預約</a>
+  </nav>
   <main>
     <article class="article-page">
       <header class="article-hero">

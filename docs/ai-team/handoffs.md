@@ -1,6 +1,6 @@
 # 各 AI 工作交接
 
-更新日期：2026-07-25
+更新日期：2026-07-30
 
 ## 交接制度
 
@@ -751,7 +751,7 @@
 
 - 任務 ID：`SEO-INTEL-20260725-02`
 - 任務名稱：分析高機會心理健康關鍵字並建立三種網站修改方向
-- 目前狀態：`user_preview`
+- 目前狀態：`approved`
 - 交接日期／時區：2026-07-25／Asia/Taipei
 - 交接來源：網站總管 AI
 - 接手角色：使用者
@@ -1002,3 +1002,61 @@
   - 桌機／手機、唯一入口、實際點擊、H1、canonical 與 console 回歸通過。
 - 後續觀察：
   - 依既有 Search Console 工作流觀察首頁 → 指南及指南 → 講座合作的實際成效。
+
+### 2026-07-29：全站心理專欄新增職場心理健康下拉入口
+
+- 任務 ID：`SEO-CONTENT-20260729-06`
+- 目前狀態：`user_preview`
+- 使用者決策：
+  - 不採獨立第八個頂層連結。
+  - 桌機滑鼠移到「心理專欄」時顯示「職場心理健康」下拉提示。
+  - 手機以縮排子項呈現。
+- 版本紀錄：
+  - V1 視覺 FAIL：獨立頂層入口在臨界寬度有擁擠風險。
+  - V2 視覺 FAIL：短螢幕手機選單無可視高度與捲動。
+  - V3 PASS：完成首頁／講座頁 1120px 桌機斷點、手機捲動、收合焦點隔離及裝飾箭頭無障礙修正。
+  - V4 FAIL：擴大至全站後發現手機入口只有 2/34，且有兩處 `aria-current` 語意錯誤。
+  - V5 PASS：桌機 dropdown、hamburger、mobile menu 與手機子項均為 34/34；current 語意、nowrap、快取版本、共用 CSS／JS 及產生器均完成修正與複驗。
+- 五重驗收：文案、視覺／無障礙、架構／互動、SEO、組織合作／講座邀約均 PASS。
+- 證據：`docs/seo/keyword-research/home-workplace-nav-five-review-2026-07-29.md`
+- 保持不變：首頁、文章、系列、指南與講座正文，canonical、robots、sitemap、JSON-LD 與草稿隔離。
+- 下一步：
+  - 使用者已於 2026-07-30 明確核准上線。
+  - 發布維護 AI 提交候選分支、建立 PR、合併部署並完成正式站回歸驗收。
+
+### 2026-07-30：職場心理健康指南搜尋發現性補強
+
+- 任務 ID：`SEO-CONTENT-20260730-07`
+- 目前狀態：`approved`
+- 交接來源：網站總管 AI
+- 接手角色：使用者；核准後交 SEO／發布維護 AI
+- 目標與成功標準：
+  - 讓 Google 可透過全站導覽及 sitemap 發現正式指南。
+  - 讓搜尋／Discover 可使用符合條件的大型預覽圖，但不得保證收錄、排名或推播。
+- 已確認決策：
+  - sitemap 中保留一筆正式指南 URL，不建立重複項目。
+  - 34 個正式頁均改過重要導覽連結，故 34 筆 `lastmod` 更新為 `2026-07-30`。
+  - 指南 robots 加入 `max-image-preview:large`；不改正文。
+- 不可改變事項：
+  - 正式內容原意、canonical、結構化資料語意及草稿隔離。
+  - 不加入 meta keywords、隱藏文字或關鍵字堆砌。
+- 發布前新增修正：
+  - 完整掃描發現 `docs/drafts/workplace-bullying-committee-shelved-2026-07-07.html` 仍為 `index, follow`。
+  - 只將該擱置草稿改為 `noindex, nofollow`；草稿正文與正式內容未改。
+  - `drafts/` 與 `docs/drafts/` 共 6 個草稿複驗均為 `noindex, nofollow`。
+- 驗證證據：
+  - 五重驗收均 PASS。
+  - sitemap XML 正常，共 34 個唯一 URL，指南一筆，草稿零筆。
+  - 全站桌機／手機指南入口均為 34/34 可爬取標準 anchor。
+  - 指南 canonical 正確，OG 圖為 1600 × 900，本地實頁無水平溢位。
+  - 完整紀錄：`docs/seo/keyword-research/workplace-guide-google-discovery-qa-2026-07-30.md`
+- 尚未完成：
+  - 未 commit、未 push、未建立或合併 PR、未部署。
+  - 正式站 HTTP、Search Console 與實際 Search／Discover 呈現尚未驗證。
+- 已知風險：
+  - Google 可自行改寫摘要、裁切圖片，也可能不收錄或不顯示 Discover。
+- 使用者決定：
+  - 已於 2026-07-30 明確核准此候選上線。
+- 接手角色下一步：
+  - 發布維護 AI 依流程提交、部署並做正式站回歸。
+  - 正式 URL 可抓取後，Search Console 依防重複規則檢查及必要的單次索引申請。
