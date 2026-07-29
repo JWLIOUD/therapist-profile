@@ -1,10 +1,10 @@
 # 工作流：Search Console 索引與搜尋成效回饋
 
-更新日期：2026-07-25
+更新日期：2026-07-29
 
 ## 觸發與負責角色
 
-- 觸發：新頁發布、SEO 文案更新、sitemap 變更、固定月度／季度回顧，或使用者要求檢查 Google 搜尋成效。
+- 觸發：每日 09:00（Asia/Taipei）索引盤點；新頁發布、SEO 文案更新、sitemap 變更、固定月度／季度回顧，或使用者要求檢查 Google 搜尋成效。
 - 統籌：網站總管 AI。
 - 執行：搜尋成效與索引驗收 AI。
 - 接收回饋：搜尋趨勢研究 AI、SERP／搜尋意圖分析 AI、內容機會策略 AI、內容編輯 AI、SEO／發布維護 AI。
@@ -14,8 +14,10 @@
 
 - 讀取 Search Console、分析匯出 CSV 或使用者截圖屬於唯讀驗收。
 - 提交 sitemap、執行 URL Inspection Live Test、Request indexing 或其他外部變更，必須由使用者明確授權。
+- 使用者已於 2026-07-29 授權每日排程：提交尚未存在且網站端驗證通過的正式 sitemap；對符合條件、尚未申請且 Live Test 通過的正式 URL 執行單次 Request indexing。
 - 沒有可用權限時，建立「待使用者提供」清單，不得杜撰資料或假裝已登入。
 - 已要求建立索引、已在 Google 服務中或已編入索引的 URL，不重複送出申請。
+- 需要修改 HTML、文案、canonical、robots、sitemap 內容、結構化資料、內部連結、圖片或網站架構時，排程只能建立問題報告與修改方案，不得直接改站。
 
 ## 總管需求單
 
@@ -39,6 +41,19 @@
 - robots／noindex、上次檢索與 live test 狀態（若取得）。
 - Request indexing 是否曾送出、送出日期與當時結果。
 - 下一次允許檢查時間；避免無意義重複操作。
+- HTTP、robots、self-canonical、是否為正式頁、是否為草稿／重複頁與網站端預檢結果。
+- Search Console 顯示的「未偵測到任何參照 Sitemap」、探索／檢索、soft 404、重複頁與 enhancement 問題。
+
+## 每日索引處理順序
+
+1. 讀取正式 sitemap 與站內可索引 URL，更新索引台帳。
+2. 核對 sitemap 是否已提交、可讀且處理成功；尚未提交時先驗證 sitemap 只含 canonical、indexable、HTTP 200 正式 URL，再提交一次。
+3. 依序處理首頁、核心服務／文章入口、新發布頁、重要文章、一般文章。
+4. 未建立索引的 URL 先確認 HTTP 200、`index, follow`、self-canonical、在 sitemap、無 robots 阻擋、不是草稿或重複頁。
+5. 執行 URL Inspection；只有尚未申請、不是處理中、不是已在 Google 服務中、不是已建立索引，且 Live Test 通過時，才送出一次 Request indexing。
+6. 每次送出都記錄日期、結果與下一次允許檢查時間。
+7. 遇到當日額度、頻率限制、CAPTCHA、登入或權限問題立即停止，保留佇列到次日，不重試消耗額度。
+8. Google 建議若涉及網站修改，建立 0 至 3 個方案交使用者審核，依正式需求單與四重驗收流程處理。
 
 ## 搜尋成效分析
 
@@ -104,6 +119,7 @@
 
 ## 建議頻率
 
+- 每日：sitemap、索引台帳、未索引佇列、已申請防重複與 Google 問題類型檢查。
 - 發布後 7 天：確認索引與早期訊號，不以低樣本判定成敗。
 - 發布後 28 天：第一次策略與文案成效回顧。
 - 發布後 90 天：中期成效與常青／季節性判斷。
