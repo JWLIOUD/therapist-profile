@@ -117,5 +117,9 @@
 - [x] 指南加入 `max-image-preview:large`，並驗證 1600 × 900、16:9 專屬圖片與 OG／Twitter／替代說明。
 - [x] 完成指南搜尋發現性五重驗收；正文、canonical、JSON-LD 與草稿邊界均保持不變。
 - [x] 使用者完成預覽並於 2026-07-30 明確核准全站導覽與指南搜尋發現性候選上線。
-- [ ] 核准並部署後，確認正式指南、OG 圖及 sitemap 為 HTTP `200`，再依防重複規則做 Search Console URL Inspection。
+- [x] 以 PR #7 合併至 main，GitHub Pages run `30471185768` 部署成功。
+- [x] 正式首頁、講座、文章列表、代表文章、系列、指南、導覽資產、OG 圖及 sitemap 均為 HTTP `200`。
+- [x] 正式站桌機下拉、390 × 568 手機選單、實際指南跳轉、無溢位／壞圖及 console 回歸通過。
+- [x] 正式 sitemap 為 34 筆唯一 URL、指南一筆、草稿零筆；擱置草稿為 `noindex, nofollow`。
+- [ ] 依防重複規則做 Search Console sitemap 與指南 URL Inspection；已申請、處理中或已收錄不得重複送出。
 - [ ] 於 Search Console 記錄實際收錄及 Search／Discover 成效；不得把候選條件當成推播或流量保證。

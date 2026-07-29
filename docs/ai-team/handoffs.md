@@ -1006,7 +1006,7 @@
 ### 2026-07-29：全站心理專欄新增職場心理健康下拉入口
 
 - 任務 ID：`SEO-CONTENT-20260729-06`
-- 目前狀態：`user_preview`
+- 目前狀態：`verified`
 - 使用者決策：
   - 不採獨立第八個頂層連結。
   - 桌機滑鼠移到「心理專欄」時顯示「職場心理健康」下拉提示。
@@ -1022,12 +1022,13 @@
 - 保持不變：首頁、文章、系列、指南與講座正文，canonical、robots、sitemap、JSON-LD 與草稿隔離。
 - 下一步：
   - 使用者已於 2026-07-30 明確核准上線。
-  - 發布維護 AI 提交候選分支、建立 PR、合併部署並完成正式站回歸驗收。
+  - PR #7 已合併至 main，GitHub Pages 部署成功。
+  - 正式站桌機鍵盤下拉、390 × 568 手機選單、實際指南跳轉、無溢位／壞圖及 console 回歸均通過。
 
 ### 2026-07-30：職場心理健康指南搜尋發現性補強
 
 - 任務 ID：`SEO-CONTENT-20260730-07`
-- 目前狀態：`approved`
+- 目前狀態：`verified`
 - 交接來源：網站總管 AI
 - 接手角色：使用者；核准後交 SEO／發布維護 AI
 - 目標與成功標準：
@@ -1050,13 +1051,20 @@
   - 全站桌機／手機指南入口均為 34/34 可爬取標準 anchor。
   - 指南 canonical 正確，OG 圖為 1600 × 900，本地實頁無水平溢位。
   - 完整紀錄：`docs/seo/keyword-research/workplace-guide-google-discovery-qa-2026-07-30.md`
+- 發布結果：
+  - 候選 commit：`b7d66dddf7b7c184878e042199fb3c7c13710cc7`
+  - PR #7：`https://github.com/JWLIOUD/therapist-profile/pull/7`
+  - main merge commit：`14004977db8255f98a7bd3103312db3f6b42c303`
+  - GitHub Pages run：`30471185768`，狀態 `built`／`success`。
+  - 正式頁、導覽 CSS／JS、sitemap 與 OG 圖均為 HTTP `200`。
+  - 正式 sitemap 34 筆、指南一筆、草稿零筆；擱置草稿 robots 為 `noindex, nofollow`。
+  - 桌機與 390 × 568 手機導覽、實際跳轉、版面、圖片及 console 回歸通過。
 - 尚未完成：
-  - 未 commit、未 push、未建立或合併 PR、未部署。
-  - 正式站 HTTP、Search Console 與實際 Search／Discover 呈現尚未驗證。
+  - Search Console URL Inspection 與實際 Search／Discover 呈現尚未驗證。
 - 已知風險：
   - Google 可自行改寫摘要、裁切圖片，也可能不收錄或不顯示 Discover。
 - 使用者決定：
   - 已於 2026-07-30 明確核准此候選上線。
 - 接手角色下一步：
-  - 發布維護 AI 依流程提交、部署並做正式站回歸。
-  - 正式 URL 可抓取後，Search Console 依防重複規則檢查及必要的單次索引申請。
+  - Search Console 依防重複規則檢查及必要的單次索引申請。
+  - 依 7／28／90 天窗口回饋 query、page、click、impression、CTR 與 average position。
