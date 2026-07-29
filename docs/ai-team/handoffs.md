@@ -907,6 +907,25 @@
   - 每案的目標 URL、原意保真、SEO、視覺、架構、風險與預期指標。
   - 網站總管推薦順序，提交使用者審核。
 - 權限限制：
-  - 自動排程只研究與提案，不得修改網站、commit、push、發布或 Request indexing。
+  - 自動排程只研究與提案，不得修改網站、commit、push 或發布；Search Console 的 sitemap 提交與單次 Request indexing 僅依 2026-07-29 後續授權及防重複規則執行。
   - 使用者接受方案後才開需求單與開發。
   - 文案、風格、網站架構與 SEO 四重驗收全部 PASS，並取得使用者發布核准後，才可正式上線。
+
+### 2026-07-29：擴充每日 Search Console 索引管理
+
+- 任務名稱：全站 Google Search Console 索引盤點與申請佇列
+- 目前狀態：`active`
+- 排程：合併至每日 09:00（Asia/Taipei）總管排程。
+- 使用者授權：
+  - 檢查正式 sitemap 與所有可索引 URL。
+  - 提交尚未存在且網站端驗證通過的正式 sitemap。
+  - 對尚未申請、未處理、未在 Google 服務中、未建立索引且 Live Test 通過的正式 URL，執行單次 Request indexing。
+- 每日紀錄：
+  - HTTP、robots、canonical、sitemap、Google-selected canonical、索引狀態、最後檢查／申請時間、sitemap 參照與錯誤類型。
+- 防重複與停止條件：
+  - 已申請、處理中、已在 Google 服務中或已建立索引不得重複申請。
+  - 遇到每日額度、頻率限制、CAPTCHA、登入或權限問題立即停止，保留佇列到次日。
+  - 草稿、noindex、非 canonical、重複頁或網站端預檢失敗的 URL 不得送出。
+- 網站修正：
+  - Google 建議若需要修改 HTML、內容、canonical、robots、sitemap、結構化資料或架構，只能建立報告與方案。
+  - 使用者接受方案後才進入開發、四重驗收與正式發布流程。
