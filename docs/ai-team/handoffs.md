@@ -872,3 +872,24 @@
 - 發布後要求：
   - 驗證正式 URL、三個圖片、robots、canonical、OG、JSON-LD、sitemap 與三個 inbound。
   - 建立 Search Console 7／28／90 天回饋；外部 indexing 操作遵守授權與防重複規則。
+
+### 2026-07-29：方案 B 正式發布完成
+
+- 任務 ID：`SEO-CONTENT-20260725-03`
+- 目前狀態：`verified`
+- PR：`https://github.com/JWLIOUD/therapist-profile/pull/1`
+- main commit：`9c3b35b97508b827f4245ff5c4f6b950381d41c5`
+- GitHub Pages：`built`
+- 正式 URL：`https://yuchienpsy.com/workplace-mental-health.html`
+- 正式驗收：
+  - 新頁、CSS、三個插畫、首頁、文章列表與職場系列頁均為 HTTP `200`。
+  - 線上 robots、canonical、OG URL、WebPage／Breadcrumb JSON-LD 與 sitemap 通過。
+  - 桌機與 390×844 手機無水平溢位、無壞圖、無 console warning／error。
+  - 首頁、心理專欄與職場系列的三個導流入口均可用。
+- 保持不變：
+  - 七篇文章正文與原意未修改。
+  - 草稿維持 noindex，未加入 sitemap。
+- 接手角色下一步：
+  - 搜尋成效與索引驗收 AI 依權限讀取 Search Console URL 狀態。
+  - 若已送出、已在 Google 服務中或已編入索引，不重複 Request indexing。
+  - 在 7／28／90 天建立 query、page、click、impression、CTR 與 average position 回饋。

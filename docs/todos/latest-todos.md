@@ -93,8 +93,8 @@
 - [x] 使用者已於 2026-07-29 明確核准方案 B 正式發布。
 - [x] 完成文案、風格、網站架構與 SEO 四重驗收；視覺與 SEO 的第一輪問題均修正後重測通過。
 - [x] 將新頁切換為 `index, follow`，補 canonical、`og:url`、正式 JSON-LD URL 與 sitemap。
-- [ ] 提交接手分支、合併至 `main` 並確認 GitHub Pages 發布完成。
-- [ ] 發布後驗證正式新頁、圖片、metadata、JSON-LD、sitemap 與三個 inbound。
+- [x] 提交接手分支、以 PR #1 合併至 `main`，GitHub Pages build 狀態為 `built`。
+- [x] 發布後驗證正式新頁、圖片、metadata、JSON-LD、sitemap 與三個 inbound。
 - [ ] 方案 B 發布後建立 Search Console 7／28／90 天 query、page、click、impression、CTR 與 average position 回饋。
 - [ ] 執行下一次雙週快速趨勢掃描，加入 Google Trends 台灣區 7／30／90 天比較。
 - [ ] 決定是否另行建立自動排程；未取得明確授權前維持人工觸發。
