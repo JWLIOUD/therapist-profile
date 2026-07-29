@@ -1,0 +1,256 @@
+:root {
+  --wmh-ink: var(--brown);
+  --wmh-muted: var(--muted);
+  --wmh-paper: var(--white);
+  --wmh-cream: var(--cream-2);
+  --wmh-peach: var(--peach);
+  --wmh-sage: var(--sage);
+  --wmh-line: var(--line);
+}
+
+.wmh-hero {
+  padding: 88px 0 56px;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(241, 201, 184, .38), transparent 32%),
+    linear-gradient(180deg, var(--wmh-cream), #fffdf9);
+}
+
+.wmh-inner {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.wmh-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.wmh-eyebrow,
+.wmh-label {
+  color: var(--sage-dark);
+  font-size: .92rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.wmh-hero h1 {
+  max-width: 780px;
+  margin: 12px 0 20px;
+  color: var(--wmh-ink);
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  line-height: 1.16;
+}
+
+.wmh-lead {
+  max-width: 760px;
+  color: var(--wmh-muted);
+  font-size: 1.14rem;
+  line-height: 1.9;
+}
+
+.wmh-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.wmh-hero-visual {
+  display: grid;
+  gap: 18px;
+}
+
+.wmh-hero-art {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--wmh-line);
+  border-radius: 24px;
+  background: var(--wmh-paper);
+  box-shadow: 0 18px 42px rgba(77, 58, 49, .08);
+}
+
+.wmh-hero-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
+.wmh-hero-note {
+  padding: 28px;
+  border: 1px solid var(--wmh-line);
+  border-radius: 24px;
+  background: rgba(255, 253, 249, .84);
+  box-shadow: 0 18px 42px rgba(109, 85, 72, .08);
+}
+
+.wmh-hero-note h2 {
+  margin: 8px 0 12px;
+  font-size: 1.45rem;
+}
+
+.wmh-section {
+  padding: 72px 0;
+}
+
+.wmh-section.alt {
+  background: var(--wmh-cream);
+}
+
+.wmh-section-head {
+  max-width: 760px;
+  margin-bottom: 30px;
+}
+
+.wmh-section h2 {
+  color: var(--wmh-ink);
+  font-size: clamp(1.7rem, 3vw, 2.45rem);
+}
+
+.wmh-section-head p,
+.wmh-copy p,
+.wmh-card p,
+.wmh-boundary p {
+  color: var(--wmh-muted);
+  line-height: 1.85;
+}
+
+.wmh-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.wmh-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  padding: 26px;
+  border: 1px solid var(--wmh-line);
+  border-radius: 22px;
+  background: var(--wmh-paper);
+  box-shadow: 0 12px 30px rgba(77, 58, 49, .06);
+}
+
+.wmh-card h3 {
+  margin: 8px 0 10px;
+  color: var(--wmh-ink);
+  font-size: 1.3rem;
+  line-height: 1.45;
+}
+
+.wmh-card a {
+  margin-top: auto;
+  color: var(--sage-dark);
+  font-weight: 700;
+}
+
+.wmh-three {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.wmh-copy {
+  padding: 24px;
+  border-left: 4px solid var(--wmh-sage);
+  border-radius: 0 18px 18px 0;
+  background: #fff;
+}
+
+.wmh-boundary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 32px;
+  border-radius: 24px;
+  background: rgba(234, 216, 200, .52);
+}
+
+.wmh-footer-cta {
+  text-align: center;
+}
+
+.wmh-footer-cta p {
+  max-width: 700px;
+  margin: 12px auto 0;
+}
+
+@media (max-width: 820px) {
+  .wmh-hero {
+    padding-top: 56px;
+  }
+
+  .wmh-hero-grid,
+  .wmh-topic-grid,
+  .wmh-three,
+  .wmh-boundary {
+    grid-template-columns: 1fr;
+  }
+
+  .wmh-card {
+    min-height: auto;
+  }
+
+}
+
+@media (min-width: 821px) {
+  .wmh-topic-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .wmh-card {
+    grid-column: span 3;
+  }
+
+  .wmh-card:nth-last-child(-n + 3) {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 639px) {
+  .wmh-hero-art img {
+    aspect-ratio: 1;
+    object-position: center;
+  }
+}
+
+@media (max-width: 899px) {
+  .site-header .nav-cta {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .site-header .nav-cta {
+    display: inline-flex;
+    min-height: 42px;
+    padding: 9px 16px;
+    font-size: .92rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .wmh-inner {
+    width: min(100% - 28px, 1100px);
+  }
+
+  .wmh-section {
+    padding: 54px 0;
+  }
+
+  .wmh-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .wmh-hero-note,
+  .wmh-card,
+  .wmh-boundary {
+    padding: 22px;
+  }
+}

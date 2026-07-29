@@ -1,19 +1,65 @@
 # 各 AI 工作交接
 
-更新日期：2026-06-19
+更新日期：2026-07-25
 
-## 交接格式
+## 交接制度
 
-每次交接都要留下：
+交接不是摘要，而是任務責任正式移轉。每次交接必須符合 `docs/maintenance-workflow.md` 的任務狀態與閘門，並留下足以讓接手角色不需猜測即可繼續工作的資訊。
 
-- 任務名稱
-- 交接來源
-- 接手角色
-- 目前狀態
-- 已改檔案
-- 尚未完成
-- 驗證方式
-- 風險或需要你決定的事項
+### 必填格式
+
+```text
+任務 ID：
+任務名稱：
+目前狀態：
+交接日期／時區：
+交接來源：
+接手角色：
+
+目標與成功標準：
+已確認決策：
+不可改變事項：
+
+已完成：
+已修改檔案：
+驗證證據：
+
+尚未完成：
+已知風險：
+需要使用者決定：
+
+接手角色下一步：
+接手完成條件：
+```
+
+### 狀態用詞
+
+- `intake`：已收到，尚未完成範圍確認。
+- `scoped`：目標、範圍、限制與角色已確定。
+- `assigned`：總管需求單已派工。
+- `in_progress`：執行中，尚未進入驗收。
+- `review`：等待專責或品質檢查。
+- `user_preview`：等待使用者檢視或決定。
+- `approved`：使用者已核准指定範圍。
+- `published`：已發布，但正式站／外部驗收未必完成。
+- `verified`：適用驗收有證據通過。
+- `blocked`：缺少必要決策、權限或資料，無法安全前進。
+- `closed`：交付、驗證、風險與下一步均已記錄。
+
+### 證據規則
+
+- 「已修改」附檔案與 diff 範圍。
+- 「已驗證」附指令、結果、預覽網址、截圖或報告。
+- 「已發布」附 commit、分支、部署結果與正式 URL。
+- 「Google 已完成」需區分網站端、Search Console 與實際 SERP。
+- 未執行或無法確認的項目標示「未驗證」，不得省略。
+
+### 退回與重交
+
+- 審查不通過時，接手角色將任務退回原負責角色，列出問題、證據與重測條件。
+- 修正後建立新的交接紀錄，不覆蓋先前失敗證據。
+- 品質檢查角色若自行修改問題，不得直接自我核准；由總管安排另一輪檢查。
+- 使用者的新決定若改變範圍，總管需更新需求單並重新派工。
 
 ## 交接紀錄
 
@@ -498,3 +544,331 @@
   - 檢查 canonical 為 `https://yuchienpsy.com/talks.html`。
   - 檢查首頁與文章頁導覽都連到 `talks.html`。
   - 全站連結檢查需確認 `talks.html`、首頁、文章頁都回 `200` 且有內容。
+### 2026-07-05：職場霸凌調查委員／外聘心理師 SEO 頁面草案
+
+- 任務名稱：讓需要職場霸凌調查委員、申訴評議委員或安全及衛生防護委員會外聘心理師的行政窗口，能透過 Google 找到明確邀約頁。
+- 使用者限制：本次只做本地預覽，不上線、不 push；需等使用者確認後再發布。
+- 總管 AI 決策：
+  - 不把需求只塞在 `talks.html`，因為「講座邀約」與「調查／評議／外聘委員」搜尋意圖不同。
+  - 新增獨立頁 `workplace-bullying-committee.html`，主打行政窗口會搜尋的精準語句。
+  - `talks.html` 保留職場霸凌與不法侵害教育訓練，但把「委員邀約」導到獨立頁。
+  - `index.html` 專業背景區與講座區加入入口，讓使用者能從首頁理解此服務存在。
+- AI 團隊分工：
+  - 內容編輯 AI：文案站在公部門人事、政風、職安、HR、EAP 行政窗口角度，強調「可先來信評估邀約角色」，不承諾調查結論。
+  - SEO / 發布維護 AI：關鍵字包含 `職場霸凌調查委員`、`職場霸凌外聘委員`、`職場霸凌心理師`、`安全及衛生防護委員會 外聘委員`、`不法侵害調查 心理師`、`公部門職場霸凌 委員`。
+  - 前端維護 AI：新增頁面沿用既有 `styles.css`、Gmail CTA 與複製 Email 備援；避免新增費用資訊。
+  - 品質檢查 AI：本地預覽需確認首頁、講座頁、新頁、Gmail 邀約、複製 Email、手機版導覽與 sitemap 都正常。
+- 已修改檔案：
+  - `workplace-bullying-committee.html`
+  - `index.html`
+  - `talks.html`
+  - `styles.css`
+  - `sitemap.xml`
+- 上線前待辦：
+  - 使用者本地預覽確認文案與版面。
+  - 確認是否要補更多實際委員經驗或正式單位名稱。
+  - 上線前執行全站連結檢查與本地瀏覽器驗收。
+  - 若上線，發布後到 Search Console 檢查新 URL；若已要求建立索引、已在 Google 服務中或已編入索引，不得重複按 Request indexing。
+- 本輪驗收紀錄：
+  - 使用 Codex 內建 Node REPL 啟動本地靜態伺服器：`http://127.0.0.1:8011/workplace-bullying-committee.html`。
+  - `Start-Process` 與本機 Python 執行受 Windows/Codex 權限限制，無法作為背景伺服器方案。
+  - HTTP 檢查通過：`/`、`/talks.html`、`/workplace-bullying-committee.html`、`/sitemap.xml`、`/styles.css` 均回 200。
+  - 新頁檢查通過：H1、漁業署/農糧署經驗、Gmail CTA、複製 Email、FAQ schema 均存在，且未出現費用資訊。
+  - 主要頁面內部連結與錨點檢查通過，未發現空白頁或斷裂內部跳轉。
+  - Playwright / 瀏覽器自動截圖受權限限制，視覺預覽需由使用者開啟本地網址確認。
+
+### 2026-07-07：職場霸凌委員獨立頁擱置與職場心理健康 SEO 測試文
+
+- 任務名稱：暫停上一輪職場霸凌委員獨立頁正式站導入，改做職場心理健康／職場霸凌文章 SEO 改寫內部測試版。
+- 使用者最新決策：
+  - `workplace-bullying-committee.html` 還需要改，暫時不要加入正式網站。
+  - 先測試現有心理專欄是否可改寫成「心理健康 × 職場／社會制度」長尾關鍵字文章。
+- 總管 AI 決策：
+  - 將上一輪正式站入口還原：`index.html`、`talks.html`、`sitemap.xml`、`styles.css` 不保留職場霸凌委員獨立頁入口。
+  - 將上一輪獨立頁草案移到 `docs/drafts/workplace-bullying-committee-shelved-2026-07-07.html`，只作為擱置素材。
+  - 以現有 `articles/workplace-05.html` 作為母稿，建立內部測試文 `drafts/workplace-mental-health-seo-test.html`。
+  - 測試文設定 `noindex, nofollow`，不加入 `articles.html`、系列頁或 `sitemap.xml`。
+- AI 團隊分工：
+  - 內容編輯 AI：把原本「黑羊效應／職場霸凌」文章改寫成更貼近職場人搜尋意圖的專欄，保留心理師溫和、科普、不診斷的語氣。
+  - SEO / 發布維護 AI：聚焦長尾關鍵字 `職場心理健康`、`職場霸凌處理機制`、`心理諮商如何幫助職場人`、`職場倦怠預防`、`心理健康與工作生活平衡`、`職場性別平等與心理健康`。
+  - 前端維護 AI：沿用 `article.css` 建立可預覽內部草稿，不新增正式導覽或 sitemap。
+  - 品質檢查 AI：確認正式站入口已移除、測試文為 noindex、測試文 HTTP 可開啟且主要連結正常。
+- 目前狀態：
+  - 本次為內部測試版，不上線、不提交 Search Console。
+  - 若使用者喜歡此方向，下一步才是決定要覆寫原文、另開新文，或做系列文章策略。
+
+### 2026-07-25：建立搜尋趨勢與內容情報 AI 團隊
+
+- 任務名稱：建立即時關鍵字、SERP 與內容機會研究團隊
+- 交接來源：網站總管 AI
+- 接手角色：搜尋趨勢研究 AI、SERP／搜尋意圖分析 AI、內容機會策略 AI、研究品質檢查 AI、內容編輯 AI
+- 目前狀態：團隊角色、固定工作流、報告範本與第一份基準報告已建立，尚未啟用自動排程或 Search Console 資料串接。
+- 已改檔案：
+  - `docs/ai-team/ai-roles.md`
+  - `docs/workflows/keyword-trend-research.md`
+  - `docs/seo/keyword-research/report-template.md`
+  - `docs/seo/keyword-research/keyword-opportunity-2026-07-25.md`
+  - `docs/todos/latest-todos.md`
+  - `docs/ai-team/handoffs.md`
+- 尚未完成：
+  - 使用者確認職場心理健康 SEO 測試文方向。
+  - 取得 Search Console 資料後建立本站實際流量與關鍵字成效基準。
+  - 決定是否建立雙週或每月自動排程。
+- 驗證方式：
+  - 公開來源的趨勢、政策與 SERP 訊號均與本站實際流量分開標示。
+  - 報告未宣稱未取得的精確搜尋量、點擊或固定排名。
+  - 研究報告只位於 `docs/`，沒有加入公開導覽或 sitemap。
+- 風險或需要使用者決定：
+  - Google Trends 是相對興趣，不是搜尋量；手動搜尋排名只是當下快照。
+  - 自站查詢、曝光、點擊、CTR 與平均排名需要 Search Console。
+  - 心理健康、法律與職場制度文章仍需專業審稿與使用者預覽。
+  - 擱置頁與 SEO 測試文維持原限制，不得正式化或加入 sitemap。
+
+### 2026-07-25：限定心理健康情報範圍與建立 SEO 語意保真發包流程
+
+- 任務名稱：將搜尋情報轉為可控的即時 SEO 修改與網站驗收流程
+- 交接來源：網站總管 AI
+- 接手角色：搜尋趨勢研究 AI、內容機會策略 AI、內容編輯 AI、SEO／發布維護 AI、品質檢查 AI
+- 目前狀態：流程文件已完成；尚未對正式文章執行任何趨勢驅動修改。
+- 已改檔案：
+  - `docs/ai-team/ai-roles.md`
+  - `docs/workflows/keyword-trend-research.md`
+  - `docs/workflows/seo-trend-content-update.md`
+  - `docs/workflows/pre-publish-check.md`
+  - `docs/seo/keyword-research/report-template.md`
+  - `docs/todos/latest-todos.md`
+  - `docs/ai-team/handoffs.md`
+- 核心決策：
+  - 只分析與心理健康及網站專業定位直接相關的議題；無關熱門話題在評分前排除。
+  - 情報報告必須檢查既有 SEO 策略並提出修正方向。
+  - 網站總管核准後建立需求單，才可發包給內容、SEO 與品質檢查角色。
+  - 既有內容只允許 SEO 層面的修改，不得改變核心意思、案例意義、專業主張、結論或來源。
+  - 每次修改都需先建立語意基準，再進行修改前後逐項對照。
+- 驗證方式：
+  - `pre-publish-check.md` 已加入趨勢證據、心理健康相關性、語意保真、關鍵字互搶、完整網站回歸與使用者預覽檢查。
+  - `seo-trend-content-update.md` 已明列可修改與不可修改範圍、總管需求單及雙重驗收流程。
+- 風險或需要使用者決定：
+  - 如果 SEO 目標無法在不改變原意的情況下完成，必須改為新增獨立文章或持續觀察。
+  - 即時性不能取代專業審稿與使用者確認。
+  - 未取得 Search Console 前仍不能宣稱本站真實流量或固定排名。
+
+### 2026-07-25：重寫總管工作流、AI 角色與交接制度
+
+- 任務 ID：`OPS-20260725-01`
+- 任務名稱：統一網站總管派工、角色權責、交接與驗收規範
+- 目前狀態：`verified`
+- 交接日期／時區：2026-07-25／Asia/Taipei
+- 交接來源：網站總管 AI
+- 接手角色：品質檢查 AI
+- 目標與成功標準：
+  - 每個 AI 角色具有明確輸入、責任、交付、禁止事項與完成條件。
+  - 每條工作流具有觸發、需求單、角色順序、交接、驗收及停止條件。
+  - 交接狀態與證據格式一致。
+- 已確認決策：
+  - 趨勢研究限心理健康相關議題。
+  - 趨勢 SEO 更新不得改變既有內容核心意義。
+  - 總管建立需求單後才能派工；使用者核准後才能發布。
+- 不可改變事項：
+  - 正式網站內容與 sitemap 本次不修改。
+  - 擱置頁與 SEO 測試文維持既有隔離規則。
+- 已完成：
+  - 重寫總管作業制度、AI 角色檔與全部專用工作流。
+  - 更新發布前檢查與交接制度。
+- 已修改檔案：
+  - `docs/maintenance-workflow.md`
+  - `docs/ai-team/ai-roles.md`
+  - `docs/ai-team/handoffs.md`
+  - `docs/workflows/*.md`
+- 驗證證據：
+  - `git diff --check` 通過。
+  - 六份 `docs/workflows/*.md` 均存在，工作流路由與引用名稱一致。
+  - 角色、需求單、交接狀態、發布閘門與停止條件已交叉核對。
+  - `index.html`、`articles.html`、`talks.html`、文章、系列、CSS、`robots.txt` 與 `sitemap.xml` 本次均無 diff。
+  - 擱置頁、SEO 測試文 `noindex, nofollow` 與禁止推送 `main` 規則仍保留。
+- 尚未完成：
+  - 使用者確認。
+- 已知風險：
+  - 文件規則完整不代表自動排程已啟用；自動化仍需另行授權。
+- 需要使用者決定：
+  - 是否在文件驗收後 commit 並推送接手分支。
+- 接手角色下一步：
+  - 驗證所有工作流名稱、角色名稱、狀態與限制一致；確認公開網站無 diff。
+- 接手完成條件：
+  - `git diff --check` 通過，所有工作流文件存在，公開網站與 sitemap 無改動。
+
+### 2026-07-25：建立 Search Console 搜尋成效回饋閉環
+
+- 任務 ID：`SEO-PERF-20260725-01`
+- 任務名稱：將索引驗收與 Search Console 流量數據回饋趨勢及 SEO 文案團隊
+- 目前狀態：`verified`
+- 交接日期／時區：2026-07-25／Asia/Taipei
+- 交接來源：網站總管 AI
+- 接手角色：品質檢查 AI
+- 目標與成功標準：
+  - 有專責角色管理 sitemap、URL 索引狀態與已送出索引申請。
+  - Search Console 的 query、page、click、impression、CTR、average position 能回饋趨勢與 SEO 文案策略。
+  - 趨勢策略與文案目標具有可重現的發布後判定方式。
+- 已確認決策：
+  - Search Console 平均排名不是固定名次。
+  - 讀取與分析可作驗收；提交 sitemap、Live Test 或 Request indexing 需使用者授權。
+  - 不重複對已申請、已在 Google 服務中或已編入索引的 URL 送出申請。
+- 不可改變事項：
+  - 本次只建立制度與報告範本，不假裝已取得 Search Console 資料。
+  - 正式網站內容與 sitemap 不修改。
+- 已完成：
+  - 新增搜尋成效與索引驗收 AI。
+  - 新增 Search Console 索引／成效回饋工作流與報告範本。
+  - 將回饋接入趨勢研究、SEO 更新、發布後檢查與待辦。
+- 已修改檔案：
+  - `docs/maintenance-workflow.md`
+  - `docs/ai-team/ai-roles.md`
+  - `docs/workflows/search-performance-feedback.md`
+  - `docs/seo/search-performance/report-template.md`
+  - `docs/workflows/keyword-trend-research.md`
+  - `docs/workflows/seo-trend-content-update.md`
+  - `docs/workflows/pre-publish-check.md`
+  - `docs/todos/latest-todos.md`
+  - `docs/ai-team/handoffs.md`
+- 驗證證據：
+  - `git diff --check` 通過。
+  - `search-performance-feedback.md` 與 Search Console 報告範本存在。
+  - 總管路由、角色鏈、趨勢研究、SEO 更新與發布後檢查均已引用成效回饋流程。
+  - Search Console 唯讀分析、外部操作授權、重複 indexing 防護與低樣本判斷規則一致。
+  - 正式 HTML、CSS、文章、`robots.txt` 與 `sitemap.xml` 本次均無 diff。
+- 尚未完成：
+  - 使用者確認與第一份真實 Search Console 報告。
+- 已知風險：
+  - 沒有 Search Console 權限或匯出資料時只能建立待辦，不能判斷真實成效。
+  - 新頁 7 天資料可能過少，不能過早判定策略失敗。
+- 需要使用者決定：
+  - 後續以登入權限、CSV 匯出或截圖何種方式提供 Search Console 資料。
+- 接手角色下一步：
+  - 確認工作流、角色、報告欄位與外部操作授權邊界一致。
+- 接手完成條件：
+  - `git diff --check` 通過，所有引用文件存在，公開網站與 sitemap 無 diff。
+
+### 2026-07-25：第一輪心理健康搜尋情報與三種本地 SEO 方案
+
+- 任務 ID：`SEO-INTEL-20260725-02`
+- 任務名稱：分析高機會心理健康關鍵字並建立三種網站修改方向
+- 目前狀態：`user_preview`
+- 交接日期／時區：2026-07-25／Asia/Taipei
+- 交接來源：網站總管 AI
+- 接手角色：使用者
+- 目標與成功標準：
+  - 趨勢、SERP 與內容策略團隊完成獨立分析。
+  - SEO 團隊提出三種修改方向。
+  - 三版只在本地建立並完成桌面、手機、連結、草稿隔離與核心頁回歸。
+- 已確認決策：
+  - 缺 Search Console／Keyword Planner／可匯出 Trends，因此只稱高機會訊號，不稱精確高流量排行。
+  - 第一優先議題為職場霸凌新制與心理安全。
+  - 三種方案為 A 單篇精修、B 職場心理健康總論、C 文章群意圖分層。
+- 不可改變事項：
+  - 原文案例、心理觀點、結論、來源與服務界線不變。
+  - 本任務不修改正式網站、不進 sitemap、不 commit、不 push、不發布。
+- 已完成：
+  - 分析報告、總管需求單、SEO 修改方向、三版本地預覽與評估報告。
+- 已修改檔案：
+  - `docs/seo/keyword-research/team-analysis-2026-07-25.md`
+  - `docs/seo/keyword-research/seo-directions-2026-07-25.md`
+  - `docs/seo/keyword-research/three-options-evaluation-2026-07-25.md`
+  - `docs/ai-team/requests/SEO-INTEL-20260725-02.md`
+  - `drafts/seo-options/*.html`
+  - `docs/todos/latest-todos.md`
+  - `docs/ai-team/handoffs.md`
+- 驗證證據：
+  - 三方案及入口 HTTP `200`，桌面與 375px 手機無水平溢位。
+  - 瀏覽器 console 無 warning／error，所有相對連結指向存在檔案。
+  - 四個預覽頁均為 `noindex, nofollow`。
+  - 首頁、文章列表、講座頁、原文章與職場系列頁回歸 `200`。
+  - 正式頁面、CSS、robots 與 sitemap 無修改。
+- 尚未完成：
+  - 使用者選擇；任何正式改站與 Search Console 成效驗證。
+- 已知風險：
+  - B 與系列頁可能互搶廣義詞；C 多頁同批修改不易歸因。
+- 需要使用者決定：
+  - 選 A、B、C，或採分階段 A → C → B。
+- 接手角色下一步：
+  - 開啟本地預覽入口，閱讀評估並選擇正式候選。
+- 接手完成條件：
+  - 使用者明確核准下一輪範圍；總管另建正式需求單。
+
+### 2026-07-25：方案 B 職場心理健康導航頁正式候選
+
+- 任務 ID：`SEO-CONTENT-20260725-03`
+- 任務名稱：建立職場心理健康總論與文章導航頁
+- 目前狀態：`user_preview`
+- 交接日期／時區：2026-07-25／Asia/Taipei
+- 交接來源：網站總管 AI
+- 接手角色：使用者
+- 目標與成功標準：
+  - 建立「職場心理健康」廣義主題入口，依七種處境導向既有文章。
+  - 首頁、文章列表與職場系列頁建立自然入口。
+  - 不修改任何既有文章的原意、正文、標題、案例、結論或來源。
+- 已確認決策：
+  - 新頁使用 `/workplace-mental-health.html`。
+  - 新頁負責總論與導航；系列頁、霸凌文章、講座頁維持不同搜尋意圖。
+  - 本輪只做本地候選與驗收，不發布。
+- 不可改變事項：
+  - 新頁維持 `noindex, nofollow`、不設正式 canonical、不進 sitemap。
+  - 不 commit、不 push、不發布；尤其不得推送 `main`。
+  - 擱置草案與既有 SEO 測試文不得轉為正式網站內容。
+- 已完成：
+  - 新頁、專用 CSS、三個站內入口、結構化資料、專屬桌機／手機插畫與本地完整驗收。
+- 已修改檔案：
+  - `workplace-mental-health.html`
+  - `workplace-mental-health.css`
+  - `index.html`
+  - `articles.html`
+  - `series/workplace.html`
+  - `docs/ai-team/requests/SEO-CONTENT-20260725-03.md`
+  - `docs/seo/keyword-research/workplace-guide-local-qa-2026-07-25.md`
+  - `docs/todos/latest-todos.md`
+  - `docs/ai-team/handoffs.md`
+- 驗證證據：
+  - `git diff --check` 通過；七篇原文章沒有 diff。
+  - 單一 H1、七張導航卡、兩段 JSON-LD 可解析、相對連結無遺失。
+  - 新頁維持 `noindex, nofollow`，未加入 sitemap。
+  - 所有範圍內頁面與 CSS 回應 `200`；桌機與 390px 手機無水平溢位。
+  - 桌機載入 1600×900 專屬導航插畫、手機載入另行構圖的 900×900 版本；alt、尺寸與裁切均通過。
+  - 新頁色票已使用全站 CSS 變數；社群預覽改用專屬 1600×900 JPG。
+- 尚未完成：
+  - 使用者預覽與正式發布核准。
+  - 發布版 robots、canonical、`og:url`、結構化資料 URL、sitemap 與 Search Console。
+- 已知風險：
+  - 缺少 Search Console 真實基準，現在不能證明流量成長。
+  - 若未來讓導航頁與系列頁使用過度相似內容，可能發生搜尋意圖重疊。
+- 需要使用者決定：
+  - 是否核准此候選進入正式發布流程。
+- 接手角色下一步：
+  - 預覽 `/workplace-mental-health.html`，確認文案、七篇導流順序與 CTA。
+- 接手完成條件：
+  - 使用者明確核准或提出修正；總管依結果建立後續需求單。
+
+### 2026-07-29：方案 B 四重驗收與正式發布授權
+
+- 任務 ID：`SEO-CONTENT-20260725-03`
+- 目前狀態：`approved`
+- 交接來源：使用者／網站總管 AI
+- 接手角色：SEO／發布維護 AI
+- 使用者決策：
+  - 通過文案、風格、網站架構與 SEO 四重驗收迴圈後正式發布。
+- 驗收結果：
+  - 文案：第一輪 PASS。
+  - 視覺：第一輪 FAIL；修正手機首屏閱讀順序與品牌色後第二輪 PASS。
+  - 網站架構：PASS。
+  - SEO：第一輪 FAIL；完成正式索引設定與 sitemap 後第二輪 PASS。
+- 發布候選：
+  - `workplace-mental-health.html`
+  - `workplace-mental-health.css`
+  - `assets/illustrations/ill-007-workplace-guide-*`
+  - 首頁、文章列表與職場系列頁入口。
+- 保持不變：
+  - 七篇文章正文、案例、標題、觀點與來源。
+  - 擱置草案及既有 SEO 測試文。
+- 驗證證據：
+  - `docs/seo/keyword-research/workplace-guide-release-qa-2026-07-29.md`
+  - `git diff --check`、JSON-LD、XML、相對連結、桌機／390px 手機與本地 HTTP 檢查通過。
+- 發布後要求：
+  - 驗證正式 URL、三個圖片、robots、canonical、OG、JSON-LD、sitemap 與三個 inbound。
+  - 建立 Search Console 7／28／90 天回饋；外部 indexing 操作遵守授權與防重複規則。

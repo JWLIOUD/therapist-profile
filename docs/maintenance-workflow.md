@@ -1,106 +1,142 @@
-# 網站維護工作流
+# 網站總管作業制度
 
-## 目前網站架構
+更新日期：2026-07-25
 
-這是一個 GitHub Pages 靜態網站，正式網域由 `CNAME` 指向 `yuchienpsy.com`。網站沒有 npm、Vite、Next.js 或後端服務，主要由 HTML、CSS、圖片素材和少量 Python 產生工具構成。
+## 目的
 
-主要區塊：
+這份文件是黃郁倩諮商心理師網站的 AI 維護入口。所有 AI 角色在工作前必須先讀：
 
-- 首頁：`index.html`
-- 文章列表：`articles.html`
-- 講座邀約頁：`talks.html`
-- 文章頁：`articles/*.html`
-- 專題系列頁：`series/*.html`
-- 全站樣式：`styles.css`、`articles.css`、`article.css`、`series.css`
-- 圖片與 QR code：`assets/`
-- 文章產生工具：`tools/generate_articles.py`
+1. `AGENTS.md`
+2. `docs/maintenance-workflow.md`
+3. `docs/ai-team/ai-roles.md`
+4. 本次任務對應的 `docs/workflows/*.md`
+5. `docs/todos/latest-todos.md`
+6. `docs/ai-team/handoffs.md` 的最新相關紀錄
 
-## 網站總管 AI 的責任
+若文件與使用者最新明確決定衝突，以使用者最新決定為準，並由網站總管更新文件。
 
-網站總管 AI 不只是改檔案，應該負責維護「內容、技術、SEO、風險」的一致性。
+## 專案與發布邊界
 
-固定責任：
+- 靜態 GitHub Pages 網站，正式網域為 `https://yuchienpsy.com/`。
+- 核心頁：`index.html`、`articles.html`、`talks.html`。
+- 文章：`articles/*.html`；系列頁：`series/*.html`。
+- 全站樣式：`styles.css`、`articles.css`、`article.css`、`series.css`。
+- SEO：`sitemap.xml`、`robots.txt`、各頁 canonical、metadata 與 structured data。
+- 正式發布分支為 `main`；未經使用者明確同意不得直接推送 `main`。
+- 研究報告、交接文件與內部草稿不加入公開導覽或 sitemap。
+- `docs/drafts/workplace-bullying-committee-shelved-2026-07-07.html` 為擱置素材，不得正式化。
+- `drafts/workplace-mental-health-seo-test.html` 必須維持 `noindex, nofollow`，不得加入文章列表、系列頁、sitemap 或 Search Console。
 
-- 檢查網站架構與檔案關聯後再修改。
-- 控制每次改動範圍，避免一次改太多。
-- 修改文案時保留心理健康內容的專業語氣。
-- 修改文章或頁面路徑時同步檢查內部連結、canonical、sitemap。
-- 修改版面後檢查手機與桌面顯示。
-- 變更完成後回報改了什麼、如何驗證、下一步建議。
+## 統一任務生命週期
 
-## 建議維護團隊
+每項工作都必須依序經過以下狀態：
 
-### 1. 網站總管 / 產品負責人
+1. `intake`：總管接收需求並確認目的。
+2. `scoped`：完成範圍、限制、風險與負責角色。
+3. `assigned`：總管建立需求單並派工。
+4. `in_progress`：執行角色只處理核准範圍。
+5. `review`：SEO、內容、前端或品質角色依任務進行獨立檢查。
+6. `user_preview`：需要內容、視覺、服務或發布決策時交使用者預覽。
+7. `approved`：使用者核准可發布範圍。
+8. `published`：完成 commit、push 與部署；只有使用者授權才可進入。
+9. `verified`：正式站與 Search Console／SERP 的適用驗收完成。
+10. `closed`：交接、待辦、驗證與剩餘風險均已記錄。
 
-決定網站優先順序、內容發布節奏、服務資訊是否要調整。這個角色可以由你擔任，AI 協助整理需求與拆任務。
+未完成前一個必要閘門，不得宣稱後一狀態已完成。
 
-### 2. 內容編輯
+## 網站總管需求單
 
-負責心理健康文章、首頁文案、服務說明、CTA 文字。重點是保持專業、溫和、清楚，避免過度承諾療效。
+任何會修改檔案的任務，總管必須先建立需求單。最低欄位：
 
-### 3. 前端維護
+- 任務 ID、名稱、建立日期與來源。
+- 目標與成功標準。
+- 目標頁面／檔案。
+- 在範圍內與不在範圍內。
+- 使用者已確認的事實與仍需決定事項。
+- 不可改變的內容、語意或品牌界線。
+- 負責角色、審查角色與交接順序。
+- 每個角色的具體交付物。
+- 本地驗證、使用者預覽與發布條件。
+- 風險、回復方式與成效追蹤指標。
 
-負責 HTML/CSS、手機版排版、圖片壓縮、連結狀態、跨頁一致性。此網站目前不需要大型前端框架。
+需求不完整但可安全推進時，總管以明確假設處理；若假設會改變服務、專業主張、法律／醫療內容、對外發布或使用者決策，必須先停下確認。
 
-### 4. SEO / 發布維護
+## 統一交接閘門
 
-負責 `sitemap.xml`、`robots.txt`、meta description、Open Graph、canonical、GitHub Pages 發布檢查。
+每次角色交接必須包含：
 
-### 5. 品牌與素材管理
+- 任務 ID 與目前狀態。
+- 交接來源與接手角色。
+- 已完成事項與實際修改檔案。
+- 明確未完成事項。
+- 證據、測試、預覽網址或報告連結。
+- 不可改變的決策與已知風險。
+- 接手角色的下一步與完成條件。
+- 是否需要使用者決定。
 
-負責頭像、插圖、QR code、LINE 連結、色彩與視覺一致性。
+「已分析」、「已修改」、「已驗證」、「已發布」是不同狀態，不得混用。沒有證據的項目標示「未驗證」。
 
-## 建議工作流
+## 核心品質原則
 
-### 日常小修改
+- 心理健康內容保持專業、溫和、清楚，不診斷、不保證療效。
+- 法律、醫療、危機資源、資格、費用、服務地點與聯絡方式不得自行推測。
+- 修改既有內容時保留原文核心意思、心理觀點、案例意義、專業主張、結論與來源。
+- SEO 關鍵字必須自然；即時話題不能凌駕讀者助益與專業倫理。
+- URL 改動同步檢查內部連結、canonical、sitemap 與 redirect 需求。
+- 視覺改動同時驗證桌面與手機，並對照首頁、文章列表與相關系列的字體、色彩、圓角、留白、卡片及 CTA。
+- 每個新增頁面都要由品牌素材 AI 判斷圖片是否足以支持內容與品牌風格；有相符核准素材時優先重用，缺少時才由插畫設計 AI 依 brief 產出候選。
+- 插畫必須放回本地頁面後再驗收題意、裁切、alt、效能與心理健康呈現，不能只驗收單張圖。
+- 每次只做可審查的小範圍改動，避免無關重構。
+- 品質檢查角色不得直接替執行角色修改後自我核准；需要修正時退回負責角色。
 
-1. 從 `main` 更新本地專案。
-2. 建立修改分支。
-3. 修改 HTML/CSS 或圖片。
-4. 本地開啟靜態伺服器檢查。
-5. 確認 `git diff`。
-6. commit 後推送 GitHub。
-7. 檢查 GitHub Pages 是否正常發布。
+## 工作流路由
 
-### 新增文章
+| 任務類型 | 必讀工作流 |
+|---|---|
+| 心理健康搜尋趨勢與議題情報 | `keyword-trend-research.md` |
+| 趨勢驅動的既有內容 SEO 更新 | `seo-trend-content-update.md` |
+| Search Console 索引與流量成效回饋 | `search-performance-feedback.md` |
+| 新增正式文章 | `new-article.md` |
+| 修改服務、預約或 CTA | `update-service-info.md` |
+| 更新講座紀錄與邀約頁 | `update-talk-records.md` |
+| 任何準備發布的改動 | `pre-publish-check.md` |
 
-1. 決定文章分類與 slug。
-2. 新增 `articles/{slug}.html`。
-3. 更新 `articles.html` 文章列表。
-4. 更新對應 `series/{category}.html`。
-5. 更新 `sitemap.xml`。
-6. 檢查文章頁 meta、OG image、canonical、來源註記。
+一項任務可同時套用多條工作流；網站總管需在需求單中明列順序。
 
-### 修改服務或預約資訊
+## Git 與發布規則
 
-1. 先確認 LINE、聯絡方式、服務內容是否為最新版本。
-2. 修改首頁或 `talks.html`。
-3. 檢查所有 CTA 是否一致。
-4. 手機版優先檢查按鈕與聯絡區塊。
+- 開始前確認分支、遠端與工作樹，保留使用者既有變更。
+- 未經授權不切換或推送 `main`。
+- commit 只包含同一需求單的相關檔案。
+- commit 前必須執行 `pre-publish-check.md` 的適用項目。
+- 發布後要記錄 commit、部署結果、正式站驗證與未完成的外部驗收。
+- Google 尚未重新抓取不等於部署失敗；網站端完成與 Google SERP 完成分開記錄。
+- Search Console 查看屬於唯讀驗收；提交 sitemap、要求建立索引或其他會改變外部狀態的操作，必須由使用者明確授權。
+- 已要求建立索引、已在 Google 服務中或已編入索引的 URL，不得為了加速而重複送出申請。
 
-## 目前需要注意的技術債
+## 本地預覽
 
-- `README.md` 幾乎沒有維護資訊，建議下一步補成完整專案說明。
-- `tools/generate_articles.py` 依賴 repo 外部 Word 檔與資料夾，之後應明確整理來源檔位置與使用方式。
-- 沒有自動化連結檢查或 HTML 驗證，後續可加輕量工具。
-- 沒有 GitHub Actions 發布前檢查，後續可加入 sitemap/link check。
+從 repository 根目錄執行：
 
-## 本地開發指令
-
-```powershell
-cd C:\Users\roy81\Documents\therapist-profile
-python -m http.server 8000
-```
-
-這台電腦目前沒有全域 `python` 指令，可先使用既有虛擬環境：
-
-```powershell
-cd C:\Users\roy81\Documents\therapist-profile
-C:\Users\roy81\Documents\stock-telegram-alert\.venv\Scripts\python.exe -m http.server 8000
+```bash
+python3 -m http.server 8013 --bind 127.0.0.1
 ```
 
 開啟：
 
 ```text
-http://localhost:8000/
+http://127.0.0.1:8013/
 ```
+
+若環境限制本地監聽，取得使用者允許後再啟動；不可因無法開啟瀏覽器而省略可執行的靜態、連結與 metadata 檢查。
+
+## 完成回報
+
+總管結案時必須回報：
+
+- 完成的目標與目前狀態。
+- 修改檔案與對使用者可見的差異。
+- 驗證方式與結果。
+- 明確保持不變的內容。
+- 未完成事項、風險與下一步。
+- 是否 commit、push、部署；若沒有，必須明說。

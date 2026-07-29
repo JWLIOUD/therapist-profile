@@ -1,43 +1,54 @@
-# 固定流程：新增文章
+# 工作流：新增正式文章
 
-負責角色：網站總管 AI、內容編輯 AI、SEO / 發布維護 AI、前端維護 AI、品質檢查 AI
+更新日期：2026-07-25
 
-## 觸發條件
+## 觸發與負責角色
 
-你提供新文章、文章草稿、Word 來源、或要求新增某篇文章時啟動。
+- 觸發：使用者提供文章、草稿、來源檔或明確要求新增文章。
+- 統籌：網站總管 AI。
+- 執行：內容編輯 AI、前端維護 AI、SEO／發布維護 AI。
+- 審查：品質檢查 AI；敏感內容需使用者／心理師本人確認。
 
-## 流程
+## 必要輸入
 
-1. 網站總管 AI 確認文章目標、分類、標題、slug、來源與是否要立即發布。
-2. 內容編輯 AI 檢查標題、摘要、段落、語氣與專業風險。
-3. 前端維護 AI 建立或更新：
-   - `articles/{slug}.html`
-   - `articles.html`
-   - 對應 `series/{category}.html`
-4. SEO / 發布維護 AI 檢查：
-   - `<title>`
-   - meta description
-   - `robots` 是否為 `index, follow`
-   - canonical
-   - Open Graph
-   - Article JSON-LD
-   - `sitemap.xml`
-5. 品質檢查 AI 執行發布前檢查。
-6. 網站總管 AI 回報改動、驗證結果、剩餘風險。
+- 文章目的、目標讀者、分類、正文、slug。
+- 原刊來源、引用與授權狀態。
+- 是否需要封面圖、CTA 與立即發布。
+- 不可修改的內容與專業界線。
 
-## 必填資料
+缺少正文、來源權利或會影響專業主張的決定時，不得進入正式實作。
 
-- 文章標題
-- 文章分類
-- 文章正文
-- URL slug
-- 是否有原刊來源
-- 是否需要封面圖或沿用分類圖
+## 總管需求單
 
-## 完成標準
+總管需明列：
 
-- 新文章可從 `articles.html` 點到。
-- 新文章可從對應系列頁點到。
-- 新文章 URL 已加入 `sitemap.xml`。
-- 新文章頁有 canonical、meta description、OG、JSON-LD。
-- 本機預覽沒有破版。
+- 新文章 URL、對應系列、文章列表位置與內部連結。
+- 各角色可修改檔案。
+- title、description、canonical、OG、Article JSON-LD 與 sitemap 要求。
+- 使用者預覽與發布條件。
+
+## 執行與交接
+
+1. 內容編輯 AI 整理語氣、層次、來源與 CTA，交付文案稿及風險標記。
+2. 使用者需確認的臨床、經驗、服務或來源事項先停下確認。
+3. 前端維護 AI 建立 `articles/{slug}.html`，更新 `articles.html` 與對應 `series/*.html`。
+4. SEO／發布維護 AI 完成 metadata、canonical、robots、OG、JSON-LD、內部連結與 sitemap。
+5. 品質檢查 AI 執行內容、連結、桌面／手機、SEO、草稿隔離與完整網站回歸。
+6. 總管整合修改摘要與本地預覽交使用者。
+7. 使用者核准後才可 commit、push 與發布。
+
+每次交接必須依 `docs/maintenance-workflow.md` 的統一交接閘門記錄。
+
+## 驗收
+
+- 新文章可從 `articles.html` 與正確系列頁到達。
+- canonical、robots、OG、JSON-LD、來源與 sitemap 正確。
+- 文案無不當診斷、療效承諾、法律／醫療推測。
+- 手機與桌面可讀，圖片與 CTA 正常。
+- 首頁、文章列表、代表文章、代表系列與 `talks.html` 回歸通過。
+- 未核准草稿不出現在公開導覽或 sitemap。
+
+## 完成與停止條件
+
+- 完成：使用者核准、發布前檢查通過、正式站驗證與交接紀錄完成。
+- 停止：來源權利不明、專業主張未確認、內容與既有頁面高度重複或會造成無法解決的關鍵字互搶。
