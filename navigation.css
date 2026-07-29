@@ -1,0 +1,123 @@
+.hamburger {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 253, 249, .76);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 20px;
+  height: 2px;
+  display: block;
+  position: relative;
+  background: var(--brown);
+  border-radius: 999px;
+  transition: .25s ease;
+}
+
+.hamburger span::before,
+.hamburger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: var(--brown);
+  border-radius: 999px;
+  transition: .25s ease;
+}
+
+.hamburger span::before {
+  top: -7px;
+}
+
+.hamburger span::after {
+  top: 7px;
+}
+
+.menu-open .hamburger span {
+  background: transparent;
+}
+
+.menu-open .hamburger span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.menu-open .hamburger span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: var(--header-height) 0 auto;
+  z-index: 19;
+  max-height: calc(100dvh - var(--header-height));
+  padding: 20px 18px 26px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  background: rgba(251, 247, 241, .98);
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  transform: translateY(-120%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform .28s ease, opacity .28s ease, visibility .28s ease;
+}
+
+.menu-open .mobile-menu {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 14px 10px;
+  color: var(--brown);
+  border-bottom: 1px solid var(--line);
+  font-weight: 700;
+}
+
+.mobile-menu .mobile-sub-link {
+  padding-left: 28px;
+  color: var(--brown-2);
+  font-size: .94rem;
+  white-space: nowrap;
+}
+
+.mobile-menu .mobile-sub-link span {
+  margin-right: 8px;
+  color: var(--sage-dark);
+}
+
+.mobile-menu .btn {
+  margin-top: 18px;
+  text-align: center;
+  border-bottom: 0;
+}
+
+@media (min-width: 900px) {
+  .hamburger,
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hamburger span,
+  .hamburger span::before,
+  .hamburger span::after,
+  .mobile-menu {
+    transition-duration: .01ms !important;
+  }
+}

@@ -354,12 +354,27 @@ def page_header(active: str = "articles") -> str:
         <a href="../index.html">首頁</a>
         <a href="../index.html#about">關於我</a>
         <a href="../index.html#services">諮商服務</a>
-        <a href="../articles.html"{current}>心理專欄</a>
+        <div class="nav-dropdown">
+          <a href="../articles.html"{current} aria-haspopup="true">心理專欄</a>
+          <div class="nav-submenu" role="group" aria-label="心理專欄子選單">
+            <a href="../workplace-mental-health.html">職場心理健康</a>
+          </div>
+        </div>
         <a href="../index.html#contact">聯絡預約</a>
       </nav>
       <a class="btn btn-primary nav-cta" href="{LINE_URL}" target="_blank" rel="noopener noreferrer">LINE 預約</a>
+      <button class="hamburger" type="button" aria-label="開啟選單" aria-controls="mobileMenu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+      </button>
     </div>
-  </header>"""
+  </header>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="手機選單">
+    <a href="../index.html">首頁</a>
+    <a href="../articles.html">心理專欄</a>
+    <a class="mobile-sub-link" href="../workplace-mental-health.html"><span aria-hidden="true">↳</span>職場心理健康</a>
+    <a href="../index.html#contact">聯絡預約</a>
+    <a class="btn btn-primary" href="{LINE_URL}" target="_blank" rel="noopener noreferrer">LINE 預約</a>
+  </nav>"""
 
 
 def footer() -> str:
@@ -482,7 +497,9 @@ def article_page(article, articles) -> str:
   <meta name="twitter:description" content="{html.escape(article["description"], quote=True)}">
   <meta name="twitter:image" content="{series_image(series)}">
   <meta name="twitter:image:alt" content="{html.escape(series.image_alt, quote=True)}">
-  <link rel="stylesheet" href="../article.css?v=20260621-visual-qa-1">
+  <link rel="stylesheet" href="../article.css?v=20260729-nav-dropdown-1">
+  <link rel="stylesheet" href="../navigation.css?v=20260729-1">
+  <script src="../navigation.js?v=20260729-1" defer></script>
   <script type="application/ld+json">{json.dumps(article_json_ld, ensure_ascii=False, indent=2)}</script>
   <script type="application/ld+json">{json.dumps(breadcrumb_json_ld, ensure_ascii=False, indent=2)}</script>
 </head>
@@ -644,7 +661,9 @@ def series_page(series: Series, items, all_series) -> str:
   <meta name="twitter:description" content="{html.escape(series.description, quote=True)}">
   <meta name="twitter:image" content="{series_image(series)}">
   <meta name="twitter:image:alt" content="{html.escape(series.image_alt, quote=True)}">
-  <link rel="stylesheet" href="../series.css?v=20260621-visual-qa-1">
+  <link rel="stylesheet" href="../series.css?v=20260729-nav-dropdown-1">
+  <link rel="stylesheet" href="../navigation.css?v=20260729-1">
+  <script src="../navigation.js?v=20260729-1" defer></script>
   <script type="application/ld+json">{json.dumps(collection_json_ld, ensure_ascii=False, indent=2)}</script>
   <script type="application/ld+json">{json.dumps(breadcrumb_json_ld, ensure_ascii=False, indent=2)}</script>
 </head>

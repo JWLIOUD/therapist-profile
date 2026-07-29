@@ -23,7 +23,9 @@
   <meta name="twitter:description" content="收錄關係、自我照顧與社會事件相關的心理觀點文章。">
   <meta name="twitter:image" content="https://yuchienpsy.com/assets/illustrations/ill-006-insights-series-1600x900.png">
   <meta name="twitter:image:alt" content="三個生活片段以紙頁拼貼呈現，包含關係對話、社會事件後的休息與獨處書寫。">
-  <link rel="stylesheet" href="../series.css?v=20260621-visual-qa-1">
+  <link rel="stylesheet" href="../series.css?v=20260729-nav-dropdown-1">
+  <link rel="stylesheet" href="../navigation.css?v=20260729-1">
+  <script src="../navigation.js?v=20260729-1" defer></script>
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -91,12 +93,25 @@
         <a href="../index.html">首頁</a>
         <a href="../index.html#about">關於我</a>
         <a href="../index.html#services">諮商服務</a>
-        <a href="../articles.html" aria-current="page">心理專欄</a>
+        <div class="nav-dropdown">
+          <a href="../articles.html" aria-current="page" aria-haspopup="true">心理專欄</a>
+          <div class="nav-submenu" role="group" aria-label="心理專欄子選單">
+            <a href="../workplace-mental-health.html">職場心理健康</a>
+          </div>
+        </div>
         <a href="../index.html#contact">聯絡預約</a>
       </nav>
       <a class="btn btn-primary nav-cta" href="https://line.me/R/ti/p/@264kulgk" target="_blank" rel="noopener noreferrer">LINE 預約</a>
+      <button class="hamburger" type="button" aria-label="開啟選單" aria-controls="mobileMenu" aria-expanded="false"><span aria-hidden="true"></span></button>
     </div>
   </header>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="手機選單">
+    <a href="../index.html">首頁</a>
+    <a href="../articles.html">心理專欄</a>
+    <a class="mobile-sub-link" href="../workplace-mental-health.html"><span aria-hidden="true">↳</span>職場心理健康</a>
+    <a href="../index.html#contact">聯絡預約</a>
+    <a class="btn btn-primary" href="https://line.me/R/ti/p/@264kulgk" target="_blank" rel="noopener noreferrer">LINE 預約</a>
+  </nav>
   <main>
     <section class="series-hero">
       <div class="page-inner hero-grid">
