@@ -44,7 +44,8 @@
 - [ ] 考慮加入 `WebSite`、`Person`、`Article` 結構化資料一致性檢查。
 - [x] 使用者核准 `SEO-PLAN-20260812-08`：以 `articles/workplace-05.html` 承接「職場霸凌怎麼辦」非品牌意圖。
 - [x] 依 `SEO-CONTENT-20260813-09` 完成本地候選與五重驗收；候選已通過發布閘門。
-- [ ] 將 `SEO-CONTENT-20260813-09` 候選提交、合併、完成 GitHub Pages 發布與正式站驗證。
+- [x] 將 `SEO-CONTENT-20260813-09` 候選以 PR #9 合併，GitHub Pages run `31618285054` 成功，正式站驗證通過。
+- [ ] `SEO-CONTENT-20260813-09` 發布後 7／28／90 天：比較非品牌 query、目標頁曝光、點擊、CTR、平均排名與頁面互搶。
 
 ## 文件維護
 
