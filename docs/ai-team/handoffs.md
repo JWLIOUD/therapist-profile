@@ -1117,3 +1117,17 @@
 - 完整紀錄：`docs/seo/keyword-research/workplace-05-non-brand-five-review-2026-08-13.md`
 - 使用者權限：已授權驗收完畢直接提交、合併與發布。
 - 接手角色下一步：網站總管 AI 以獨立 PR 合併，確認 GitHub Pages 成功，再做正式站 metadata、版面與 console 回歸。
+
+### 2026-08-13：非品牌詞 SEO 正式發布並完成線上驗證
+
+- 任務 ID：`SEO-CONTENT-20260813-09`
+- 目前狀態：`verified`
+- 候選 commit：`c232dcec17eb386bac5dba346fae5757b9895f39`
+- PR：`#9`，已合併；main merge commit：`0ceb9787bed1195ac8d4182b366e0f3a7a74641f`。
+- GitHub Pages：run `31618285054`，`Success`，44 秒。
+- 正式站：目標頁、版本化 CSS、桌機圖與手機圖均 HTTP `200`。
+- 正式頁複驗：title、description、H1、canonical、robots、兩段 JSON-LD、六個 H3 均與候選一致。
+- 正式視覺：1280 × 900 與 390 × 844 無水平溢位、壞圖或 console warning／error；手機 hamburger 可見。
+- 索引邊界：目標 URL 已索引，不重複 Request indexing。
+- 保持不變：正文段落、案例、結論、來源、免責、CTA、圖片、URL、sitemap、其他正式頁與草稿邊界。
+- 接手角色下一步：搜尋成效與索引驗收 AI 依 7／28／90 天窗口回饋非品牌 query、page、click、impression、CTR、average position 與互搶。

@@ -87,4 +87,18 @@
 
 五重驗收均有具體證據且全部 `PASS`，未發現需要 R2 修正的 FAIL。使用者已於 2026-08-13 明確授權「修改後驗收完畢直接送出」，因此 R1 可進入 commit、PR、合併與 GitHub Pages 發布。
 
-正式站驗證需在部署後補記：HTTP、title、description、H1、canonical、robots、JSON-LD、圖片、桌機／手機版面與 console。若正式站與候選不一致，停止成效計時並回復修正。
+正式站驗證已於部署後補記如下；若後續正式站與候選不一致，停止成效計時並回復修正。
+
+## 正式發布與線上複驗
+
+- 候選 commit：`c232dcec17eb386bac5dba346fae5757b9895f39`
+- PR：`https://github.com/JWLIOUD/therapist-profile/pull/9`，已合併。
+- main merge commit：`0ceb9787bed1195ac8d4182b366e0f3a7a74641f`
+- GitHub Pages：run `31618285054`，`Success`，44 秒。
+- 正式目標頁：HTTP `200`；title、description、H1、canonical、robots、兩段 JSON-LD、六個 H3 與 R1 相同。
+- 資產：版本化 `article.css`、桌機 WebP 與手機 WebP 均為 HTTP `200`。
+- 正式桌機 1280 × 900：client width 與 scroll width 均為 1265，圖片載入完成。
+- 正式手機 390 × 844：client width 與 scroll width 均為 375；一個 H1、六個 H3、圖片載入完成、hamburger 可見。
+- 正式頁 warning／error console log：0。
+
+最終結論：`VERIFIED`。內容發布與五重驗收候選一致，開始 7／28／90 天成效觀察；不對已索引 URL 重複要求建立索引。
