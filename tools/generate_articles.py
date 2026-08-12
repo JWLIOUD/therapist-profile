@@ -186,6 +186,32 @@ ARTICLE_SOURCE_LINKS = {
     "post-election-self-care": "https://mental-health.gov.taipei/News_Content.aspx?n=A526AC306CCFCE21&sms=69F6D3EF07A1110E&s=5F05187A8CB988F0",
 }
 
+ARTICLE_PAGE_OVERRIDES = {
+    "workplace-05": {
+        "title": "職場霸凌怎麼辦？從黑羊效應理解心理影響與自我保護",
+        "document_title": "職場霸凌怎麼辦？從黑羊效應理解心理影響與自我保護｜黃郁倩諮商心理師",
+        "description": (
+            "遇到疑似職場霸凌時，為什麼容易自責、孤立或不知所措？本文從黑羊效應整理界線表達、"
+            "支持系統、事件紀錄與旁觀者可做的事；不取代申訴、法律或醫療判斷。"
+        ),
+        "article_css_version": "20260813-workplace-seo-1",
+        "body_replacements": {
+            "<p>什麼是黑羊效應？</p>":
+                "<h2>什麼是黑羊效應？為什麼可能演變成職場霸凌？</h2>",
+            "<p>職場中，如果你是黑羊(受害者)</p>":
+                "<h2>遇到職場霸凌時，可以先怎麼保護自己？</h2>",
+            "<h2>不要過度檢討</h2>": "<h3>不要過度檢討</h3>",
+            "<h2>不要討好霸凌者</h2>": "<h3>不要討好霸凌者</h3>",
+            "<h2>找信任的親友訴說</h2>": "<h3>找信任的親友訴說</h3>",
+            "<h2>勇敢表達自己的立場</h2>": "<h3>勇敢表達自己的立場</h3>",
+            "<h2>盡可能收集證據</h2>": "<h3>盡可能收集證據</h3>",
+            "<h2>不要被這些惡意打敗了</h2>": "<h3>不要被這些惡意打敗了</h3>",
+            "<h2>職場中，如果你是白羊(旁觀者)</h2>":
+                "<h2>如果你是旁觀者，可以如何提供支持？</h2>",
+        },
+    },
+}
+
 
 def compact(text: str) -> str:
     return " ".join(text.replace("\u3000", " ").split())
@@ -399,11 +425,29 @@ def article_page(article, articles) -> str:
     related = [item for item in same_series if item is not article][:3]
     canonical = f"{SITE}/articles/{article['slug']}.html"
     source_link = ARTICLE_SOURCE_LINKS.get(article["slug"])
+    page_override = ARTICLE_PAGE_OVERRIDES.get(article["slug"], {})
+    page_title = page_override.get("title", article["title"])
+    document_title = page_override.get(
+        "document_title",
+        f"{article['title']}｜{series.name}｜{AUTHOR}",
+    )
+    page_description = page_override.get("description", article["description"])
+    page_body = article["body"]
+    for original, replacement in page_override.get("body_replacements", {}).items():
+        if original not in page_body:
+            raise ValueError(
+                f"Missing approved page override target for {article['slug']}: {original}"
+            )
+        page_body = page_body.replace(original, replacement, 1)
+    article_css_version = page_override.get(
+        "article_css_version",
+        "20260729-nav-dropdown-1",
+    )
     article_json_ld = {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": article["title"],
-        "description": article["description"],
+        "headline": page_title,
+        "description": page_description,
         "image": series_image(series),
         "url": canonical,
         "author": {"@type": "Person", "name": AUTHOR, "url": f"{SITE}/#about"},
@@ -445,7 +489,7 @@ def article_page(article, articles) -> str:
             {
                 "@type": "ListItem",
                 "position": 4,
-                "name": article["title"],
+                "name": page_title,
                 "item": canonical,
             },
         ],
@@ -477,14 +521,14 @@ def article_page(article, articles) -> str:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{html.escape(article["title"])}｜{html.escape(series.name)}｜{AUTHOR}</title>
-  <meta name="description" content="{html.escape(article["description"], quote=True)}">
+  <title>{html.escape(document_title)}</title>
+  <meta name="description" content="{html.escape(page_description, quote=True)}">
   <meta name="author" content="{AUTHOR}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="{canonical}">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="{html.escape(article["title"], quote=True)}">
-  <meta property="og:description" content="{html.escape(article["description"], quote=True)}">
+  <meta property="og:title" content="{html.escape(page_title, quote=True)}">
+  <meta property="og:description" content="{html.escape(page_description, quote=True)}">
   <meta property="og:image" content="{series_image(series)}">
   <meta property="og:image:width" content="1600">
   <meta property="og:image:height" content="900">
@@ -493,11 +537,11 @@ def article_page(article, articles) -> str:
   <meta property="og:locale" content="zh_TW">
   <meta property="og:site_name" content="{SITE_NAME}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{html.escape(article["title"], quote=True)}">
-  <meta name="twitter:description" content="{html.escape(article["description"], quote=True)}">
+  <meta name="twitter:title" content="{html.escape(page_title, quote=True)}">
+  <meta name="twitter:description" content="{html.escape(page_description, quote=True)}">
   <meta name="twitter:image" content="{series_image(series)}">
   <meta name="twitter:image:alt" content="{html.escape(series.image_alt, quote=True)}">
-  <link rel="stylesheet" href="../article.css?v=20260729-nav-dropdown-1">
+  <link rel="stylesheet" href="../article.css?v={article_css_version}">
   <link rel="stylesheet" href="../navigation.css?v=20260729-1">
   <script src="../navigation.js?v=20260729-1" defer></script>
   <script type="application/ld+json">{json.dumps(article_json_ld, ensure_ascii=False, indent=2)}</script>
@@ -515,14 +559,14 @@ def article_page(article, articles) -> str:
             <a href="../series/{series.key}.html">{html.escape(series.name)}</a>
           </nav>
           <p class="article-series">{html.escape(series_label)}</p>
-          <h1>{html.escape(article["title"])}</h1>
+          <h1>{html.escape(page_title)}</h1>
           <picture class="article-hero-media">
             <source media="(max-width: 639px)" srcset="../assets/illustrations/{series.image_stem}-mobile-900x900.webp">
             <img src="../assets/illustrations/{series.image_stem}-1600x900.webp"
               alt="{html.escape(series.image_alt, quote=True)}" width="1600" height="900"
               fetchpriority="high" decoding="async">
           </picture>
-          <p class="article-description">{html.escape(article["description"])}</p>
+          <p class="article-description">{html.escape(page_description)}</p>
           <div class="article-meta">
             <span>作者：{AUTHOR}</span><span>分類：{html.escape(series.topic)}</span>
           </div>
@@ -544,7 +588,7 @@ def article_page(article, articles) -> str:
           </div>
         </aside>
         <div class="article-content">
-          {article["body"]}
+          {page_body}
           {source_html}
           <aside class="article-disclaimer" aria-label="內容聲明">
             <strong>內容聲明</strong>
