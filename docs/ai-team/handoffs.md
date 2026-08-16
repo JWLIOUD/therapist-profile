@@ -1136,7 +1136,7 @@
 
 - 任務 ID：`SEO-MAINT-20260814-10`
 - 任務名稱：職場霸凌文章 sitemap `lastmod` 準確性修正
-- 目前狀態：`user_preview`
+- 目前狀態：`approved`
 - 交接日期／時區：2026-08-16／Asia/Taipei
 - 交接來源：SEO／發布維護 AI、品質檢查 AI、組織合作與講座邀約視角驗收 AI
 - 接手角色：使用者；最終核准後交 SEO／發布維護 AI
