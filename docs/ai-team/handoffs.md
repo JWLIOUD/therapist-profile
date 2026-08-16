@@ -797,7 +797,7 @@
 
 - 任務 ID：`SEO-CONTENT-20260725-03`
 - 任務名稱：建立職場心理健康總論與文章導航頁
-- 目前狀態：`user_preview`
+- 目前狀態：`approved`
 - 交接日期／時區：2026-07-25／Asia/Taipei
 - 交接來源：網站總管 AI
 - 接手角色：使用者
@@ -1131,3 +1131,28 @@
 - 索引邊界：目標 URL 已索引，不重複 Request indexing。
 - 保持不變：正文段落、案例、結論、來源、免責、CTA、圖片、URL、sitemap、其他正式頁與草稿邊界。
 - 接手角色下一步：搜尋成效與索引驗收 AI 依 7／28／90 天窗口回饋非品牌 query、page、click、impression、CTR、average position 與互搶。
+
+### 2026-08-16：`workplace-05` sitemap `lastmod` 修正完成五重驗收
+
+- 任務 ID：`SEO-MAINT-20260814-10`
+- 任務名稱：職場霸凌文章 sitemap `lastmod` 準確性修正
+- 目前狀態：`user_preview`
+- 交接日期／時區：2026-08-16／Asia/Taipei
+- 交接來源：SEO／發布維護 AI、品質檢查 AI、組織合作與講座邀約視角驗收 AI
+- 接手角色：使用者；最終核准後交 SEO／發布維護 AI
+- 目標與成功標準：只把 `workplace-05.html` 的 `<lastmod>` 從 `2026-07-30` 校正為 `2026-08-13`，且公開內容與其他索引設定零變更。
+- 已確認決策：使用者已於 2026-08-16 核准方案 1，並於五重驗收完成後再次明確回覆「核准上線」。
+- 不可改變事項：HTML、CSS、JavaScript、圖片、文案、metadata、JSON-LD、canonical、robots、內部連結、CTA、其他 sitemap URL 與日期。
+- 已完成：
+  - 建立分支 `codex/seo-maint-20260814-10`。
+  - `sitemap.xml` 只有一行日期替換。
+  - XML、34 個唯一 URL、草稿隔離、本地檔案對應、canonical、indexability 與 robots 宣告通過。
+  - 首頁、專欄入口、目標文章、職場系列、講座邀約、sitemap 與 robots 共 7/7 本地 HTTP 200。
+  - 文案、視覺、架構、SEO、組織合作五重初審均有證據並 PASS。
+- 已修改檔案：`sitemap.xml`、需求單、五重驗收紀錄、最新待辦與本交接紀錄。
+- 驗證證據：`docs/seo/keyword-research/workplace-05-sitemap-lastmod-five-review-2026-08-16.md`。
+- 尚未完成：commit、push、PR、合併、GitHub Pages 發布、正式 sitemap 驗證、Search Console 重新讀取與 Google 重抓。
+- 已知風險：`lastmod` 是提示，不保證立即重抓、排名、流量或 Google 採用新版摘要。
+- 需要使用者決定：無；已取得最終發布核准。
+- 接手角色下一步：SEO／發布維護 AI 只提交本需求檔案，建立 PR 並發布；發布後不重複提交 sitemap 或 Request indexing。
+- 接手完成條件：正式 sitemap 顯示 2026-08-13、34 URL 維持正常、GitHub Pages 成功，並將外部 Google 狀態標示為待觀察或已驗證。
