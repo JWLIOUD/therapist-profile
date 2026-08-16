@@ -49,7 +49,8 @@
 - [x] 使用者核准 `SEO-MAINT-20260814-10` 方案 1：只校正 `workplace-05.html` 的 sitemap `<lastmod>`。
 - [x] 在 `codex/seo-maint-20260814-10` 完成單一日期修改與五重驗收；HTML、CSS、圖片、文案、metadata、canonical、robots、JSON-LD、內部連結與其他 sitemap 項目均保持不變。
 - [x] 使用者已再次核准上線；授權只提交本需求範圍並進入 PR／合併與 GitHub Pages 發布。
-- [ ] 完成正式 sitemap、GitHub Pages 與 Search Console 後續觀察紀錄。
+- [x] 以 PR #11 合併 `SEO-MAINT-20260814-10`；GitHub Pages run `31930404211` 成功，正式 sitemap 與 34/34 URL 線上驗證通過。
+- [ ] 由每日 Search Console 工作流觀察 sitemap 重新讀取與目標頁重新檢索日期；不重複提交 sitemap 或 Request indexing。
 
 ## 文件維護
 

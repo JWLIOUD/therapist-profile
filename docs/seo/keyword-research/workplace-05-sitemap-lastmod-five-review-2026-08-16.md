@@ -15,7 +15,7 @@
 
 初審版本／diff 基準：`4fd7814`（`main`）→ `codex/seo-maint-20260814-10` working tree R0
 
-目前狀態：`approved`
+目前狀態：`verified`
 
 ## 版本修改總表
 
@@ -135,7 +135,9 @@
 - 所有 FAIL 是否都有修改紀錄：候選沒有 FAIL；驗證工具／環境失敗已保留並說明更正方式，沒有把它誤列為候選缺陷。
 - 所有修改是否都有獨立複驗：R0 後沒有追加候選修改，因此無複驗輪次。
 - 明確保持不變的內容：全部 HTML、CSS、JavaScript、圖片、公開文案、metadata、JSON-LD、canonical、robots、內部連結、CTA、其他 sitemap URL 與日期。
-- 未驗證的外部狀態：尚未 commit、push、建立 PR、合併或發布；正式 sitemap 仍是舊日期；Google 重新讀取、重抓與搜尋成效均待發布後觀察。
-- 整體判定：`PASS — READY FOR USER RELEASE APPROVAL`
+- 正式發布證據：PR [#11](https://github.com/JWLIOUD/therapist-profile/pull/11) 已合併；main merge commit 為 `13b9117b01fa477d6135e67f80b6145851b4ef85`；GitHub Pages run [`31930404211`](https://github.com/JWLIOUD/therapist-profile/actions/runs/31930404211) 為 `Success`，38 秒。
+- 正式站複驗：sitemap HTTP 200、XML 通過、目標 `<lastmod>` 為 `2026-08-13`；34 個 URL 唯一、0 個草稿，34/34 URL 均為 HTTP 200；首頁、目標文章及 `robots.txt` 亦為 HTTP 200。
+- 未驗證的外部狀態：Search Console 重新讀取 sitemap、Google 重新檢索目標頁與搜尋成效仍有資料延遲，交每日與 7／28／90 天工作流觀察。
+- 整體判定：`PASS — RELEASED AND VERIFIED`
 - 使用者預覽重點：本地 sitemap 的目標 URL 日期為 2026-08-13；目標文章畫面與文字應完全沒有變化。
-- 發布閘門：使用者已於 2026-08-16 再次明確回覆「核准上線」；可 commit、push、建立 PR／合併與正式站驗證，但不得擴大檔案範圍。
+- 發布閘門：使用者已於 2026-08-16 再次明確回覆「核准上線」；已完成限定範圍的 PR、合併、Pages 發布與正式站驗證。
