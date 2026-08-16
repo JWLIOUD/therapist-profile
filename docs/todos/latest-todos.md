@@ -1,6 +1,6 @@
 # 最新待辦事項
 
-更新日期：2026-08-13
+更新日期：2026-08-16
 
 ## 最高優先
 
@@ -46,6 +46,10 @@
 - [x] 依 `SEO-CONTENT-20260813-09` 完成本地候選與五重驗收；候選已通過發布閘門。
 - [x] 將 `SEO-CONTENT-20260813-09` 候選以 PR #9 合併，GitHub Pages run `31618285054` 成功，正式站驗證通過。
 - [ ] `SEO-CONTENT-20260813-09` 發布後 7／28／90 天：比較非品牌 query、目標頁曝光、點擊、CTR、平均排名與頁面互搶。
+- [x] 使用者核准 `SEO-MAINT-20260814-10` 方案 1：只校正 `workplace-05.html` 的 sitemap `<lastmod>`。
+- [x] 在 `codex/seo-maint-20260814-10` 完成單一日期修改與五重驗收；HTML、CSS、圖片、文案、metadata、canonical、robots、JSON-LD、內部連結與其他 sitemap 項目均保持不變。
+- [x] 使用者已再次核准上線；授權只提交本需求範圍並進入 PR／合併與 GitHub Pages 發布。
+- [ ] 完成正式 sitemap、GitHub Pages 與 Search Console 後續觀察紀錄。
 
 ## 文件維護
 
