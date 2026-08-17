@@ -172,8 +172,14 @@ h1 {
   margin-bottom: 22px;
   color: var(--brown);
   font-family: "Noto Serif TC", "Source Han Serif TC", "Songti TC", serif;
-  font-size: clamp(2.5rem, 10vw, 5.8rem);
-  line-height: 1.13;
+  font-size: clamp(1.35rem, 6.5vw, 2.75rem);
+  line-height: 1.24;
+  letter-spacing: .01em;
+}
+
+.articles-hero h1 span {
+  display: block;
+  white-space: nowrap;
 }
 
 .hero-desc {

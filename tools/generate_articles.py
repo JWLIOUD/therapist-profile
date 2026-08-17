@@ -18,7 +18,6 @@ WORKFLOW = ROOT.parent / "WorkFlow" / "project" / "YucheinHomePage" / "docs"
 AUTHOR = "黃郁倩 諮商心理師"
 SITE = "https://yuchienpsy.com"
 SITE_NAME = "黃郁倩 諮商心理師"
-LINE_URL = "https://line.me/R/ti/p/@264kulgk"
 
 
 @dataclass
@@ -379,16 +378,17 @@ def page_header(active: str = "articles") -> str:
       <nav class="desktop-nav" aria-label="主選單">
         <a href="../index.html">首頁</a>
         <a href="../index.html#about">關於我</a>
-        <a href="../index.html#services">諮商服務</a>
+        <a href="../index.html#services">合作服務</a>
         <div class="nav-dropdown">
           <a href="../articles.html"{current} aria-haspopup="true">心理專欄</a>
           <div class="nav-submenu" role="group" aria-label="心理專欄子選單">
             <a href="../workplace-mental-health.html">職場心理健康</a>
           </div>
         </div>
-        <a href="../index.html#contact">聯絡預約</a>
+        <a href="../talks.html">講座與活動</a>
+        <a href="../index.html#contact">聯絡方式</a>
       </nav>
-      <a class="btn btn-primary nav-cta" href="{LINE_URL}" target="_blank" rel="noopener noreferrer">LINE 預約</a>
+      <a class="btn btn-primary nav-cta" href="../talks.html#formats">合作邀約</a>
       <button class="hamburger" type="button" aria-label="開啟選單" aria-controls="mobileMenu" aria-expanded="false">
         <span aria-hidden="true"></span>
       </button>
@@ -398,8 +398,9 @@ def page_header(active: str = "articles") -> str:
     <a href="../index.html">首頁</a>
     <a href="../articles.html">心理專欄</a>
     <a class="mobile-sub-link" href="../workplace-mental-health.html"><span aria-hidden="true">↳</span>職場心理健康</a>
-    <a href="../index.html#contact">聯絡預約</a>
-    <a class="btn btn-primary" href="{LINE_URL}" target="_blank" rel="noopener noreferrer">LINE 預約</a>
+    <a href="../talks.html">講座與活動</a>
+    <a href="../index.html#contact">聯絡方式</a>
+    <a class="btn btn-primary" href="../talks.html#formats">合作邀約</a>
   </nav>"""
 
 
@@ -409,8 +410,9 @@ def footer() -> str:
       <div><strong>{AUTHOR}</strong><p>諮心字第005821號</p></div>
       <div class="footer-links">
         <a href="../articles.html">心理專欄</a>
-        <a href="../index.html#services">諮商服務</a>
-        <a href="../index.html#contact">聯絡預約</a>
+        <a href="../index.html#services">合作服務</a>
+        <a href="../talks.html">講座與活動</a>
+        <a href="../index.html#contact">聯絡方式</a>
       </div>
     </div>
   </footer>"""
@@ -542,7 +544,7 @@ def article_page(article, articles) -> str:
   <meta name="twitter:image" content="{series_image(series)}">
   <meta name="twitter:image:alt" content="{html.escape(series.image_alt, quote=True)}">
   <link rel="stylesheet" href="../article.css?v={article_css_version}">
-  <link rel="stylesheet" href="../navigation.css?v=20260729-1">
+  <link rel="stylesheet" href="../navigation.css?v=20260817-collab-1">
   <script src="../navigation.js?v=20260729-1" defer></script>
   <script type="application/ld+json">{json.dumps(article_json_ld, ensure_ascii=False, indent=2)}</script>
   <script type="application/ld+json">{json.dumps(breadcrumb_json_ld, ensure_ascii=False, indent=2)}</script>
@@ -595,10 +597,10 @@ def article_page(article, articles) -> str:
             <p>{DISCLAIMER}</p>
           </aside>
           <section class="article-cta">
-            <p class="section-kicker">想進一步談談嗎？</p>
-            <h2>閱讀可以是一個開始，諮商能陪你更靠近自己的需要。</h2>
-            <p>如果文章裡的情境讓你覺得熟悉，可以為自己保留一個被理解與整理的空間。</p>
-            <a class="btn btn-primary" href="{LINE_URL}" target="_blank" rel="noopener noreferrer">LINE 預約諮商</a>
+            <p class="section-kicker">讓閱讀延伸成交流</p>
+            <h2>文章可以是理解的開始，也能成為講座與活動的選題參考。</h2>
+            <p>如果這個主題貼近你的企業、校園、公部門或社區需求，可以查看可合作的講座、工作坊、團體與推廣形式。</p>
+            <a class="btn btn-primary" href="../talks.html#topics">查看合作主題</a>
           </section>
           <nav class="post-nav" aria-label="上一篇與下一篇">
             {nav_item("上一篇", previous)}
@@ -706,7 +708,7 @@ def series_page(series: Series, items, all_series) -> str:
   <meta name="twitter:image" content="{series_image(series)}">
   <meta name="twitter:image:alt" content="{html.escape(series.image_alt, quote=True)}">
   <link rel="stylesheet" href="../series.css?v=20260729-nav-dropdown-1">
-  <link rel="stylesheet" href="../navigation.css?v=20260729-1">
+  <link rel="stylesheet" href="../navigation.css?v=20260817-collab-1">
   <script src="../navigation.js?v=20260729-1" defer></script>
   <script type="application/ld+json">{json.dumps(collection_json_ld, ensure_ascii=False, indent=2)}</script>
   <script type="application/ld+json">{json.dumps(breadcrumb_json_ld, ensure_ascii=False, indent=2)}</script>
@@ -757,10 +759,10 @@ def series_page(series: Series, items, all_series) -> str:
       <div class="page-inner author-panel">
         <img src="../assets/headshot.jpg" alt="黃郁倩諮商心理師照片">
         <div><p class="section-kicker">作者</p><h2>{AUTHOR}</h2>
-          <p>諮心字第005821號。提供兒童、青少年與成人心理諮商。</p>
+          <p>諮心字第005821號。提供心理健康講座、工作坊、團體與推廣活動合作。</p>
           <div class="author-links">
             <a class="btn btn-secondary" href="../index.html#about">了解心理師</a>
-            <a class="btn btn-primary" href="{LINE_URL}" target="_blank" rel="noopener noreferrer">LINE 預約諮商</a>
+            <a class="btn btn-primary" href="../talks.html#formats">提出合作需求</a>
           </div>
         </div>
       </div>
