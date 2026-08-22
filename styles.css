@@ -229,10 +229,6 @@ select:focus-visible,
   border-bottom: 0;
 }
 
-.mobile-menu .btn-primary {
-  color: var(--white);
-}
-
 main {
   padding-top: var(--header-height);
   overflow: hidden;
