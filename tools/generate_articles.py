@@ -377,43 +377,62 @@ def page_header(active: str = "articles") -> str:
     <div class="nav-wrap">
       <a class="brand" href="../index.html">{AUTHOR}<small>諮心字第005821號</small></a>
       <nav class="desktop-nav" aria-label="主選單">
-        <a href="../index.html">首頁</a>
-        <a href="../index.html#about">關於我</a>
-        <a href="../index.html#services">諮商服務</a>
-        <div class="nav-dropdown">
-          <a href="../articles.html"{current} aria-haspopup="true">心理專欄</a>
-          <div class="nav-submenu" role="group" aria-label="心理專欄子選單">
-            <a href="../workplace-mental-health.html">職場心理健康</a>
-          </div>
-        </div>
-        <a href="../index.html#contact">聯絡預約</a>
+        <a href="../workplace-services.html">職場與組織</a>
+        <a href="../talks.html">講座與工作坊</a>
+        <a href="../media.html">媒體與節目</a>
+        <a href="../personal-support.html">個人心理支持</a>
+        <div class="nav-dropdown"><a href="../articles.html"{current} aria-haspopup="true">心理專欄</a><div class="nav-submenu" role="group" aria-label="心理專欄子選單"><a href="../workplace-mental-health.html">職場心理健康指南</a></div></div>
+        <a href="../index.html#about">關於心理師</a>
       </nav>
-      <a class="btn btn-primary nav-cta" href="{LINE_URL}" target="_blank" rel="noopener noreferrer">LINE 預約</a>
       <button class="hamburger" type="button" aria-label="開啟選單" aria-controls="mobileMenu" aria-expanded="false">
         <span aria-hidden="true"></span>
       </button>
     </div>
   </header>
   <nav class="mobile-menu" id="mobileMenu" aria-label="手機選單">
-    <a href="../index.html">首頁</a>
+    <a href="../workplace-services.html">職場與組織</a>
+    <a href="../talks.html">講座與工作坊</a>
+    <a href="../media.html">媒體與節目</a>
+    <a href="../personal-support.html">個人心理支持</a>
     <a href="../articles.html">心理專欄</a>
-    <a class="mobile-sub-link" href="../workplace-mental-health.html"><span aria-hidden="true">↳</span>職場心理健康</a>
-    <a href="../index.html#contact">聯絡預約</a>
-    <a class="btn btn-primary" href="{LINE_URL}" target="_blank" rel="noopener noreferrer">LINE 預約</a>
+    <a class="mobile-sub-link" href="../workplace-mental-health.html">↳ 職場心理健康指南</a>
+    <a href="../index.html#about">關於心理師</a>
   </nav>"""
 
 
 def footer() -> str:
     return f"""<footer class="site-footer">
     <div class="footer-inner">
-      <div><strong>{AUTHOR}</strong><p>諮心字第005821號</p></div>
+      <div><strong>{AUTHOR}</strong><p>諮心字第005821號</p><p>心理專業 × 組織與公共合作｜講座、工作坊、媒體邀約與個人心理支持</p><p>yuchien9489@gmail.com</p><p>© 黃郁倩諮商心理師</p></div>
       <div class="footer-links">
-        <a href="../articles.html">心理專欄</a>
-        <a href="../index.html#services">諮商服務</a>
-        <a href="../index.html#contact">聯絡預約</a>
+        <a href="../workplace-services.html">職場與組織</a><a href="../talks.html">講座與工作坊</a><a href="../media.html">媒體與節目</a><a href="../personal-support.html">個人心理支持</a><a href="../articles.html">心理專欄</a><a href="../index.html#about">關於心理師</a>
       </div>
     </div>
   </footer>"""
+
+
+RELATED_SERVICES = {
+    "workplace-03": ("將職場界線帶入團隊學習：查看心理健康講座", "../talks.html#mental-health"),
+    "workplace-07": ("團體學習可參考教師研習與心理健康講座", "../talks.html#teachers"),
+    "workplace-05": ("組織窗口如需評估外部委員參與，可查看調查洽詢與專業界線", "../workplace-bullying-investigation.html"),
+    "addiction-06": ("學校與親職團體可查看講座與工作坊方向", "../talks.html#students"),
+    "self-care-07": ("了解個人心理支持", "../personal-support.html"),
+    "post-election-self-care": ("相關媒體紀錄：臺北廣播電臺《LOHAS健康有約》選舉心理調適", "../media.html#records"),
+    "relationship-control": ("了解個人心理支持", "../personal-support.html"),
+}
+SERIES_RELATED_SERVICES = {
+    "boundary": ("討論關係界線與心理健康講座", "../talks.html#topics"),
+    "self-care": ("團體活動可了解粉彩與酒精墨水創作體驗", "../creative-workshops.html"),
+}
+
+
+def related_service(item: tuple[str, str] | None) -> str:
+    if item is None:
+        return ""
+    label, url = item
+    return (f'<aside class="related-service" aria-label="相關服務與合作">'
+            f'<h2>相關服務與合作</h2><p><a href="{html.escape(url, quote=True)}">'
+            f'{html.escape(label)} →</a></p></aside>')
 
 
 def article_page(article, articles) -> str:
@@ -542,8 +561,8 @@ def article_page(article, articles) -> str:
   <meta name="twitter:image" content="{series_image(series)}">
   <meta name="twitter:image:alt" content="{html.escape(series.image_alt, quote=True)}">
   <link rel="stylesheet" href="../article.css?v={article_css_version}">
-  <link rel="stylesheet" href="../navigation.css?v=20260729-1">
-  <script src="../navigation.js?v=20260729-1" defer></script>
+  <link rel="stylesheet" href="../navigation.css?v=20261115-2">
+  <script src="../navigation.js?v=20261115-3" defer></script>
   <script type="application/ld+json">{json.dumps(article_json_ld, ensure_ascii=False, indent=2)}</script>
   <script type="application/ld+json">{json.dumps(breadcrumb_json_ld, ensure_ascii=False, indent=2)}</script>
 </head>
@@ -611,6 +630,7 @@ def article_page(article, articles) -> str:
         </div>
       </div>
     </article>
+    {related_service(RELATED_SERVICES.get(article['slug']))}
   </main>
   {footer()}
 </body>
@@ -706,8 +726,8 @@ def series_page(series: Series, items, all_series) -> str:
   <meta name="twitter:image" content="{series_image(series)}">
   <meta name="twitter:image:alt" content="{html.escape(series.image_alt, quote=True)}">
   <link rel="stylesheet" href="../series.css?v=20260729-nav-dropdown-1">
-  <link rel="stylesheet" href="../navigation.css?v=20260729-1">
-  <script src="../navigation.js?v=20260729-1" defer></script>
+  <link rel="stylesheet" href="../navigation.css?v=20261115-2">
+  <script src="../navigation.js?v=20261115-3" defer></script>
   <script type="application/ld+json">{json.dumps(collection_json_ld, ensure_ascii=False, indent=2)}</script>
   <script type="application/ld+json">{json.dumps(breadcrumb_json_ld, ensure_ascii=False, indent=2)}</script>
 </head>
@@ -765,6 +785,7 @@ def series_page(series: Series, items, all_series) -> str:
         </div>
       </div>
     </section>
+    {related_service(SERIES_RELATED_SERVICES.get(series.key))}
   </main>
   {footer()}
 </body>
