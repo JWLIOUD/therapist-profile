@@ -1345,3 +1345,14 @@ h2 {
     transition-duration: .01ms !important;
   }
 }
+/* Service preview: generous reading measure and keyboard-visible links. */
+.service-hero { padding-top: 130px; background: #f8f2e9; }
+.service-hero .section-inner, .service-hero ~ .section .section-inner { max-width: 900px; }
+.service-intro { max-width: 48rem; font-size: 1.15rem; line-height: 1.9; }
+.quick-links { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 2rem; }
+.quick-links a { padding: .65rem 1rem; background: white; border: 1px solid #d7c6b9; border-radius: 999px; }
+.copy-status { overflow-wrap: anywhere; }
+.related-service { max-width: 920px; margin: 2rem auto 4rem; padding: 1.5rem; border: 1px solid var(--line); border-radius: 18px; }
+.service-hero ~ .section:nth-child(odd) { background: #f8f2e9; }
+.desktop-nav a:focus-visible, .quick-links a:focus-visible, button:focus-visible { outline: 3px solid #6c7b67; outline-offset: 3px; }
+.nav-dropdown.nav-dismissed .nav-submenu { opacity: 0; visibility: hidden; pointer-events: none; }
